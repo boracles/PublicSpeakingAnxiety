@@ -1,19 +1,19 @@
 using UnityEngine;
 using System;
 
+[RequireComponent(typeof(AudioListener))]
 public class MicCapturer : MonoBehaviour
 {
     public int sampleRate = 16000;
-    public event Action<float[]> OnSegment; // 10 ms 단위 오디오 버퍼
+    public event Action<float[]> OnSegment;     // 20 ms PCM float[]
 
-    AudioClip micBuf;
-    const int SEG_MS = 20;              // 20 ms == 320 샘플(16 kHz)
-    int readPos = 0, segSamples;
+    const int SEG_MS = 20;
+    AudioClip micBuf; int segSamples, readPos;
 
     void Start()
     {
         segSamples = sampleRate * SEG_MS / 1000;
-        micBuf = Microphone.Start("", true, 60, sampleRate);
+        micBuf = Microphone.Start(null, true, 60, sampleRate);  // VR 헤드셋 기본 입력
         StartCoroutine(ReadLoop());
     }
 
@@ -21,8 +21,8 @@ public class MicCapturer : MonoBehaviour
     {
         while (Microphone.IsRecording(null))
         {
-            int curPos = Microphone.GetPosition(null);
-            while (AvailableSamples(curPos) >= segSamples)
+            int cur = Microphone.GetPosition(null);
+            while (Available(cur) >= segSamples)
             {
                 float[] seg = new float[segSamples];
                 micBuf.GetData(seg, readPos);
@@ -32,6 +32,6 @@ public class MicCapturer : MonoBehaviour
             yield return null;
         }
     }
-    int AvailableSamples(int cur) =>
-        cur >= readPos ? cur - readPos : micBuf.samples - readPos + cur;
+    int Available(int cur) => cur >= readPos ? cur - readPos :
+        micBuf.samples - readPos + cur;
 }
