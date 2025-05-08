@@ -38,7 +38,6 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _METALLICSPECGLOSSMAP
   - _NORMALMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -293,7 +292,7 @@ Material:
     - _ReceivesSSR: 1
     - _RefractionModel: 0
     - _SSRefractionProjectionModel: 0
-    - _Smoothness: 0.4
+    - _Smoothness: 0.2
     - _SmoothnessRemapMax: 0.58293545
     - _SmoothnessRemapMin: 0
     - _SmoothnessTextureChannel: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Threading.Tasks;
 
 public class SpeechRecognizer : MonoBehaviour
 {
@@ -10,25 +11,28 @@ public class SpeechRecognizer : MonoBehaviour
     MicCapturer      mic;
     AzureStreamSender sender;
 
-    public event Action<string,bool> OnText;   // (text, isFinal)
-    public float lastLatency;                  // 최종 텍스트까지 걸린 시간
+    public event Action<string, bool> OnText;   // (text, isFinal)
+    public float lastLatency;                   // 최종 latency
 
-    void Awake(){ mic = GetComponent<MicCapturer>(); }
+    void Awake() => mic = GetComponent<MicCapturer>();
 
     void Start()
     {
         sender = new AzureStreamSender();
         sender.Begin(azureKey, azureRegion);
-        sender.OnResult += (txt, t, fin)=>
+
+        sender.OnResult += (txt, t, fin) =>
         {
             if (fin) lastLatency = t;
             OnText?.Invoke(txt, fin);
         };
         mic.OnSegment += sender.Send;
     }
-    void OnDestroy()
+
+    /* 안전하게 인식 종료 후 파괴 */
+    async void OnDestroy()
     {
         mic.OnSegment -= sender.Send;
-        sender.End(); sender.Dispose();
+        await sender.EndAsync();   // ⏹️ 완료 대기
     }
 }

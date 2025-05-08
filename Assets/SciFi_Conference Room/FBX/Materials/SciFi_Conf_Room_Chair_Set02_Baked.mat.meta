@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f64dcef62e08d0c459a2ac56aa86ad04
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 167324
+  packageName: Sci-Fi Conference Room
+  packageVersion: 2017.4.37f1
+  assetPath: Assets/SciFi_Conference Room/FBX/Materials/SciFi_Conf_Room_Chair_Set02_Baked.mat
+  uploadId: 364319

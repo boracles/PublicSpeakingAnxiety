@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e5d22062c2004674d86a145ab215da06
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 167324
+  packageName: Sci-Fi Conference Room
+  packageVersion: 2017.4.37f1
+  assetPath: Assets/SciFi_Conference Room/FBX/Materials/SciFi_Conf_Room_Panel_03_Baked.mat
+  uploadId: 364319

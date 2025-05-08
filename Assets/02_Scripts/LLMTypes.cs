@@ -13,5 +13,5 @@ public struct LLMReply
 [Serializable]
 public struct LLMQuestionSet
 {
-    public string[] questions; // 길이 1~3
+    public string[] questions;   // 반드시 2개
 }

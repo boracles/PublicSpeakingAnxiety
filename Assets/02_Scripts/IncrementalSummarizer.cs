@@ -1,50 +1,47 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 using System.Text;
-using System.Linq;
 
 public class IncrementalSummarizer : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] SpeechRecognizer stt;
-    [SerializeField] LLMClient        llm;      // 요약용
-    
-    readonly StringBuilder segBuf = new();      // 30 s 세그먼트
-    readonly List<string>  summaries = new();   // 누적 요약
+    [SerializeField] LLMClient        llm;
 
-    float lastSegTime = 0f;
-    
+    readonly StringBuilder fullBuf = new();
+    public  string GetFullContext() => fullBuf.ToString();   // 호출용
+
+    /* ───────── STT 누적 ───────── */
     void OnEnable()  => stt.OnText += OnSentence;
     void OnDisable() => stt.OnText -= OnSentence;
 
     void OnSentence(string txt, bool final)
     {
-        if(!final) return;
-        segBuf.AppendLine(txt);
-        if(Time.time - lastSegTime > 30f)       // 30 s 경과
-            StartCoroutine(SummarizeSeg());
+        if (!final) return;
+        fullBuf.AppendLine(txt);
     }
 
-    IEnumerator SummarizeSeg()
+    /* ───────── 지금까지 누적분을 요약해서 콜백 ───────── */
+    public IEnumerator SummarizeNow(System.Action<string,float> onDone)
     {
-        lastSegTime = Time.time;
-        string seg = segBuf.ToString(); segBuf.Clear();
+        string ctx = fullBuf.ToString();
+        if (string.IsNullOrWhiteSpace(ctx))
+        {
+            Debug.LogWarning("📂 누적된 텍스트가 없습니다.");
+            yield break;
+        }
 
-        string prompt = $"다음 한국어 발표 내용을 한 문장으로 요약해:\n{seg}";
-        bool done = false;
+        string prompt =
+            "다음 발표 전체 내용을 핵심 정보가 빠지지 않도록 " +
+            "정확하게 요약해 줘. 가능하면 불필요한 장황함은 줄여 줘:\n" + ctx;
 
-        yield return llm.Query(prompt, (LLMReply r, float t) => {
-            summaries.Add(r.answer);
-            done = true;
+        yield return llm.Query(prompt, (LLMReply rep, float t) =>
+        {
+            Debug.Log($"🧾 전체 요약({t:F1}s): {rep.answer}");
+            onDone?.Invoke(rep.answer, t);
         });
-        
-        while (!done)
-            yield return null;
-    }
 
-    public string Get5MinSummary()
-    {
-        // 최근 10개(5분) 요약만 선택
-        return string.Join(" ", summaries.TakeLast(10));
+        // 필요하면 요약 후 버퍼 초기화
+        // fullBuf.Clear();
     }
 }
