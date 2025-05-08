@@ -11,7 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: adce0b63bca75a84e9f786201b7d7b0b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _WINDCOLORMIX_ON
   m_InvalidKeywords:
   - _DISABLE_DBUFFER
   - _DOUBLESIDED_ON
@@ -288,7 +289,7 @@ Material:
     - _UVEmissive: 0
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
-    - _WINDCOLORMIX: 0
+    - _WINDCOLORMIX: 1
     - _WindColorMix: 0
     - _WindColorThreshold: 0.3
     - _WindNormalInfluence: 0
