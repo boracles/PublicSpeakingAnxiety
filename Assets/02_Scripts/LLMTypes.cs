@@ -10,8 +10,8 @@ public struct LLMReply
 }
 
 /// GPT 질문 생성(1~3개 배열) 용
-[Serializable]
-public struct LLMQuestionSet
+[System.Serializable]
+public class LLMQuestionSet
 {
     public string[] questions;   // 반드시 2개
 }
