@@ -1,29 +1,45 @@
-using System;
+using System;         
+using System.Text; 
 using UnityEngine;
 
 public static class WavUtility
 {
     // 16-bit PCM WAV → AudioClip
-    public static AudioClip ToAudioClip(byte[] wavBytes, string clipName, out int sampleRate)
+    public static AudioClip ToAudioClip(byte[] data, string name, out int sampleRate)
     {
-        // ── WAV 헤더 파싱 ─────────────────────────────
-        // RIFF header 44 bytes
-        sampleRate = BitConverter.ToInt32(wavBytes, 24);
-        short channels   = BitConverter.ToInt16(wavBytes, 22);
-        int   dataStart  = Array.IndexOf(wavBytes, (byte)'d', 36) + 8; // "data" chunk
-        int   samples    = (wavBytes.Length - dataStart) / 2;         // 16-bit → /2
+        // 1. RIFF / WAVE 헤더 체크
+        if (Encoding.ASCII.GetString(data, 0, 4) != "RIFF" ||
+            Encoding.ASCII.GetString(data, 8, 4) != "WAVE")
+            throw new InvalidOperationException("Not a valid WAV file");
 
-        float[] audioData = new float[samples];
-        int offset = dataStart;
-        for (int i = 0; i < samples; i++)
-        {
-            short sample = BitConverter.ToInt16(wavBytes, offset);
-            audioData[i] = sample / 32768f;
-            offset += 2;
-        }
+        // 2. fmt 청크 위치 찾기
+        int fmt = 12;
+        while (Encoding.ASCII.GetString(data, fmt, 4) != "fmt ")
+            fmt += 8 + BitConverter.ToInt32(data, fmt + 4);   // chunkID+size 스킵
 
-        AudioClip clip = AudioClip.Create(clipName, samples / channels, channels, sampleRate, false);
-        clip.SetData(audioData, 0);
+        short channels = BitConverter.ToInt16(data, fmt + 10);
+        sampleRate     = BitConverter.ToInt32(data, fmt + 12);
+        short bitDepth = BitConverter.ToInt16(data, fmt + 22);    // 16
+
+        // 3. data 청크 위치 찾기
+        int dataOffset = fmt + 8 + BitConverter.ToInt32(data, fmt + 4);
+        while (Encoding.ASCII.GetString(data, dataOffset, 4) != "data")
+            dataOffset += 8 + BitConverter.ToInt32(data, dataOffset + 4);
+
+        int pcmOffset   = dataOffset + 8;
+        int bytesLength = BitConverter.ToInt32(data, dataOffset + 4);
+        int totalSamples = bytesLength / (bitDepth / 8);
+
+        // 4. 16-bit → float 변환
+        float[] samples = new float[totalSamples];
+        for (int i = 0, b = pcmOffset; i < totalSamples; i++, b += 2)
+            samples[i] = BitConverter.ToInt16(data, b) / 32768f;
+
+        // 5. AudioClip 생성
+        int frames = totalSamples / channels;
+        AudioClip clip = AudioClip.Create(name, frames, channels, sampleRate, false);
+        clip.SetData(samples, 0);
         return clip;
     }
+
 }

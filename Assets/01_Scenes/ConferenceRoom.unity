@@ -10692,7 +10692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1476942873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10705,9 +10705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676104b2aee6851409c9a9dc7dfa9899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speechKey: 
+  speechKey: 2SBzXTEuTeWmlQIJWRw3YzCxY3uFJPpERzJPzaj4ZngPzFzeh7L5JQQJ99BEACNns7RXJ3w3AAAAACOGWzMb
   region: koreacentral
-  voice: ko-KR-InJoonNeural
+  voice: ko-KR-SunHiNeural
   source: {fileID: 0}
   lipSync: {fileID: 0}
 --- !u!4 &1476942874

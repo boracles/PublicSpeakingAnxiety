@@ -12,9 +12,9 @@ using UnityEngine.Networking;
  public class TTSPlayer : MonoBehaviour
 {
     [Header("Azure Speech TTS")]
-    [SerializeField] string speechKey = "";
+    [SerializeField] string speechKey = "2SBzXTEuTeWmlQIJWRw3YzCxY3uFJPpERzJPzaj4ZngPzFzeh7L5JQQJ99BEACNns7RXJ3w3AAAAACOGWzMb";
     [SerializeField] string region    = "koreacentral";
-    [SerializeField] string voice     = "ko-KR-InJoonNeural"; // 한국어 남성
+    [SerializeField] string voice     = "ko-KR-SunHiNeural";
 
     [Header("Audio & LipSync")]
     [SerializeField] AudioSource       source;   // 48 kHz, Mono
