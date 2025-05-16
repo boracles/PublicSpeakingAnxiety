@@ -10,7 +10,7 @@ public class QAController : MonoBehaviour {
     [Header("Deps")]
     [SerializeField] IncrementalSummarizer summarizer;
     [SerializeField] LLMClient            llm;
-    [SerializeField] TTSPlayer            tts;
+    [SerializeField] public TTSPlayer            tts;
     [SerializeField] TranscriptBuffer     transcript;
 
     [Header("Avatar & FX")]
@@ -25,6 +25,8 @@ public class QAController : MonoBehaviour {
     [TextArea] public string outro  = "답변 감사합니다. 발표는 여기서 마치겠습니다.";
     [Range(0,3)] public float delaySec = 1.5f;     // 모든 질문 동일 지연
 
+    public System.Action OnIntroButton;
+    
     const string QuestionSys =
         "You are a helpful assistant.\nReturn ONLY this schema: { \"questions\": [string, string] }";
 
@@ -38,16 +40,22 @@ public class QAController : MonoBehaviour {
         yield return QAFlow();
     }
 
-    /* ───────── 버튼 이벤트 ───────── */
     public void OnButtonPressed() {
         if (waitForRelease) return;
         waitForRelease = true;
+
         switch (stage) {
-            case Stage.Idle:      if (!busy) StartCoroutine(QAFlow()); break;
-            case Stage.WaitAns1:  answerDone = true; break;
-            case Stage.WaitAns2:  answerDone = true; break;
+            case Stage.Idle:              // 발표 시작 신호
+                OnIntroButton?.Invoke();  // ExperimentManager 쪽 플래그 켜기
+                break;
+
+            case Stage.WaitAns1:
+            case Stage.WaitAns2:
+                answerDone = true;        // 답변 완료
+                break;
         }
     }
+
     public void OnButtonReleased() => waitForRelease = false;
 
     /* ───────── 메인 코루틴 ───────── */
@@ -123,5 +131,5 @@ public class QAController : MonoBehaviour {
         }
     }
 
-    void Reset() { stage = Stage.Idle; busy = answerDone = waitForRelease = false; }
+    public void Reset() { stage = Stage.Idle; busy = answerDone = waitForRelease = false; }
 }

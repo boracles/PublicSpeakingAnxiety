@@ -14336,6 +14336,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   qa: {fileID: 1217292105}
   presentationSec: 300
+  startMent:
+  - "\uCCAB \uBC88\uC9F8 \uBC1C\uD45C\uB97C \uC2DC\uC791\uD558\uACA0\uC2B5\uB2C8\uB2E4.
+    \uC900\uBE44\uB418\uBA74 \uC2DC\uC791\uD574\uC8FC\uC138\uC694."
+  - "\uC774\uC81C \uB450 \uBC88\uC9F8 \uBC1C\uD45C\uB97C \uC2DC\uC791\uD574 \uC8FC\uC138\uC694."
+  - "\uB9C8\uC9C0\uB9C9 \uC138 \uBC88\uC9F8 \uBC1C\uD45C\uB97C \uC2DC\uC791\uD574
+    \uC8FC\uC138\uC694."
 --- !u!1001 &1996180821
 PrefabInstance:
   m_ObjectHideFlags: 0
