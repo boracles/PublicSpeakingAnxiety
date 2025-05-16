@@ -6408,7 +6408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a8518bef717b25843bea070082633581, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.607
+      value: -1.513
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a8518bef717b25843bea070082633581, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9343,12 +9343,17 @@ MonoBehaviour:
   llm: {fileID: 264091577}
   tts: {fileID: 792033669}
   transcript: {fileID: 1217292107}
+  avatarGesture: {fileID: 0}
+  spatialPanel: {fileID: 0}
+  fxSource: {fileID: 0}
+  spatialSfx: {fileID: 0}
   intro: "\uBC1C\uD45C \uC798 \uB4E4\uC5C8\uC2B5\uB2C8\uB2E4. \uBC1C\uD45C\uB97C
     \uB4E4\uC73C\uBA74\uC11C \uAD81\uAE08\uD55C \uC810\uC774 \uC788\uC5C8\uB294\uB370\uC694. "
   intro2: "\uB2F5\uBCC0 \uAC10\uC0AC\uD569\uB2C8\uB2E4. \uCD94\uAC00 \uC9C8\uBB38
     \uD558\uB098 \uB354 \uB4DC\uB9AC\uC790\uBA74\uC694. "
   outro: "\uB2F5\uBCC0 \uAC10\uC0AC\uD569\uB2C8\uB2E4. \uBC1C\uD45C\uB294 \uC5EC\uAE30\uC11C
-    \uB9C8\uCE58\uACA0\uC2B5\uB2C8\uB2E4."
+    \uB9C8\uCE58\uACA0\uC2B5\uB2C8\uB2E4. \uC218\uACE0\uD558\uC168\uC2B5\uB2C8\uB2E4."
+  delaySec: 2
 --- !u!4 &1217292106
 Transform:
   m_ObjectHideFlags: 0
@@ -12716,7 +12721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a8518bef717b25843bea070082633581, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.569
+      value: 5.534
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a8518bef717b25843bea070082633581, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14294,13 +14299,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1993189725}
+  - component: {fileID: 1993189726}
   m_Layer: 0
-  m_Name: DelayManager
+  m_Name: ExperimentManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1993189725
 Transform:
   m_ObjectHideFlags: 0
@@ -14316,6 +14322,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1993189726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993189724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 694687b9f8ecd0f4081c907c6631faec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  qa: {fileID: 1217292105}
+  presentationSec: 300
 --- !u!1001 &1996180821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15510,6 +15530,30 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7380761033440643621, guid: 9b33a0962b32a13448b8017d7892eed8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0766
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380761033440643621, guid: 9b33a0962b32a13448b8017d7892eed8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0766
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380761033440643621, guid: 9b33a0962b32a13448b8017d7892eed8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0766
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380761033440643621, guid: 9b33a0962b32a13448b8017d7892eed8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380761033440643621, guid: 9b33a0962b32a13448b8017d7892eed8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0193
+      objectReference: {fileID: 0}
+    - target: {fileID: 7380761033440643621, guid: 9b33a0962b32a13448b8017d7892eed8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 7380761033440643622, guid: 9b33a0962b32a13448b8017d7892eed8, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 0
@@ -15642,10 +15686,14 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7380761034243297895, guid: 9b33a0962b32a13448b8017d7892eed8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 323f0907b32fceb4884afb8a935c148c, type: 2}
     - target: {fileID: 7380761034632162594, guid: 9b33a0962b32a13448b8017d7892eed8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 56de816e821ff3749a268eeb424e3b33, type: 2}
+      objectReference: {fileID: 2100000, guid: c8b52bef3f9f9c546b27e49337d13d44, type: 2}
     - target: {fileID: 7380761035279303104, guid: 9b33a0962b32a13448b8017d7892eed8, type: 3}
       propertyPath: m_Radius
       value: 0.25
