@@ -6375,9 +6375,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speechKey: 2SBzXTEuTeWmlQIJWRw3YzCxY3uFJPpERzJPzaj4ZngPzFzeh7L5JQQJ99BEACNns7RXJ3w3AAAAACOGWzMb
   region: koreacentral
-  voice: ko-KR-SunHiNeural
+  voice: ko-KR-SoonBokNeural
   source: {fileID: 1072941150}
   lipSync: {fileID: 1494842610}
+  defaultRate: 0.6
 --- !u!4 &792033670 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
@@ -8057,7 +8058,7 @@ AudioSource:
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.9
   Loop: 0
   Mute: 0
   Spatialize: 0
