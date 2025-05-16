@@ -1,61 +1,96 @@
-﻿﻿// ───────────────────────────────────────────────
-//  TTSPlayer.cs
-//  • Azure Speech TTS REST 호출  → wav → AudioSource
-//  • OVRLipSyncContext로 viseme 스트림 재생
-// ───────────────────────────────────────────────
-using System;
+﻿using System;
 using System.Text;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.IO;
 
  public class TTSPlayer : MonoBehaviour
 {
-    [Header("Azure Speech TTS")]
-    [SerializeField] string speechKey = "2SBzXTEuTeWmlQIJWRw3YzCxY3uFJPpERzJPzaj4ZngPzFzeh7L5JQQJ99BEACNns7RXJ3w3AAAAACOGWzMb";
+       [Header("Azure Speech TTS")]
+    [SerializeField] string speechKey = "";
     [SerializeField] string region    = "koreacentral";
     [SerializeField] string voice     = "ko-KR-SunHiNeural";
 
     [Header("Audio & LipSync")]
-    [SerializeField] AudioSource       source;   // 48 kHz, Mono
+    [SerializeField] public AudioSource       source;      // 48 kHz, Mono
     [SerializeField] OVRLipSyncContext lipSync;
 
-    const int SAMPLE_RATE = 48000;      // LipSync 권장
+    string ttsUrl;
 
-    /* ────────── 외부 호출용 코루틴 ───────────── */
-    public IEnumerator Speak(string text, float speechRate     = 1.0f, Action onComplete    = null)
+    void Awake()
     {
-        byte[] wavBytes = null;
-        yield return StartCoroutine(GetTTSData(text, speechRate, bytes => wavBytes = bytes));
-        if (wavBytes == null) yield break;
-
-        // 2) WAV → AudioClip
-        AudioClip clip = WavUtility.ToAudioClip(wavBytes, "TTS", out _);
-
-        // 3) 재생 + LipSync
-        source.clip = clip;
-        source.Play();
-
-        yield return new WaitForSeconds(clip.length);
-        onComplete?.Invoke();
+        SpeechConfigLoader.Load(out speechKey, out region);
+        ttsUrl = $"https://{region}.tts.speech.microsoft.com/cognitiveservices/v1";
+        if (lipSync && !lipSync.audioSource) lipSync.audioSource = source;
     }
 
-    IEnumerator GetTTSData(string text, float rate, Action<byte[]> onDone)
+    /* ---------- 여기부터 완전히 교체 ---------- */
+    public IEnumerator Speak(string text,
+                             float speechRate = 1.0f,
+                             Action<bool> onComplete = null)
+    {
+        /* ➊ TTS 호출 → wavBytes */
+        byte[] wavBytes = null;
+        yield return StartCoroutine(GetTtsData(text, speechRate, b => wavBytes = b));
+
+        if (wavBytes == null) { onComplete?.Invoke(false); yield break; }
+
+        /* ➋ 임시 wav 파일로 저장 */
+        string wavPath = Path.Combine(Application.temporaryCachePath,
+                                      $"tts_{Guid.NewGuid()}.wav");
+        File.WriteAllBytes(wavPath, wavBytes);
+        Debug.Log($"[TTS] saved → {wavPath}");
+
+        /* ➌ Unity 내장 디코더로 AudioClip 로드 */
+        using (UnityWebRequest req =
+               UnityWebRequestMultimedia.GetAudioClip("file://" + wavPath,
+                                                       AudioType.WAV))
+        {
+            yield return req.SendWebRequest();
+
+            if (req.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogWarning($"[TTS] decode err {req.error}");
+                onComplete?.Invoke(false);
+                yield break;
+            }
+
+            AudioClip clip = DownloadHandlerAudioClip.GetContent(req);
+
+            /* ➍ 재생 */
+            source.clip = clip;
+            source.Play();
+            Debug.Log($"[TTS] clip len={clip.length:F2}s");
+
+            yield return new WaitForSeconds(clip.length);
+            onComplete?.Invoke(true);
+
+            /* ➎ 정리 */
+            Destroy(clip);
+            File.Delete(wavPath);     // 임시 파일 삭제
+        }
+    }
+
+    private IEnumerator GetTtsData(string text, float rate,
+        Action<byte[]> onDone)
     {
         string ssml =
             $@"<speak version=""1.0"" xml:lang=""ko-KR"">
-   <voice name=""{voice}"">
-     <prosody rate=""{rate * 100:F0}%"" pitch=""0%"">{text}</prosody>
-   </voice>
- </speak>";
+  <voice name=""{voice}"">
+    <prosody rate=""{rate * 100:F0}%"" pitch=""0%"">{text}</prosody>
+  </voice>
+</speak>";
 
-        string url = $"https://{region}.tts.speech.microsoft.com/cognitiveservices/v1";
-        using var req = new UnityWebRequest(url, "POST");
+        using UnityWebRequest req =
+            new UnityWebRequest(ttsUrl, UnityWebRequest.kHttpVerbPOST);
         byte[] body = Encoding.UTF8.GetBytes(ssml);
-        req.uploadHandler   = new UploadHandlerRaw(body);
+
+        req.uploadHandler = new UploadHandlerRaw(body);
         req.downloadHandler = new DownloadHandlerBuffer();
         req.SetRequestHeader("Content-Type", "application/ssml+xml");
-        req.SetRequestHeader("X-Microsoft-OutputFormat", "riff-48khz-16bit-mono-pcm");
+        req.SetRequestHeader("X-Microsoft-OutputFormat",
+            "riff-48khz-16bit-mono-pcm");
         req.SetRequestHeader("Ocp-Apim-Subscription-Key", speechKey);
         req.timeout = 15;
 
@@ -63,11 +98,13 @@ using UnityEngine.Networking;
 
         if (req.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogWarning($"TTS error: {req.error}");
-            onDone(null);                // ← 여기
+            Debug.LogWarning($"[TTS] {req.responseCode} {req.error}");
+            onDone(null);
             yield break;
         }
-        onDone(req.downloadHandler.data); // ← 여기
+
+        onDone(req.downloadHandler.data);
     }
+    
 
 }
