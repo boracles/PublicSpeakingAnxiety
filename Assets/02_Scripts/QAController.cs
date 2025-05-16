@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Random = UnityEngine.Random;
 
 public class QAController : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class QAController : MonoBehaviour
     [SerializeField] LLMClient            llm;
     [SerializeField] TTSPlayer            tts; 
 
+    [TextArea] public string intro = "발표 잘 들었습니다. 발표를 들으면서 궁금한 점이 있었는데요. ";  
+    
     const string QuestionSys =
         "You are a helpful assistant.\n" +
         "Return ONLY this schema: { \"questions\": [string, string] }";
@@ -44,10 +47,9 @@ public class QAController : MonoBehaviour
             "Schema:\n{ \"questions\": [string, string] }\n\n" +
             summary;
         
-        LLMReply rep = default; 
-        float lat = 0;
-        
-        yield return llm.Query(questionPrompt, (r,t)=>{ rep=r; lat=t; }, QuestionSys);
+        LLMReply rep = default;
+
+        yield return llm.Query(questionPrompt, (r,t)=>{ rep=r; /* lat=t; */ }, QuestionSys);
         
         LLMQuestionSet qset;
         try
@@ -63,25 +65,19 @@ public class QAController : MonoBehaviour
         }
 
         /* ③ 질문별 TTS ‧ Lip-Sync 실행 */
-        foreach (string q in qset.questions)
-        {
-            Debug.Log($"❓ {q}");
-
+        string chosen    = qset.questions[Random.Range(0, qset.questions.Length)];
+        string utterance = intro + chosen;  
+        Debug.Log($"❓ {utterance}");
+        
             /* (선택) 1.5 s 장지연 + 보상 피드백
                 DelayManager / FeedbackType 은 직접 구현한 뒤 사용
              */
             // yield return DelayManager.Inject(1.5f, FeedbackType.SystemClarity);
 
             bool ok = false;
-            yield return StartCoroutine(tts.Speak(q, 1.0f, done => ok = done));
-            Debug.Log($"[TTS-DEBUG] clip={tts.source.clip}  " +
-                      $"len={tts.source.clip?.length:F2}s  " +
-                      $"samples={tts.source.clip?.samples}");
-            Debug.Log($"TTS Speak result = {ok}");
-        }
-
-        busy = false;
-        triggeredOnce = true;   // 이후 입력 무시
+            yield return StartCoroutine(tts.Speak(utterance, -1f, done => ok = done));
+            if (ok) triggeredOnce = true;       
+            busy = false;
     }
 
 }
