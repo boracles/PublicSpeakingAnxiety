@@ -6376,7 +6376,8 @@ MonoBehaviour:
   speechKey: 2SBzXTEuTeWmlQIJWRw3YzCxY3uFJPpERzJPzaj4ZngPzFzeh7L5JQQJ99BEACNns7RXJ3w3AAAAACOGWzMb
   region: koreacentral
   voice: ko-KR-SoonBokNeural
-  source: {fileID: 1072941150}
+  outputSource: {fileID: 1072941150}
+  analysisSource: {fileID: 1494842611}
   lipSync: {fileID: 1494842610}
   defaultRate: 1
 --- !u!4 &792033670 stripped
@@ -8066,9 +8067,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -8101,7 +8102,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -11116,6 +11117,38 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5662ce075424c424d9d6b656e287f0e1, type: 2}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[4]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[5]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[25]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[41]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[43]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[47]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_BlendShapeWeights.Array.data[49]'
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3774885915943685086, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -11161,14 +11194,20 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 792033668}
     - targetCorrespondingSourceObject: {fileID: -1355597695489818144, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1494842613}
+    - targetCorrespondingSourceObject: {fileID: -1355597695489818144, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1494842614}
+    - targetCorrespondingSourceObject: {fileID: -1355597695489818144, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1494842607}
     - targetCorrespondingSourceObject: {fileID: -1355597695489818144, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1494842611}
+      addedObject: {fileID: 1494842610}
     - targetCorrespondingSourceObject: {fileID: -1355597695489818144, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1494842610}
+      addedObject: {fileID: 1494842611}
   m_SourcePrefab: {fileID: 100100000, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
 --- !u!1 &1494842606 stripped
 GameObject:
@@ -11188,7 +11227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinnedMeshRenderer: {fileID: 1494842608}
-  visemeToBlendTargets: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e000000
+  visemeToBlendTargets: 230000002300000024000000440000001f00000020000000280000002e000000230000002500000022000000290000002f0000002400000025000000
   enableVisemeTestKeys: 0
   visemeTestKeys: 600000000900000071000000770000006500000072000000740000007900000075000000690000006f000000700000005b0000005d0000005c000000
   laughterKey: 301
@@ -11213,17 +11252,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f43c520a9bad8a3489109c869f454576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 1072941150}
-  provider: 1
+  audioSource: {fileID: 1494842611}
+  provider: 0
   enableAcceleration: 1
   enableKeyboardInput: 0
   enableTouchInput: 0
   audioLoopback: 0
   loopbackKey: 108
-  showVisemes: 0
+  showVisemes: 1
   debugVisemesKey: 100
   skipAudioSource: 0
-  gain: 1
+  gain: 10
   debugLaughterKey: 104
   showLaughter: 0
   laughterScore: 0
@@ -11249,7 +11288,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 0
-  MaxDistance: 30
+  MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -11324,6 +11363,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1494842613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494842606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a9ab9bd307b52408482439332ccaa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1494842614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494842606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4300ee7de552cef4184c3ac764a7b824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ctx: {fileID: 1494842610}
 --- !u!1001 &1495001031
 PrefabInstance:
   m_ObjectHideFlags: 0

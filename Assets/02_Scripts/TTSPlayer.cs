@@ -15,7 +15,8 @@ public class TTSPlayer : MonoBehaviour
 
     /* ───── Audio / Lip-Sync ───── */
     [Header("Audio & LipSync")]
-    [SerializeField] public AudioSource      source;   // 48 kHz Mono
+    [SerializeField] AudioSource outputSource;    // VoiceOut
+    [SerializeField] AudioSource analysisSource;  // Head (mute)
     [SerializeField] OVRLipSyncContext lipSync;
 
     [Range(0.4f, 1.0f)]
@@ -27,12 +28,41 @@ public class TTSPlayer : MonoBehaviour
     {
         SpeechConfigLoader.Load(out speechKey, out region);
         ttsUrl = $"https://{region}.tts.speech.microsoft.com/cognitiveservices/v1";
-        if (lipSync && !lipSync.audioSource) lipSync.audioSource = source;
+
+        // ① 출력용(VoiceOut)
+        if (!outputSource)
+            outputSource = GameObject.Find("VoiceOut")  // 씬 전체에서 탐색
+                ?.GetComponent<AudioSource>();
+
+        // ② 분석용(Head) : lipSync 에 없으면 수동 탐색
+        if (!analysisSource)
+            analysisSource = lipSync ? lipSync.audioSource : null;
+
+        if (!analysisSource)
+            analysisSource = GameObject.Find("Head")    // Head 오브젝트 명시
+                ?.GetComponent<AudioSource>();
+
+        // ③ 두 소스가 같다면 복사본 하나 추가(안전장치)
+        if (analysisSource == outputSource && analysisSource != null)
+        {
+            analysisSource = analysisSource.gameObject.AddComponent<AudioSource>();
+            analysisSource.playOnAwake = false;
+        }
+
+        // ④ 분석용 소스 세팅 & LipSync 연결
+        if (analysisSource)
+        {
+            analysisSource.mute           = false;
+            analysisSource.spatialize     = false;   // ⭐ Spatializer 사용 안 함
+            analysisSource.spatialBlend   = 0f;      // 2D
+
+            if (lipSync) lipSync.audioSource = analysisSource;
+        }
     }
 
+
     /* ───── TTS 재생 코루틴 ───── */
-    public IEnumerator Speak(string text, float speechRate = -1f,
-                             Action<bool> onComplete = null)
+    public IEnumerator Speak(string text, float speechRate = -1f, Action<bool> onComplete = null)
     {
         if (speechRate < 0) speechRate = defaultRate;
         speechRate = Mathf.Clamp(speechRate, 0.4f, 1.2f);
@@ -60,16 +90,30 @@ public class TTSPlayer : MonoBehaviour
             }
 
             AudioClip clip = DownloadHandlerAudioClip.GetContent(req);
-
+            
+            
             /* ④ 재생 */
-            source.clip = clip;
-            source.Play();
-            while (source.isPlaying) yield return null;
+            outputSource.clip   = clip;   // 3D 출력
+            analysisSource.clip = clip;   // LipSync 분석
 
-            /* ⑤ 정리 */
+            lipSync?.ResetContext();      // 잔여 버퍼 클리어
+            outputSource.Play();
+            analysisSource.Play();
+
+            yield return null;
+            Debug.Log($"CLIP   len={clip.length:F2}s  freq={clip.frequency}  ch={clip.channels}");
+
+            Debug.Log($"OUT    mute={outputSource.mute} vol={outputSource.volume} "
+                      + $"play={outputSource.isPlaying}");
+
+            Debug.Log($"ANA    mute={analysisSource.mute} vol={analysisSource.volume} "
+                      + $"play={analysisSource.isPlaying}");
+            
+            while (outputSource.isPlaying) yield return null;
+
             onComplete?.Invoke(true);
             Destroy(clip);
-            File.Delete(wavPath);
+            File.Delete(wavPath); 
         }
     }
 
