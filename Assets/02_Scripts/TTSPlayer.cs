@@ -68,10 +68,14 @@ public class TTSPlayer : MonoBehaviour
     {
         if (cache.ContainsKey(text)) yield break;
 
+        AudioClip clipBuf = null;
         yield return Speak(text,                // 기존
             speechRate,
-            clip => cache[text] = clip,   // onReady: 캐시에 저장
-            null);  
+            c => clipBuf = c,   // onReady: 캐시에 저장
+            null,
+            autoPlay: false);
+        
+        if (clipBuf) cache[text] = clipBuf;
     }
 
     /* 캐시된 음성 즉시 재생 */
@@ -89,7 +93,7 @@ public class TTSPlayer : MonoBehaviour
 
     
     /* ───── TTS 재생 코루틴 ───── */
-    public IEnumerator Speak(string text, float speechRate = -1f,Action<AudioClip> onReady = null, Action<bool> onComplete = null)  
+    public IEnumerator Speak(string text, float speechRate = -1f,Action<AudioClip> onReady = null, Action<bool> onComplete = null, bool autoPlay = true)  
     {
         if (speechRate < 0) speechRate = defaultRate;
         speechRate = Mathf.Clamp(speechRate, 0.4f, 1.2f);
@@ -117,37 +121,32 @@ public class TTSPlayer : MonoBehaviour
             }
 
             AudioClip clip = DownloadHandlerAudioClip.GetContent(req);
-            
             onReady?.Invoke(clip);
-            
-            if (outputSource)                    // ← 추가: null 보호
+            if (autoPlay)
             {
-                outputSource.clip = clip;
-                outputSource.Play();
+                if (outputSource) // ← 추가: null 보호
+                {
+                    outputSource.clip = clip;
+                    outputSource.Play();
+                }
+
+                if (analysisSource) // ← 추가: null 보호
+                {
+                    analysisSource.clip = clip;
+                    analysisSource.Play();
+                    lipSync?.ResetContext(); // 잔여 버퍼 클리어 (분석용 소스가 있을 때)
+                }
+
+                while (outputSource && outputSource.isPlaying)
+                    yield return null;
+
+                onComplete?.Invoke(true);
+                Destroy(clip);
             }
-            
-            if (analysisSource)                  // ← 추가: null 보호
+            else
             {
-                analysisSource.clip = clip;
-                analysisSource.Play();
-
-                lipSync?.ResetContext();         // 잔여 버퍼 클리어 (분석용 소스가 있을 때)
+                onComplete?.Invoke(true);
             }
-
-            yield return null;
-            Debug.Log($"CLIP   len={clip.length:F2}s  freq={clip.frequency}  ch={clip.channels}");
-
-            if (outputSource)
-                Debug.Log($"OUT mute={outputSource.mute} vol={outputSource.volume} play={outputSource.isPlaying}");
-
-            if (analysisSource)
-                Debug.Log($"ANA mute={analysisSource.mute} vol={analysisSource.volume} play={analysisSource.isPlaying}");
-
-            
-            while (outputSource && outputSource.isPlaying) yield return null;
-
-            onComplete?.Invoke(true);
-            Destroy(clip);
             File.Delete(wavPath); 
         }
     }

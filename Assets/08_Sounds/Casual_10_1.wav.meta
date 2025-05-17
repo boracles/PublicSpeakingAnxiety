@@ -1,21 +1,20 @@
 fileFormatVersion: 2
-guid: e21cea670b0f32c428ee862e590a7108
-timeCreated: 1528844468
-licenseType: Store
+guid: 1828be3133772584290757de30c6ba10
 AudioImporter:
   externalObjects: {}
-  serializedVersion: 6
+  serializedVersion: 7
   defaultSettings:
+    serializedVersion: 2
     loadType: 0
     sampleRateSetting: 0
     sampleRateOverride: 44100
     compressionFormat: 1
     quality: 1
     conversionMode: 0
+    preloadAudioData: 0
   platformSettingOverrides: {}
   forceToMono: 0
   normalize: 1
-  preloadAudioData: 1
   loadInBackground: 0
   ambisonic: 0
   3D: 1
@@ -24,8 +23,8 @@ AudioImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 82022
-  packageName: Oculus Integration (Deprecated)
-  packageVersion: 57.0.2-deprecated
-  assetPath: Assets/Oculus/LipSync/Audio/vox_lp_01.wav
-  uploadId: 667590
+  productId: 284547
+  packageName: UI Sounds Pack
+  packageVersion: 1.0
+  assetPath: Assets/UI_Sounds_Pack/Casual/Casual_10/Casual_10_1.wav
+  uploadId: 662699

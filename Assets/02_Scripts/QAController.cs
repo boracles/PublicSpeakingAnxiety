@@ -14,10 +14,10 @@ public class QAController : MonoBehaviour {
     [SerializeField] TranscriptBuffer     transcript;
 
     [Header("Avatar & FX")]
-    [SerializeField] Animator  avatarGesture;      // 고개 끄덕임 등
-    [SerializeField] GameObject spatialPanel;      // 3D 패널(시각)
-    [SerializeField] AudioSource fxSource;         // 효과음용
-    [SerializeField] AudioClip   spatialSfx;
+    [SerializeField] Animator  avatarGesture;
+    [SerializeField] BarLightPulse barLight;
+    [SerializeField] AudioSource fxSource;
+    [SerializeField] AudioClip   spatialSfx;    // ★ 추가
 
     [Header("Mentions / Delay")]
     [TextArea] public string intro  = "발표 잘 들었습니다. 발표를 들으면서 궁금한 점이 있었는데요. ";
@@ -89,7 +89,6 @@ public class QAController : MonoBehaviour {
 
         /* ── Q2 ───────────────────────────── */
         stage = Stage.Asking2;
-        yield return PlayFeedback(currentMode);
         yield return WaitFixedDelay();              // ← 그리고 여기
         yield return tts.Speak(intro2 + q2);
 
@@ -111,32 +110,35 @@ public class QAController : MonoBehaviour {
         while (!answerDone && t > 0f) { t -= Time.deltaTime; yield return null; }
     }
 
+/*------------ WaitFixedDelay() -------------*/
     IEnumerator WaitFixedDelay()
     {
+        if (currentMode == FeedbackMode.Spatial)
+        {
+            /* ✦ 라이트바 ON ✦ */
+            barLight.Begin();
+
+            /* ✦ 효과음 ✦ */
+            if (spatialSfx && fxSource)
+                fxSource.PlayOneShot(spatialSfx, 0.8f);   // 볼륨 0.8
+        }
+
         if (currentMode == FeedbackMode.Gesture)
         {
             avatarGesture.SetTrigger("Listening");
-            yield return new WaitForSeconds(0.6f);      // 끄덕임 0.6 s
-
-            tts.PlayCached("음…");                      // ★ 여기 한 줄 추가
-            yield return new WaitForSeconds(0.1f);      // 필러 100 ms
+            yield return new WaitForSeconds(0.6f);
+            tts.PlayCached("음…");
+            yield return new WaitForSeconds(0.1f);
         }
 
-        float sec = DelayManager.I
-            ? DelayManager.I.CalcDelayFixed()
-            : 1.5f;
+        float sec = DelayManager.I ? DelayManager.I.CalcDelayFixed() : 1.5f;
         yield return new WaitForSeconds(sec);
-    }
-    
-    /* 피드백 재생 */
-    IEnumerator PlayFeedback(FeedbackMode m)
-    {
-        if (m != FeedbackMode.Spatial) yield break;    // Gesture·None은 통과
 
-        spatialPanel.SetActive(true);
-        fxSource.PlayOneShot(spatialSfx);
-        yield return new WaitForSeconds(1.0f);
-        spatialPanel.SetActive(false);
+        /* ─ 지연 종료 ─ */
+        if (currentMode == FeedbackMode.Spatial)
+        {
+            barLight.End();
+        }
     }
 
     public void Reset() { stage = Stage.Idle; busy = answerDone = waitForRelease = false; }
