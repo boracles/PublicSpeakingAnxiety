@@ -1411,7 +1411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608586632516782426, guid: 3b1e328912a420447ba6d1ab832487db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7000021
+      value: 1.985
       objectReference: {fileID: 0}
     - target: {fileID: 8608586632516782426, guid: 3b1e328912a420447ba6d1ab832487db, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9261,7 +9261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608586632516782426, guid: 3b1e328912a420447ba6d1ab832487db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7000021
+      value: 1.985
       objectReference: {fileID: 0}
     - target: {fileID: 8608586632516782426, guid: 3b1e328912a420447ba6d1ab832487db, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9343,7 +9343,7 @@ MonoBehaviour:
   llm: {fileID: 264091577}
   tts: {fileID: 792033669}
   transcript: {fileID: 1217292107}
-  avatarGesture: {fileID: 0}
+  avatarGesture: {fileID: 792033665}
   spatialPanel: {fileID: 0}
   fxSource: {fileID: 0}
   spatialSfx: {fileID: 0}
@@ -9352,7 +9352,7 @@ MonoBehaviour:
   intro2: "\uB2F5\uBCC0 \uAC10\uC0AC\uD569\uB2C8\uB2E4. \uCD94\uAC00 \uC9C8\uBB38
     \uD558\uB098 \uB354 \uB4DC\uB9AC\uC790\uBA74\uC694. "
   outro: "\uB2F5\uBCC0 \uAC10\uC0AC\uD569\uB2C8\uB2E4. \uBC1C\uD45C\uB294 \uC5EC\uAE30\uC11C
-    \uB9C8\uCE58\uACA0\uC2B5\uB2C8\uB2E4. \uC218\uACE0\uD558\uC168\uC2B5\uB2C8\uB2E4."
+    \uB9C8\uCE58\uACA0\uC2B5\uB2C8\uB2E4."
   delaySec: 2
 --- !u!4 &1217292106
 Transform:
@@ -11949,6 +11949,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 53751624}
     m_Modifications:
+    - target: {fileID: 5635525238379380245, guid: 3151e8f30fb3a8749b31d43db80bf85c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f1f44c845620c854f9860598d980b948, type: 2}
     - target: {fileID: 5635525238381568213, guid: 3151e8f30fb3a8749b31d43db80bf85c, type: 3}
       propertyPath: m_Name
       value: Conf_Room_TV (1)
@@ -12802,7 +12806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608586632516782426, guid: 3b1e328912a420447ba6d1ab832487db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7000021
+      value: 1.985
       objectReference: {fileID: 0}
     - target: {fileID: 8608586632516782426, guid: 3b1e328912a420447ba6d1ab832487db, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12850,6 +12854,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8608586632516782426, guid: 3b1e328912a420447ba6d1ab832487db, type: 3}
   m_PrefabInstance: {fileID: 1702897777}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1721588648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1721588650}
+  - component: {fileID: 1721588649}
+  m_Layer: 0
+  m_Name: DelayManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1721588649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721588648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcdcd15ffbc73f942a9fc985f03051a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sttMs: 0
+  llmMs: 0
+  ttsPrepMs: 0
+  fixedMin: 1.5
+  fixedMax: 2
+--- !u!4 &1721588650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721588648}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1757705862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14335,6 +14388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   qa: {fileID: 1217292105}
+  avatarGesture: {fileID: 792033665}
   presentationSec: 300
   startMent:
   - "\uCCAB \uBC88\uC9F8 \uBC1C\uD45C\uB97C \uC2DC\uC791\uD558\uACA0\uC2B5\uB2C8\uB2E4.
@@ -14989,7 +15043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8608586632516782426, guid: 3b1e328912a420447ba6d1ab832487db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7000021
+      value: 1.985
       objectReference: {fileID: 0}
     - target: {fileID: 8608586632516782426, guid: 3b1e328912a420447ba6d1ab832487db, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15787,6 +15841,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 53751624}
     m_Modifications:
+    - target: {fileID: 5635525238379380245, guid: 3151e8f30fb3a8749b31d43db80bf85c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f1f44c845620c854f9860598d980b948, type: 2}
     - target: {fileID: 5635525238381568213, guid: 3151e8f30fb3a8749b31d43db80bf85c, type: 3}
       propertyPath: m_Name
       value: Conf_Room_TV
@@ -15881,3 +15939,4 @@ SceneRoots:
   - {fileID: 1993189725}
   - {fileID: 1217292106}
   - {fileID: 1163535845}
+  - {fileID: 1721588650}

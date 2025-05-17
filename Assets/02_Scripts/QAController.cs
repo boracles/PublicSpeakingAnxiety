@@ -57,8 +57,7 @@ public class QAController : MonoBehaviour {
     }
 
     public void OnButtonReleased() => waitForRelease = false;
-
-    /* ───────── 메인 코루틴 ───────── */
+    
     IEnumerator QAFlow() {
         busy = true;
 
@@ -82,7 +81,7 @@ public class QAController : MonoBehaviour {
 
         /* ── Q1 ───────────────────────────── */
         stage = Stage.Asking1;
-        yield return new WaitForSeconds(delaySec);               // 지연
+        yield return WaitFixedDelay();              // ← 여기
         yield return tts.Speak(intro + q1);
 
         stage = Stage.WaitAns1;
@@ -90,8 +89,8 @@ public class QAController : MonoBehaviour {
 
         /* ── Q2 ───────────────────────────── */
         stage = Stage.Asking2;
-        yield return PlayFeedback(currentMode);                  // 피드백
-        yield return new WaitForSeconds(delaySec);               // 지연
+        yield return PlayFeedback(currentMode);
+        yield return WaitFixedDelay();              // ← 그리고 여기
         yield return tts.Speak(intro2 + q2);
 
         stage = Stage.WaitAns2;
@@ -112,23 +111,29 @@ public class QAController : MonoBehaviour {
         while (!answerDone && t > 0f) { t -= Time.deltaTime; yield return null; }
     }
 
-    /* 피드백 재생 */
-    IEnumerator PlayFeedback(FeedbackMode m) {
-        switch (m) {
-            case FeedbackMode.None:    yield break;
-
-            case FeedbackMode.Gesture:
-                avatarGesture.SetTrigger("Listening");           // 애니메이터 클립
-                yield return new WaitForSeconds(0.6f);
-                break;
-
-            case FeedbackMode.Spatial:
-                spatialPanel.SetActive(true);
-                fxSource.PlayOneShot(spatialSfx);
-                yield return new WaitForSeconds(1.0f);
-                spatialPanel.SetActive(false);
-                break;
+    IEnumerator WaitFixedDelay()
+    {
+        if (currentMode == FeedbackMode.Gesture)       // ← Gesture에서만!
+        {
+            avatarGesture.SetTrigger("Listening");
+            yield return new WaitForSeconds(0.6f);     // 제스처 재생 완료 대기
         }
+
+        float sec = DelayManager.I
+            ? DelayManager.I.CalcDelayFixed()
+            : 1.5f;
+        yield return new WaitForSeconds(sec);
+    }
+    
+    /* 피드백 재생 */
+    IEnumerator PlayFeedback(FeedbackMode m)
+    {
+        if (m != FeedbackMode.Spatial) yield break;    // Gesture·None은 통과
+
+        spatialPanel.SetActive(true);
+        fxSource.PlayOneShot(spatialSfx);
+        yield return new WaitForSeconds(1.0f);
+        spatialPanel.SetActive(false);
     }
 
     public void Reset() { stage = Stage.Idle; busy = answerDone = waitForRelease = false; }

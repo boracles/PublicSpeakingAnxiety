@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class ExperimentManager : MonoBehaviour {
+public class ExperimentManager : MonoBehaviour 
+{
     [SerializeField] QAController qa;
+    [SerializeField] Animator     avatarGesture;     // Clap 트리거 줄 대상
     [SerializeField] float presentationSec = 300f;      // 5분
 
     [SerializeField][TextArea] string[] startMent = {
@@ -11,44 +13,60 @@ public class ExperimentManager : MonoBehaviour {
         "마지막 세 번째 발표를 시작해 주세요."
     };
     
-    FeedbackMode[] order = { FeedbackMode.None,
+    FeedbackMode[] order = 
+    { 
+        FeedbackMode.None,
         FeedbackMode.Gesture,
-        FeedbackMode.Spatial };
+        FeedbackMode.Spatial 
+    };
 
-    void Start() {
+    void Start() 
+    {
         Shuffle(order);          // Fisher–Yates 무작위
         StartCoroutine(MainRoutine());
     }
 
-    IEnumerator MainRoutine() {
-        int idx = 0;
-        foreach (var mode in order) 
-        { /* 0️⃣ 발표 시작 멘트 ----------------------------- */
-            yield return qa.tts.Speak( startMent[idx++] );  // TTS 완전히 끝날 때까지 대기
+    IEnumerator MainRoutine() 
+    {
+        int doneCount = 0;    
+        
+        for (int i = 0; i < order.Length; i++)
+        {
+            /* 0️⃣ 발표 시작 멘트 */
+            yield return qa.tts.Speak(startMent[i]);
+            yield return WaitForStartButton();
 
-            yield return WaitForStartButton(); 
+            /* 1️⃣ Q&A 세트 */
+            yield return qa.RunTwoQuestions(order[i]);
 
-            /* 2️⃣ 질문 2개 세트 ------------------------------ */
-            yield return qa.RunTwoQuestions(mode);
+            /* 2️⃣ 발표 종료 처리 */
+            doneCount++;
+
+            if (doneCount == 3)            // ← 세 번째 발표 종료!
+            {
+                avatarGesture.SetTrigger("Clap");
+                // Sit → Clap 전이 조건: Clap(Trigger) 이어야 함
+            }
         }
 
-        /* 모든 세트 종료 후 */
+        /* 3️⃣ 실험 끝 멘트 */
         yield return qa.tts.Speak("실험이 모두 종료되었습니다. 참여해 주셔서 감사합니다.");
     }
 
 
     IEnumerator WaitForStartButton()           // 발표자가 A 버튼 누를 때까지
     {
-        qa.Reset();                            // QAController 상태 초기화
+        qa.Reset();
         bool pressed = false;
-        qa.OnIntroButton = () => pressed = true;   // 버튼 콜백 받아두기
-        while (!pressed) yield return null;        // 눌릴 때까지 대기
+        qa.OnIntroButton = () => pressed = true;
+        while (!pressed) yield return null;
     }
 
-    /* Fisher-Yates */
-    void Shuffle(FeedbackMode[] arr) {
-        for (int i = arr.Length-1; i > 0; --i) {
-            int j = Random.Range(0, i+1);
+    void Shuffle(FeedbackMode[] arr)
+    {
+        for (int i = arr.Length - 1; i > 0; --i)
+        {
+            int j = Random.Range(0, i + 1);
             (arr[i], arr[j]) = (arr[j], arr[i]);
         }
     }
