@@ -113,10 +113,13 @@ public class QAController : MonoBehaviour {
 
     IEnumerator WaitFixedDelay()
     {
-        if (currentMode == FeedbackMode.Gesture)       // ← Gesture에서만!
+        if (currentMode == FeedbackMode.Gesture)
         {
             avatarGesture.SetTrigger("Listening");
-            yield return new WaitForSeconds(0.6f);     // 제스처 재생 완료 대기
+            yield return new WaitForSeconds(0.6f);      // 끄덕임 0.6 s
+
+            tts.PlayCached("음…");                      // ★ 여기 한 줄 추가
+            yield return new WaitForSeconds(0.1f);      // 필러 100 ms
         }
 
         float sec = DelayManager.I

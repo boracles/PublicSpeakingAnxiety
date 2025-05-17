@@ -22,8 +22,16 @@ public class ExperimentManager : MonoBehaviour
 
     void Start() 
     {
-        Shuffle(order);          // Fisher–Yates 무작위
-        StartCoroutine(MainRoutine());
+        StartCoroutine(InitAndRun());
+    }
+    
+    IEnumerator InitAndRun()
+    {
+        // filler 미리 캐시
+        yield return qa.tts.Preload("음…");
+
+        Shuffle(order);
+        yield return MainRoutine();
     }
 
     IEnumerator MainRoutine() 
