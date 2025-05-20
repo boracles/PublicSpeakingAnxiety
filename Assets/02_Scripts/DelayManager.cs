@@ -19,8 +19,6 @@ public class DelayManager : MonoBehaviour
     /* 고정 지연 계산 */
     public float CalcDelayFixed()
     {
-        float pipeSec = (sttMs + llmMs + ttsPrepMs) / 1000f;
-        float target  = Random.Range(fixedMin, fixedMax);   // 1.5–2.0 s 중 랜덤
-        return Mathf.Max(0, target - pipeSec);
+        return Random.Range(fixedMin, fixedMax);
     }
 }

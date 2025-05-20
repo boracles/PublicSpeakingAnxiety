@@ -44,4 +44,10 @@ public class IncrementalSummarizer : MonoBehaviour
         // 필요하면 요약 후 버퍼 초기화
         // fullBuf.Clear();
     }
+    
+    public void ResetContext()
+    {
+        fullBuf.Clear();      // 누적 텍스트 초기화
+    }
+
 }

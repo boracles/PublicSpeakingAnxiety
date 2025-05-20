@@ -58,4 +58,6 @@ public class TranscriptBuffer : MonoBehaviour
         Clear();
         return all.Trim();
     }
+    
+    public string LatestRaw => sb.ToString().Trim();
 }

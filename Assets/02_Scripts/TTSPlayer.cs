@@ -20,6 +20,8 @@ public class TTSPlayer : MonoBehaviour
     [SerializeField] AudioSource analysisSource;  // Head (mute)
     [SerializeField] OVRLipSyncContext lipSync;
 
+    public bool IsSpeaking => outputSource && outputSource.isPlaying;
+    
     [Range(0.4f, 1.0f)]
     public float defaultRate = 0.6f; 
 

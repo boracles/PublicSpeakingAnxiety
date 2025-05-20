@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using Random = UnityEngine.Random;
 
 public enum FeedbackMode { None, Gesture, Spatial }
 
@@ -8,10 +7,10 @@ public class QAController : MonoBehaviour {
     enum Stage { Idle, Asking1, WaitAns1, Asking2, WaitAns2, Closing, Done }
 
     [Header("Deps")]
-    [SerializeField] IncrementalSummarizer summarizer;
+    [SerializeField] public IncrementalSummarizer summarizer;
     [SerializeField] LLMClient            llm;
     [SerializeField] public TTSPlayer            tts;
-    [SerializeField] TranscriptBuffer     transcript;
+    [SerializeField] public TranscriptBuffer     transcript;
 
     [Header("Avatar & FX")]
     [SerializeField] Animator  avatarGesture;
@@ -23,7 +22,6 @@ public class QAController : MonoBehaviour {
     [TextArea] public string intro  = "발표 잘 들었습니다. 발표를 들으면서 궁금한 점이 있었는데요. ";
     [TextArea] public string intro2 = "답변 감사합니다. 추가 질문 하나 더 드리자면요. ";
     [TextArea] public string outro  = "답변 감사합니다. 발표는 여기서 마치겠습니다.";
-    [Range(0,3)] public float delaySec = 1.5f;     // 모든 질문 동일 지연
 
     public System.Action OnIntroButton;
     
@@ -58,13 +56,19 @@ public class QAController : MonoBehaviour {
 
     public void OnButtonReleased() => waitForRelease = false;
     
-    IEnumerator QAFlow() {
+    IEnumerator QAFlow() 
+    {
         busy = true;
-
-        /* 1️⃣ 요약 → 질문 2개 생성 */
+        
+        yield return PlayImmediateFeedback(); 
+        
         string summary = "";
-        yield return summarizer.SummarizeNow((s,_)=> summary=s);
-        if (string.IsNullOrEmpty(summary)) { Reset(); yield break; }
+        yield return summarizer.SummarizeNow((s,_) => summary = s);
+        
+        if (string.IsNullOrEmpty(summary))
+        {
+            summary = transcript.LatestRaw ?? "(발표 요약을 사용할 수 없음)";
+        }
 
         string prompt =
           "다음 발표 요약을 듣고 청중이 할 만한 질문 두 개를 JSON 으로 반환.\n" +
@@ -81,15 +85,16 @@ public class QAController : MonoBehaviour {
 
         /* ── Q1 ───────────────────────────── */
         stage = Stage.Asking1;
-        yield return WaitFixedDelay();              // ← 여기
+        yield return PlayDelay(false);          // filler X, 지연만
         yield return tts.Speak(intro + q1);
-
+        
         stage = Stage.WaitAns1;
-        yield return WaitForButtonOrTimeout(30f);
+        yield return WaitForButtonOrTimeout(30f);  // A 버튼 눌림
+        yield return new WaitForSeconds(0.5f);    
 
         /* ── Q2 ───────────────────────────── */
         stage = Stage.Asking2;
-        yield return WaitFixedDelay();              // ← 그리고 여기
+        yield return PlayDelay(true);           // filler O, 지연 O
         yield return tts.Speak(intro2 + q2);
 
         stage = Stage.WaitAns2;
@@ -102,44 +107,75 @@ public class QAController : MonoBehaviour {
         stage = Stage.Done;
         busy  = false;
     }
-
-    /* 버튼 or 타임아웃 */
-    IEnumerator WaitForButtonOrTimeout(float sec) {
-        answerDone = false; transcript.Clear();
-        float t = sec;
-        while (!answerDone && t > 0f) { t -= Time.deltaTime; yield return null; }
-    }
-
-/*------------ WaitFixedDelay() -------------*/
-    IEnumerator WaitFixedDelay()
+    
+    IEnumerator PlayImmediateFeedback()
     {
-        if (currentMode == FeedbackMode.Spatial)
-        {
-            /* ✦ 라이트바 ON ✦ */
-            barLight.Begin();
-
-            /* ✦ 효과음 ✦ */
-            if (spatialSfx && fxSource)
-                fxSource.PlayOneShot(spatialSfx, 0.8f);   // 볼륨 0.8
-        }
-
         if (currentMode == FeedbackMode.Gesture)
         {
-            avatarGesture.SetTrigger("Listening");
-            yield return new WaitForSeconds(0.6f);
             tts.PlayCached("음…");
-            yield return new WaitForSeconds(0.1f);
+            avatarGesture.SetTrigger("Listening");
+            yield return new WaitForSeconds(0.12f);   // filler 길이만큼만 대기
+        }
+        else if (currentMode == FeedbackMode.Spatial)
+        {
+            barLight.Begin();
+            if (spatialSfx && fxSource) fxSource.PlayOneShot(spatialSfx, 0.8f);
+            yield return new WaitForSeconds(0.12f);   // 같은 길이로 통일
+            barLight.End();                           // 바로 끄고 펄스 효과만!
+        }
+    }
+
+    
+    IEnumerator PlayDelay(bool withFiller)
+    {
+        bool lightWasOn = false;             // ★ 추가
+
+        if (withFiller)
+        {
+            if (currentMode == FeedbackMode.Gesture)
+            {
+                tts.PlayCached("음…");
+                avatarGesture.SetTrigger("Listening");
+                yield return new WaitForSeconds(0.12f);
+            }
+            else if (currentMode == FeedbackMode.Spatial)
+            {
+                barLight.Begin();
+                lightWasOn = true;            // ★
+                if (spatialSfx && fxSource) fxSource.PlayOneShot(spatialSfx, 0.8f);
+            }
         }
 
+        /* 고정 지연 */
         float sec = DelayManager.I ? DelayManager.I.CalcDelayFixed() : 1.5f;
         yield return new WaitForSeconds(sec);
 
-        /* ─ 지연 종료 ─ */
-        if (currentMode == FeedbackMode.Spatial)
-        {
+        /* Spatial 모드라면 항상 OFF (withFiller 여부 무관) */
+        if (currentMode == FeedbackMode.Spatial && lightWasOn)
             barLight.End();
+    }
+
+
+    /* 버튼 or 타임아웃 */
+    IEnumerator WaitForButtonOrTimeout(float sec) 
+    {
+        answerDone = false; 
+        transcript.Clear();
+        float t = sec;
+
+        while (!answerDone && t > 0f)
+        {
+            t -= Time.deltaTime; 
+            yield return null;
         }
+        
+        waitForRelease = false; 
     }
 
     public void Reset() { stage = Stage.Idle; busy = answerDone = waitForRelease = false; }
+    
+    public void ResetSummarizer()
+        { 
+            if (summarizer) summarizer.ResetContext();
+        }
 }

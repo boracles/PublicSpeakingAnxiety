@@ -21,6 +21,10 @@ public class BarLightPulse : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         mpb  = new MaterialPropertyBlock();
+        
+        var mat = rend.material;     
+        if (!mat.IsKeywordEnabled("_EMISSION"))
+            mat.EnableKeyword("_EMISSION");
     }
 
     public void Begin() => target = 1f;   // 지연 시작
