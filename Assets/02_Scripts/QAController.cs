@@ -38,11 +38,13 @@ public class QAController : MonoBehaviour {
         yield return QAFlow();
     }
 
-    public void OnButtonPressed() {
+    public void OnButtonPressed() 
+    {
         if (waitForRelease) return;
         waitForRelease = true;
 
-        switch (stage) {
+        switch (stage) 
+        {
             case Stage.Idle:              // 발표 시작 신호
                 OnIntroButton?.Invoke();  // ExperimentManager 쪽 플래그 켜기
                 break;
@@ -89,7 +91,7 @@ public class QAController : MonoBehaviour {
         yield return tts.Speak(intro + q1);
         
         stage = Stage.WaitAns1;
-        yield return WaitForButtonOrTimeout(30f);  // A 버튼 눌림
+        yield return WaitForAnswerButton();   // A 버튼 눌림
         yield return new WaitForSeconds(0.5f);    
 
         /* ── Q2 ───────────────────────────── */
@@ -98,7 +100,7 @@ public class QAController : MonoBehaviour {
         yield return tts.Speak(intro2 + q2);
 
         stage = Stage.WaitAns2;
-        yield return WaitForButtonOrTimeout(30f);
+        yield return WaitForAnswerButton();
 
         /* ── 클로징 ──────────────────────── */
         stage = Stage.Closing;
@@ -155,21 +157,15 @@ public class QAController : MonoBehaviour {
             barLight.End();
     }
 
-
-    /* 버튼 or 타임아웃 */
-    IEnumerator WaitForButtonOrTimeout(float sec) 
+    /* ───────── A 버튼이 눌릴 때까지 (타임아웃 없음) ───────── */
+    IEnumerator WaitForAnswerButton()
     {
-        answerDone = false; 
-        transcript.Clear();
-        float t = sec;
+        answerDone     = false;      // 플래그 초기화
+        waitForRelease = false;      // 디바운스 해제
+        transcript.Clear();          // STT 버퍼 비우기
 
-        while (!answerDone && t > 0f)
-        {
-            t -= Time.deltaTime; 
+        while (!answerDone)          // 버튼을 누를 때까지 루프
             yield return null;
-        }
-        
-        waitForRelease = false; 
     }
 
     public void Reset() { stage = Stage.Idle; busy = answerDone = waitForRelease = false; }

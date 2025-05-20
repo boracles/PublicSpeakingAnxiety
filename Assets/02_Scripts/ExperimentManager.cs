@@ -48,25 +48,26 @@ public class ExperimentManager : MonoBehaviour
     {
         int doneCount = 0;    
         
+        LogRecorder.I.participant = participantId;      // ① 참가자 ID 미리 기록
         LogRecorder.I.LogEvent("SessionStart");
-        
+
         for (int i = 0; i < order.Length; i++)
         {
-            /* ✅ 모드 라벨 갱신 */
+            /* ★ 조건 ID 갱신 */
+            LogRecorder.I.conditionId = (int)order[i];   // None=0, Gesture=1, Spatial=2
+            LogRecorder.I.LogEvent("COND_START", order[i].ToString());
+
+            /* UI 라벨 */
             if (modeText) modeText.text = ModeLabel(order[i]);
-            
-            /* 0️⃣ 발표 시작 멘트 */
+
+            /* 발표 안내 멘트 */
             yield return qa.tts.Speak(startMent[i]);
-            yield return WaitForStartButton();           // 발표자가 A 버튼 눌러 “발표 종료” 신호
+            yield return WaitForStartButton();
 
-            /* 🔸 STT 최종 패킷이 들어올 시간을 0.5 s 확보 */
-            yield return new WaitForSeconds(0.5f);
-
-            /* 1️⃣ Q&A 세트 */
+            /* Q&A */
             yield return qa.RunTwoQuestions(order[i]);
 
-            /* 2️⃣ 발표 종료 처리 */
-            doneCount++;
+            LogRecorder.I.LogEvent("COND_END", order[i].ToString());
         }
 
         if (modeText) modeText.text = "";
@@ -76,16 +77,13 @@ public class ExperimentManager : MonoBehaviour
         
         LogRecorder.I.LogEvent("SessionEnd");
         
-        LogRecorder.I.participant = participantId; // LogRecorder 필드
-        LogRecorder.I.SaveToFile();
+        LogRecorder.I.CloseAll();          // ② ← SaveToFile 대신 CloseAll
 
-        /* 5 초 대기 후 프로그램 종료 */
-        yield return new WaitForSeconds(3.0f);
-
+        yield return new WaitForSeconds(3f);
 #if UNITY_EDITOR
-        EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false;
 #else
-Application.Quit();
+    Application.Quit();
 #endif
     }
 
