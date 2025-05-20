@@ -6,139 +6,145 @@ using TMPro;
 using UnityEditor;
 #endif
 
-public class ExperimentManager : MonoBehaviour 
+public class ExperimentManager : MonoBehaviour
 {
-    [SerializeField] QAController qa;
-    [SerializeField] Animator     avatarGesture;     // Clap 트리거 줄 대상
-    [SerializeField] float presentationSec = 300f;     
-   
-    [SerializeField] TextMeshProUGUI   timerText;   
-    [SerializeField] TextMeshProUGUI modeText;  
-    
-    [SerializeField] string participantId = "P01"; 
-    
-    [SerializeField][TextArea] string[] startMent = {
+    [SerializeField] QAController        qa;
+    [SerializeField] PdfScreenController pdfScreen;
+    [SerializeField] TextMeshProUGUI     timerText;
+    [SerializeField] TextMeshProUGUI     modeText;
+    [SerializeField] float               presentationSec = 300f;
+    [SerializeField] string              participantId   = "P01";
+
+    [TextArea]
+    [SerializeField] string[] startMent = {
         "첫 번째 발표를 시작하겠습니다. 준비되면 시작해주세요.",
         "이제 두 번째 발표를 시작해 주세요.",
         "마지막 세 번째 발표를 시작해 주세요."
     };
-    
-    FeedbackMode[] order = 
-    { 
-        FeedbackMode.None,
-        FeedbackMode.Gesture,
-        FeedbackMode.Spatial 
+
+    FeedbackMode[] order =
+    {
+        FeedbackMode.None,     // 0
+        FeedbackMode.Gesture,  // 1
+        FeedbackMode.Spatial   // 2
     };
 
-    void Start() 
-    {
-        StartCoroutine(InitAndRun());
-    }
-    
+    /* ─────────────────────────── */
+
+    void Start() => StartCoroutine(InitAndRun());
+
     IEnumerator InitAndRun()
     {
-        // filler 미리 캐시
         yield return qa.tts.Preload("음…");
-
-        Shuffle(order);
+        
+        if (qa.barLight) qa.barLight.BlinkOnce(0.3f);
+        
+        Shuffle(order);                      // 세션 순서 무작위
         yield return MainRoutine();
     }
 
-    IEnumerator MainRoutine() 
+    string ModeSpeech(FeedbackMode m) => m switch
     {
-        int doneCount = 0;    
-        
-        LogRecorder.I.participant = participantId;      // ① 참가자 ID 미리 기록
-        LogRecorder.I.LogEvent("SessionStart");
+         FeedbackMode.None    => "이번 발표는 피드백이 없는 모드입니다.",
+         FeedbackMode.Gesture => "이번 발표는 제스처 피드백 모드입니다.",
+         FeedbackMode.Spatial => "이번 발표는 스페이셜 피드백 모드입니다.",
+         _                    => "이번 발표 모드를 설정할 수 없습니다."
+    };
+    
+    IEnumerator MainRoutine()
+    {
+        /* 0. 로그 시작 */
+        LogRecorder.I.BeginLogging(participantId);
 
-        for (int i = 0; i < order.Length; i++)
+        for (int sessionIdx = 0; sessionIdx < order.Length; sessionIdx++)
         {
-            /* ★ 조건 ID 갱신 */
-            LogRecorder.I.conditionId = (int)order[i];   // None=0, Gesture=1, Spatial=2
-            LogRecorder.I.LogEvent("COND_START", order[i].ToString());
+            var mode = order[sessionIdx];
+            
+            LogRecorder.I.conditionId = (int)mode;                 // 0/1/2
+            LogRecorder.I.LogEvent("COND_START", mode.ToString());
+            pdfScreen.ShowPage(sessionIdx);                        // 0→1→2
+            
+            if (modeText)
+            {
+                modeText.color = modeColors[(int)mode];   // ← 색 지정
+                modeText.text  = ModeLabel(mode);         // ← 라벨 지정
+            }
 
-            /* UI 라벨 */
-            if (modeText) modeText.text = ModeLabel(order[i]);
+            qa.Reset();
+            qa.transcript.Clear();
+            qa.ResetSummarizer();
 
-            /* 발표 안내 멘트 */
-            yield return qa.tts.Speak(startMent[i]);
+
+            yield return qa.tts.Speak(ModeSpeech(mode));
+            /* 3. 발표 안내 & 발표 대기 */
+            yield return qa.tts.Speak(startMent[sessionIdx]);
             yield return WaitForStartButton();
 
-            /* Q&A */
-            yield return qa.RunTwoQuestions(order[i]);
+            /* 4. Q&A (질문 2개 예시) */
+            yield return qa.RunTwoQuestions(mode);
 
-            LogRecorder.I.LogEvent("COND_END", order[i].ToString());
+            LogRecorder.I.LogEvent("COND_END", mode.ToString());
         }
 
         if (modeText) modeText.text = "";
 
-/* TTS 종료 멘트 */
+        /* 5. 종료 멘트 */
         yield return qa.tts.Speak("실험이 모두 종료되었습니다. 참여해 주셔서 감사합니다.");
-        
-        LogRecorder.I.LogEvent("SessionEnd");
-        
-        LogRecorder.I.CloseAll();          // ② ← SaveToFile 대신 CloseAll
 
-        yield return new WaitForSeconds(3f);
+        /* 6. 로그 닫기 */
+        LogRecorder.I.CloseAll();
+
+        /* 7. 종료 대기 & 앱 종료 */
+        yield return new WaitForSeconds(2.0f);
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+        EditorApplication.isPlaying = false;
 #else
-    Application.Quit();
+        Application.Quit();
 #endif
     }
 
-    /* 모드 enum → 읽기 쉬운 문자열 */
-    string ModeLabel(FeedbackMode m)
+    static readonly Color32[] modeColors =
     {
-        return m switch
-        {
-            FeedbackMode.None    => "No-Feedback Mode",
-            FeedbackMode.Spatial => "Spatial Mode",
-            FeedbackMode.Gesture => "Gesture Mode",
-            _                    => m.ToString()
-        };
-    }
-    
-    string Format(float s)
-    {
-        s = Mathf.Max(0f, s);
-        int m = Mathf.FloorToInt(s / 60f);
-        int sec = Mathf.FloorToInt(s % 60f);
-        return $"{m}:{sec:00}";
-    }
+        new(0xAA,0xAA,0xAA,255),   // None   → 회색
+        new(0xF6,0xB3,0x00,255),   // Gesture→ 주황
+        new(0x4E,0xB3,0xFF,255)    // Spatial→ 파랑
+    };
 
-    IEnumerator WaitForStartButton()           // 발표자가 A 버튼 누를 때까지
+    string ModeLabel(FeedbackMode m) => m switch
     {
-        qa.Reset();  
-        qa.transcript.Clear(); 
-        qa.ResetSummarizer();
-        
+        FeedbackMode.None    => "No-Feedback Mode",
+        FeedbackMode.Gesture => "Gesture Mode",
+        FeedbackMode.Spatial => "Spatial Mode",
+        _                    => m.ToString()
+    };
+
+    IEnumerator WaitForStartButton()
+    {
         bool pressed = false;
+ 
         System.Action handler = () => pressed = true;
-        qa.OnIntroButton += handler;      
-        
+        qa.OnIntroButton += handler;
+
         float remain = presentationSec;
         if (timerText) timerText.text = Format(remain);
-        
-        while (!pressed)                      // ⬅️ ‘버튼 누를 때까지’로 변경
+
+        while (!pressed)
         {
             if (remain > 0f)
             {
                 remain -= Time.deltaTime;
-                if (remain <= 0f)   // 0 이하로 내려가면 0 으로 고정
-                {
-                    remain = 0f;
-                    if (timerText) timerText.text = "0:00";
-                }
-                else
-                {
-                    if (timerText) timerText.text = Format(remain);
-                }
+                timerText.text = Format(Mathf.Max(remain, 0f));
             }
             yield return null;
         }
-        
-        qa.OnIntroButton -= handler; 
+        qa.OnIntroButton -= handler;
+    }
+
+    string Format(float s)
+    {
+        int m   = Mathf.FloorToInt(s / 60f);
+        int sec = Mathf.FloorToInt(s % 60f);
+        return $"{m}:{sec:00}";
     }
 
     void Shuffle(FeedbackMode[] arr)

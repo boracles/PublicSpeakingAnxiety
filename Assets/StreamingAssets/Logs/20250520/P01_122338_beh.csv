@@ -1,0 +1,6 @@
+t,cond,tag,note
+8.809,0,SessionStart,
+8.809,2,COND_START,Spatial
+112.017,2,COND_END,Spatial
+112.017,1,COND_START,Gesture
+117.779,1,SessionEnd,
