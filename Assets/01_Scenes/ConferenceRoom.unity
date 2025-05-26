@@ -4627,7 +4627,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6891c1a322c0a9141bdc11bbd6b99712, type: 2}
     - target: {fileID: 100000, guid: 382ed18f926592c40b30b689b06abe91, type: 3}
       propertyPath: m_Name
-      value: SciFi_TouchScreen
+      value: AvatarScreen
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 382ed18f926592c40b30b689b06abe91, type: 3}
       propertyPath: m_LocalScale.x
@@ -6747,14 +6747,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792033663}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0d83797e40c5804ca350668134a044b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   headRig: {fileID: 1279335068}
-  tts: {fileID: 792033669}
+  headConstraint: {fileID: 2146148704}
+  lookTargets:
+  - {fileID: 696099010}
+  - {fileID: 486589856}
   smooth: 4
+  minSwitchTime: 1.5
+  maxSwitchTime: 4
+  tts: {fileID: 792033669}
+  stt: {fileID: 696099012}
 --- !u!114 &792033672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6762,7 +6769,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792033663}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
   m_Name: 
@@ -24709,11 +24716,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6258207676626866204, guid: c60fa86d8d6accd4c8b9349dd58a19f7, type: 3}
   m_PrefabInstance: {fileID: 1109936522}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1111903443 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6093595590945905852, guid: 08d48b43fa66dd643825c19925940ef6, type: 3}
-  m_PrefabInstance: {fileID: 1172346589}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1119779531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32762,7 +32764,7 @@ MonoBehaviour:
     m_SourceObjects:
       m_Length: 1
       m_Item0:
-        transform: {fileID: 1111903443}
+        transform: {fileID: 696099010}
         weight: 1
       m_Item1:
         transform: {fileID: 0}

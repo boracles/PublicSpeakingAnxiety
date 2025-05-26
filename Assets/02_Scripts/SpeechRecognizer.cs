@@ -14,8 +14,29 @@ public class SpeechRecognizer : MonoBehaviour
     public event Action<string, bool> OnText;   // (text, isFinal)
     public float lastLatency;                   // 최종 latency
 
-    void Awake() => mic = GetComponent<MicCapturer>();
+    public bool IsUserSpeaking { get; private set; } = false;
+    float speakCooldown = 0f;
 
+    void Update()
+    {
+        if (IsUserSpeaking)
+        {
+            speakCooldown -= Time.deltaTime;
+            if (speakCooldown <= 0f)
+                IsUserSpeaking = false;
+        }
+    }
+    
+    void Awake()
+    {
+        mic = GetComponent<MicCapturer>();
+        mic.OnSegment += HandleSegment; // 🧠 여기서 감지
+    }
+    void HandleSegment(float[] audio)
+    {
+        IsUserSpeaking = true;
+        speakCooldown = 1.2f; // 사용자가 말하면 1.2초 동안 유지
+    }
     void Start()
     {
         StartCoroutine(InitWhenMicReady());
