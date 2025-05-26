@@ -51,10 +51,10 @@ public class LipSyncBlendMap : MonoBehaviour
             new Map { visemeSlot = 7, blendShapeIndex = new int[] { 37 }, weightMultiplier = 0.8f },       // S, Z
             new Map { visemeSlot = 8, blendShapeIndex = new int[] { 42, 43 }, weightMultiplier = 1f },     // N
             new Map { visemeSlot = 9, blendShapeIndex = new int[] { 51 }, weightMultiplier = 1f },         // R
-            new Map { visemeSlot = 10, blendShapeIndex = new int[] { 34, 56, 57 }, weightMultiplier = 0.05f }, // A (입 벌림 + 하부 립)
-            new Map { visemeSlot = 11, blendShapeIndex = new int[] { 34, 52, 53 }, weightMultiplier = 0.1f },  // E
-            new Map { visemeSlot = 12, blendShapeIndex = new int[] { 40,41,54,55,56,57 }, weightMultiplier = 0.2f },  // I
-            new Map { visemeSlot = 13, blendShapeIndex = new int[] { 34, 36}, weightMultiplier =0.4f },         // O
+            new Map { visemeSlot = 10, blendShapeIndex = new int[] { 34, 56, 57 }, weightMultiplier = 0.5f }, // A (입 벌림 + 하부 립)
+            new Map { visemeSlot = 11, blendShapeIndex = new int[] { 34, 52, 53 }, weightMultiplier = 0.5f },  // E
+            new Map { visemeSlot = 12, blendShapeIndex = new int[] { 40,41,54,55,56,57 }, weightMultiplier = 0.5f },  // I
+            new Map { visemeSlot = 13, blendShapeIndex = new int[] { 34, 36}, weightMultiplier =0.6f },         // O
             new Map { visemeSlot = 14, blendShapeIndex = new int[] { 37 }, weightMultiplier = 1f },        // U
 
         };
@@ -66,13 +66,9 @@ public class LipSyncBlendMap : MonoBehaviour
 
         if (clearEachFrame)
         {
-            foreach (var m in maps)
+            for (int i = 0; i < faceMesh.sharedMesh.blendShapeCount; i++)
             {
-                foreach (var idx in m.blendShapeIndex)
-                {
-                    if (idx >= 0 && idx < faceMesh.sharedMesh.blendShapeCount)
-                        faceMesh.SetBlendShapeWeight(idx, 0);
-                }
+                faceMesh.SetBlendShapeWeight(i, 0);
             }
         }
 
@@ -83,19 +79,24 @@ public class LipSyncBlendMap : MonoBehaviour
                 continue;
 
             float visemeValue = frame.Visemes[m.visemeSlot];
-            if (visemeValue < 0.2f) continue; // 너무 작은 값 무시
+            if (visemeValue < 0.04f) continue; // 너무 작은 값 무시
 
             float w = Mathf.Clamp(visemeValue * 100f * m.weightMultiplier, 0f, 100f);
 
             foreach (int idx in m.blendShapeIndex)
             {
                 if (idx >= 0 && idx < faceMesh.sharedMesh.blendShapeCount)
-                    faceMesh.SetBlendShapeWeight(idx, w);
+                {
+                    float current = faceMesh.GetBlendShapeWeight(idx);
+                    float smoothed = Mathf.Lerp(current, w, 0.25f); // ✅ 이제 정상 작동!
+                    faceMesh.SetBlendShapeWeight(idx, smoothed);
+                }
             }
         }
 
 #if UNITY_EDITOR
-        Debug.Log($"[Viseme 12] L={faceMesh.GetBlendShapeWeight(52):F2} / R={faceMesh.GetBlendShapeWeight(53):F2}");
+    Debug.Log($"[Viseme 12] L={faceMesh.GetBlendShapeWeight(52):F2} / R={faceMesh.GetBlendShapeWeight(53):F2}");
 #endif
     }
+
 }
