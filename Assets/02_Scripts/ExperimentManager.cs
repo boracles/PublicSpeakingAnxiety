@@ -15,6 +15,8 @@ public class ExperimentManager : MonoBehaviour
     [SerializeField] float               presentationSec = 300f;
     [SerializeField] string              participantId   = "P01";
 
+    [SerializeField] QuestionPageController surveyPage;
+
     [TextArea]
     [SerializeField] string[] startMent = {
         "첫 번째 발표를 시작하겠습니다. 준비되면 시작해주세요.",
@@ -34,6 +36,7 @@ public class ExperimentManager : MonoBehaviour
     IEnumerator InitAndRun()
     {
         yield return qa.tts.Preload("음…");
+		yield return qa.tts.Preload("아…");
         
         if (qa.barLight) qa.barLight.BlinkOnce(0.3f);
         
@@ -79,6 +82,10 @@ public class ExperimentManager : MonoBehaviour
 
             /* 4. Q&A (질문 2개 예시) */
             yield return qa.RunTwoQuestions(mode);
+
+			yield return qa.tts.Speak("지금부터 간단한 설문에 응답해 주세요.");
+			yield return surveyPage.RunSurvey();          // 3문항 끝날 때까지 대기
+			yield return qa.tts.Speak("감사합니다.");
 
             LogRecorder.I.LogEvent("COND_END", mode.ToString());
         }

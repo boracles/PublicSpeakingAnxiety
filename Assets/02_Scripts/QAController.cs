@@ -160,27 +160,23 @@ public class QAController : MonoBehaviour {
         if (currentMode == FeedbackMode.Gesture)
         {
             tts.PlayCached("음…");
-             avatarGesture.SetTrigger(nextThinkingA ? "Listening1" : "Listening2");
-        nextThinkingA = !nextThinkingA;
+            avatarGesture.SetTrigger(nextThinkingA ? "Listening1" : "Listening2");
+        	nextThinkingA = !nextThinkingA;
             yield return new WaitForSeconds(0.12f);
         }
-        else if (currentMode == FeedbackMode.Spatial)
-        {
-            barLight.PulseLoop();         // ▶ 한번만 번쩍
-            if (spatialSfx && fxSource && !fxSource.isPlaying)
-            {
-                fxSource.clip = spatialSfx;
-                fxSource.loop = true;
-                fxSource.Play();
-            }
-        }
+         else if (currentMode == FeedbackMode.Spatial)
+    	{
+        	barLight.PulseLoop();          // 빛 루프 시작
+
+        	fxSource.clip = spatialSfx;
+        	fxSource.loop = false;         // ★ 루프 OFF – 한 번만 재생
+        	fxSource.Play();
+    	}
     }
 
     IEnumerator PlayDelay(bool  withFillerRequest)
     {
-        bool useFiller =
-            withFillerRequest ||                        // 호출자가 요청했거나
-            (!firstDelayDone && currentMode == FeedbackMode.Spatial); // Spatial 모드라면
+        bool useFiller = withFillerRequest || (!firstDelayDone && currentMode == FeedbackMode.Spatial); // Spatial 모드라면
 
         firstDelayDone = true;    
         
@@ -188,17 +184,15 @@ public class QAController : MonoBehaviour {
 
         if (useFiller && currentMode == FeedbackMode.Spatial)
         {
-            if (!loopRunning)
-            {
-                barLight.PulseLoop();
-                if (spatialSfx && fxSource)
-                {
-                    fxSource.clip = spatialSfx;
-                    fxSource.loop = true;
-                    fxSource.Play();
-                }
-                loopRunning = true;
-            }
+           if (!fxSource.isPlaying)           // ★ 이미 재생 중이면 건너뜀
+    		{
+        		fxSource.clip = spatialSfx;
+        		fxSource.loop = false;
+        		fxSource.Play();
+		
+        		barLight.PulseLoop();
+        		loopRunning = true;
+    		}
         }
         else if (useFiller && currentMode == FeedbackMode.Gesture)
         {
@@ -208,8 +202,7 @@ public class QAController : MonoBehaviour {
             yield return new WaitForSeconds(0.12f);
         }
 
-        /* ---------- 고정 지연 ---------- */
-        float sec = DelayManager.I ? DelayManager.I.CalcDelayFixed() : 3.2f;
+        float sec = DelayManager.I ? DelayManager.I.CalcDelayFixed() : 3.5f;
         yield return new WaitForSeconds(sec);
 
         /* ---------- 루프 정지 ---------- */
@@ -234,7 +227,13 @@ public class QAController : MonoBehaviour {
             yield return null;
     }
 
-    public void Reset() { stage = Stage.Idle; busy = answerDone = waitForRelease = false; }
+    public void Reset() 
+	{ 
+		stage = Stage.Idle; 
+		busy = answerDone = waitForRelease = false; 
+		firstDelayDone = false;
+		nextThinkingA  = true;
+	}
     
     public void ResetSummarizer()
         { 
