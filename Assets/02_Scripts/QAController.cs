@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-public enum FeedbackMode { None, Gesture, Spatial }
+public enum FeedbackMode { Gesture, Spatial }
 
 public class QAController : MonoBehaviour {
     enum Stage { Idle, Asking1, WaitAns1, Asking2, WaitAns2, Closing, Done }

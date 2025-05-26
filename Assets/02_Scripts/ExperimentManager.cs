@@ -18,13 +18,11 @@ public class ExperimentManager : MonoBehaviour
     [TextArea]
     [SerializeField] string[] startMent = {
         "첫 번째 발표를 시작하겠습니다. 준비되면 시작해주세요.",
-        "이제 두 번째 발표를 시작해 주세요.",
-        "마지막 세 번째 발표를 시작해 주세요."
+        "이제 마지막 두 번째 발표를 시작해 주세요."
     };
 
     FeedbackMode[] order =
     {
-        FeedbackMode.None,     // 0
         FeedbackMode.Gesture,  // 1
         FeedbackMode.Spatial   // 2
     };
@@ -45,7 +43,6 @@ public class ExperimentManager : MonoBehaviour
 
     string ModeSpeech(FeedbackMode m) => m switch
     {
-         FeedbackMode.None    => "이번 발표는 피드백이 없는 모드입니다.",
          FeedbackMode.Gesture => "이번 발표는 제스처 피드백 모드입니다.",
          FeedbackMode.Spatial => "이번 발표는 스페이셜 피드백 모드입니다.",
          _                    => "이번 발표 모드를 설정할 수 없습니다."
@@ -105,14 +102,12 @@ public class ExperimentManager : MonoBehaviour
 
     static readonly Color32[] modeColors =
     {
-        new(0xAA,0xAA,0xAA,255),   // None   → 회색
         new(0xF6,0xB3,0x00,255),   // Gesture→ 주황
         new(0x4E,0xB3,0xFF,255)    // Spatial→ 파랑
     };
 
     string ModeLabel(FeedbackMode m) => m switch
     {
-        FeedbackMode.None    => "No-Feedback Mode",
         FeedbackMode.Gesture => "Gesture Mode",
         FeedbackMode.Spatial => "Spatial Mode",
         _                    => m.ToString()
