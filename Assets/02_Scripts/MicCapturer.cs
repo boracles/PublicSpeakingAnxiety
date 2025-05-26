@@ -7,28 +7,18 @@ public class MicCapturer : MonoBehaviour
     public int sampleRate = 16000;
     public event Action<float[]> OnSegment;     // 20 ms PCM float[]
 
-    public bool IsReady { get; private set; }   // ✅ 마이크 준비 여부
-
     const int SEG_MS = 20;
     AudioClip micBuf; int segSamples, readPos;
 
     void Start()
     {
         segSamples = sampleRate * SEG_MS / 1000;
-        micBuf = Microphone.Start(null, true, 60, sampleRate);
-        StartCoroutine(InitAndReadLoop());
+        micBuf = Microphone.Start(null, true, 60, sampleRate);  // VR 헤드셋 기본 입력
+        StartCoroutine(ReadLoop());
     }
 
-    System.Collections.IEnumerator InitAndReadLoop()
+    System.Collections.IEnumerator ReadLoop()
     {
-        // 마이크 시작될 때까지 대기
-        while (!(Microphone.IsRecording(null) && Microphone.GetPosition(null) > 0))
-        {
-            yield return null;
-        }
-
-        IsReady = true;  // ✅ mic 준비 완료
-
         while (Microphone.IsRecording(null))
         {
             int cur = Microphone.GetPosition(null);
@@ -42,7 +32,6 @@ public class MicCapturer : MonoBehaviour
             yield return null;
         }
     }
-
     int Available(int cur) => cur >= readPos ? cur - readPos :
         micBuf.samples - readPos + cur;
 }

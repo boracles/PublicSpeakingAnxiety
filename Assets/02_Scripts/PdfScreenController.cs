@@ -43,9 +43,7 @@ public class PdfScreenController : MonoBehaviour
     void Update()
     {
         float axis = Input.GetAxis("Oculus_CrossPlatform_SecondaryThumbstickHorizontal");
-        Debug.Log($"[PDF] Thumbstick axis value: {axis}");
-
-        inputTimer += Time.deltaTime;
+       inputTimer += Time.deltaTime;
 
         if (inputTimer >= inputCooldown)
         {

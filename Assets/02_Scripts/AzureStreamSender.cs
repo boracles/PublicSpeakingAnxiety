@@ -1,15 +1,20 @@
 using UnityEngine;
 using System;
+using System.Diagnostics;
 using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
-using System.Threading.Tasks;
+using System.Threading.Tasks; 
 
+/// <summary>
+/// PushAudioInputStream → Azure Speech 연속 인식 송신기
+/// </summary>
 public class AzureStreamSender : IDisposable
 {
     const int BYTES_PER_SAMPLE = 2;
-    PushAudioInputStream push;
+    
+    PushAudioInputStream  push;
     Microsoft.CognitiveServices.Speech.SpeechRecognizer rec;
-    readonly System.Diagnostics.Stopwatch sw = new();
+    readonly Stopwatch    sw = new();      // latency 측정용
 
     public event Action<string, float, bool> OnResult;   // text, latency, isFinal
 
@@ -18,8 +23,8 @@ public class AzureStreamSender : IDisposable
         var cfg = SpeechConfig.FromSubscription(key, region);
         cfg.SpeechRecognitionLanguage = "ko-KR";
 
-        var fmt = AudioStreamFormat.GetWaveFormatPCM(sampleRate, 16, 1);
-        push = AudioInputStream.CreatePushStream(fmt);
+        var fmt  = AudioStreamFormat.GetWaveFormatPCM(sampleRate, 16, 1);
+        push     = AudioInputStream.CreatePushStream(fmt);
         var acfg = AudioConfig.FromStreamInput(push);
 
         // ② 생성도 풀네임 그대로
@@ -27,7 +32,7 @@ public class AzureStreamSender : IDisposable
 
         rec.Recognizing += (_, e) =>
             OnResult?.Invoke(e.Result.Text, (float)sw.Elapsed.TotalSeconds, false);
-        rec.Recognized += (_, e) =>
+        rec.Recognized  += (_, e) =>
             OnResult?.Invoke(e.Result.Text, (float)sw.Elapsed.TotalSeconds, true);
 
         sw.Restart();
@@ -36,59 +41,28 @@ public class AzureStreamSender : IDisposable
 
     public void Send(float[] block)
     {
-        if (push == null)
-        {
-            UnityEngine.Debug.LogWarning("[AzureStreamSender] Push stream not initialized.");
-            return;
-        }
+        int len = block.Length * BYTES_PER_SAMPLE;
+        byte[] buf = new byte[len];
 
-        if (block == null || block.Length == 0)
+        for (int i = 0; i < block.Length; i++)
         {
-            UnityEngine.Debug.LogWarning("[AzureStreamSender] Empty block received.");
-            return;
+            short s = (short)(Mathf.Clamp(block[i], -1f, 1f) * short.MaxValue);
+            buf[i * 2]     = (byte)(s & 0xFF);
+            buf[i * 2 + 1] = (byte)((s >> 8) & 0xFF);
         }
-
-        try
-        {
-            int len = block.Length * BYTES_PER_SAMPLE;
-            byte[] buf = new byte[len];
-
-            for (int i = 0; i < block.Length; i++)
-            {
-                short s = (short)(Mathf.Clamp(block[i], -1f, 1f) * short.MaxValue);
-                buf[i * 2] = (byte)(s & 0xFF);
-                buf[i * 2 + 1] = (byte)((s >> 8) & 0xFF);
-            }
-
-            push.Write(buf);  // 💥 여기서 크래시 났던 것
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"[AzureStreamSender] push.Write failed: {e.Message}");
-        }
+        push.Write(buf);
     }
-
+    
+    /* ─ 안전 종료 (async) ─ */
     public async Task EndAsync()
     {
         if (rec == null) return;
 
-        try
-        {
-            await rec.StopContinuousRecognitionAsync();
-        }
-        catch (Exception e)
-        {
-            UnityEngine.Debug.LogWarning($"StopContinuousRecognitionAsync failed: {e.Message}");
-        }
-
+        await rec.StopContinuousRecognitionAsync();
         rec.Dispose();
         push?.Close();
     }
 
-
-    public void Dispose()
-    {
-        _ = EndAsync(); // Fire-and-forget async disposal
-    }
-
+    /* IDispose 구현 (EndAsync가 실제 정리) */
+    public void Dispose() { /* nothing */ }
 }
