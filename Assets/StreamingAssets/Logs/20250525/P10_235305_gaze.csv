@@ -1,0 +1,717 @@
+t,cond,hitObj,x,y,z
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.340,2,Collider,6.49,-1.05,-1.80
+8.367,2,Collider,6.49,-1.11,-1.80
+8.406,2,Collider,6.49,-1.17,-1.80
+8.446,2,Collider,6.49,-1.23,-1.80
+8.501,2,Collider,6.49,-1.32,-1.80
+8.501,2,Collider,6.49,-1.32,-1.80
+8.543,2,Collider,6.49,-1.48,-1.80
+8.570,2,Middle,6.47,-1.60,-1.80
+8.615,2,Middle1,6.48,-1.72,-1.80
+8.641,2,Middle,6.48,-1.70,-1.80
+8.668,2,Collider,6.49,-1.66,-1.80
+8.711,2,Collider,6.49,-1.63,-1.80
+8.737,2,Collider,6.49,-1.65,-1.80
+8.779,2,Collider,6.49,-1.65,-1.80
+8.807,2,Collider,6.49,-1.65,-1.80
+8.834,2,Collider,6.49,-1.65,-1.80
+8.877,2,Collider,6.49,-1.65,-1.80
+8.905,2,Collider,6.49,-1.65,-1.80
+8.946,2,Collider,6.49,-1.65,-1.80
+8.974,2,Collider,6.49,-1.65,-1.80
+9.002,2,Collider,6.49,-1.65,-1.80
+9.039,2,Collider,6.49,-1.65,-1.80
+9.090,2,Wall_3mx20cm_Wood_Panels (2),2.93,-1.01,-0.31
+9.112,2,Auto Hand Player,6.55,-0.66,-1.72
+9.141,2,Auto Hand Player,6.55,-0.69,-1.72
+9.167,2,Auto Hand Player,6.55,-0.69,-1.72
+9.223,2,Auto Hand Player,6.55,-0.69,-1.72
+9.254,2,Auto Hand Player,6.55,-0.69,-1.72
+9.281,2,Auto Hand Player,6.55,-0.69,-1.72
+9.311,2,Auto Hand Player,6.55,-0.69,-1.72
+9.337,2,Auto Hand Player,6.55,-0.69,-1.72
+9.393,2,Auto Hand Player,6.55,-0.69,-1.72
+9.420,2,Auto Hand Player,6.55,-0.69,-1.72
+9.448,2,Auto Hand Player,6.55,-0.69,-1.72
+9.478,2,Auto Hand Player,6.55,-0.69,-1.72
+9.504,2,Auto Hand Player,6.55,-0.69,-1.72
+9.534,2,Auto Hand Player,6.55,-0.69,-1.72
+9.590,2,Auto Hand Player,6.55,-0.69,-1.72
+9.615,2,Auto Hand Player,6.55,-0.69,-1.72
+9.643,2,Auto Hand Player,6.55,-0.69,-1.72
+9.670,2,Auto Hand Player,6.55,-0.69,-1.72
+9.701,2,Auto Hand Player,6.55,-0.69,-1.72
+9.755,2,Auto Hand Player,6.55,-0.69,-1.72
+9.782,2,Auto Hand Player,6.55,-0.69,-1.72
+9.809,2,Auto Hand Player,6.55,-0.70,-1.72
+9.836,2,Auto Hand Player,6.55,-0.70,-1.72
+9.893,2,Auto Hand Player,6.55,-0.70,-1.71
+9.923,2,Auto Hand Player,6.55,-0.70,-1.71
+9.947,2,Auto Hand Player,6.55,-0.70,-1.71
+9.976,2,Auto Hand Player,6.55,-0.71,-1.71
+10.004,2,Auto Hand Player,6.55,-0.71,-1.71
+10.061,2,Auto Hand Player,6.55,-0.71,-1.71
+10.088,2,Auto Hand Player,6.55,-0.71,-1.71
+10.115,2,Auto Hand Player,6.55,-0.71,-1.71
+10.146,2,Conference_table,5.56,-1.10,-1.27
+10.171,2,Auto Hand Player,6.55,-0.71,-1.71
+10.200,2,Auto Hand Player,6.56,-0.71,-1.71
+10.256,2,Auto Hand Player,6.56,-0.71,-1.71
+10.282,2,Auto Hand Player,6.56,-0.71,-1.71
+10.324,2,Auto Hand Player,6.56,-0.71,-1.71
+10.353,2,Auto Hand Player,6.56,-0.71,-1.71
+10.449,2,Auto Hand Player,6.56,-0.71,-1.71
+10.449,2,Auto Hand Player,6.56,-0.71,-1.71
+10.449,2,Auto Hand Player,6.56,-0.71,-1.71
+10.519,2,Auto Hand Player,6.56,-0.71,-1.71
+10.519,2,Auto Hand Player,6.56,-0.71,-1.71
+10.546,2,Auto Hand Player,6.56,-0.70,-1.72
+10.576,2,Conference_table,5.26,-1.10,-1.50
+10.601,2,Auto Hand Player,6.56,-0.70,-1.72
+10.657,2,Auto Hand Player,6.56,-0.70,-1.72
+10.684,2,Auto Hand Player,6.56,-0.70,-1.72
+10.712,2,Conference_table,5.23,-1.10,-1.62
+10.741,2,Auto Hand Player,6.56,-0.71,-1.73
+10.768,2,Auto Hand Player,6.56,-0.71,-1.73
+10.823,2,Conference_table,5.42,-1.10,-1.74
+10.851,2,Auto Hand Player,6.56,-0.71,-1.74
+10.880,2,Auto Hand Player,6.56,-0.71,-1.74
+10.906,2,Auto Hand Player,6.56,-0.71,-1.74
+10.961,2,Auto Hand Player,6.56,-0.71,-1.74
+10.992,2,Auto Hand Player,6.56,-0.71,-1.75
+11.019,2,Auto Hand Player,6.56,-0.71,-1.75
+11.044,2,Auto Hand Player,6.57,-0.71,-1.75
+11.073,2,Auto Hand Player,6.57,-0.71,-1.75
+11.102,2,Conference_table,5.49,-1.10,-1.87
+11.156,2,Auto Hand Player,6.57,-0.71,-1.75
+11.185,2,Auto Hand Player,6.57,-0.71,-1.75
+11.211,2,Auto Hand Player,6.57,-0.71,-1.75
+11.254,2,Auto Hand Player,6.57,-0.71,-1.75
+11.283,2,Auto Hand Player,6.57,-0.71,-1.75
+11.310,2,Auto Hand Player,6.57,-0.71,-1.76
+11.340,2,Auto Hand Player,6.57,-0.71,-1.76
+11.367,2,Auto Hand Player,6.57,-0.71,-1.76
+11.423,2,Auto Hand Player,6.57,-0.71,-1.76
+11.453,2,Auto Hand Player,6.57,-0.71,-1.76
+11.479,2,Auto Hand Player,6.56,-0.71,-1.76
+11.507,2,Auto Hand Player,6.56,-0.71,-1.76
+11.535,2,Auto Hand Player,6.56,-0.71,-1.76
+11.592,2,Auto Hand Player,6.56,-0.71,-1.76
+11.618,2,Auto Hand Player,6.56,-0.71,-1.76
+11.647,2,Auto Hand Player,6.56,-0.71,-1.76
+11.676,2,Auto Hand Player,6.56,-0.71,-1.76
+11.702,2,Conference_table,5.44,-1.10,-1.92
+11.760,2,Auto Hand Player,6.56,-0.71,-1.76
+11.787,2,Auto Hand Player,6.57,-0.71,-1.76
+11.814,2,Auto Hand Player,6.57,-0.71,-1.76
+11.843,2,Auto Hand Player,6.57,-0.71,-1.76
+11.872,2,Auto Hand Player,6.57,-0.71,-1.76
+11.904,2,Auto Hand Player,6.57,-0.71,-1.76
+11.953,2,Auto Hand Player,6.57,-0.70,-1.76
+12.011,2,Auto Hand Player,6.57,-0.70,-1.76
+12.011,2,Auto Hand Player,6.57,-0.70,-1.76
+12.048,2,Auto Hand Player,6.57,-0.70,-1.76
+12.080,2,Conference_table,4.92,-1.10,-2.08
+12.108,2,Auto Hand Player,6.57,-0.70,-1.76
+12.135,2,Auto Hand Player,6.57,-0.70,-1.76
+12.189,2,Auto Hand Player,6.57,-0.69,-1.76
+12.220,2,Auto Hand Player,6.57,-0.69,-1.76
+12.246,2,Auto Hand Player,6.57,-0.69,-1.76
+12.274,2,Auto Hand Player,6.57,-0.69,-1.76
+12.300,2,Auto Hand Player,6.57,-0.69,-1.76
+12.356,2,Auto Hand Player,6.57,-0.69,-1.76
+12.384,2,Auto Hand Player,6.57,-0.69,-1.76
+12.412,2,Auto Hand Player,6.58,-0.69,-1.76
+12.442,2,Auto Hand Player,6.58,-0.69,-1.76
+12.468,2,Auto Hand Player,6.58,-0.69,-1.76
+12.541,2,Auto Hand Player,6.58,-0.69,-1.76
+12.541,2,Auto Hand Player,6.58,-0.69,-1.76
+12.646,2,Auto Hand Player,6.58,-0.69,-1.76
+12.646,2,Auto Hand Player,6.58,-0.69,-1.76
+12.646,2,Auto Hand Player,6.58,-0.69,-1.76
+12.746,2,Auto Hand Player,6.58,-0.69,-1.76
+12.746,2,Auto Hand Player,6.58,-0.69,-1.76
+12.746,2,Auto Hand Player,6.58,-0.69,-1.76
+12.801,2,Chair_2 (9),4.20,-0.98,-2.19
+12.801,2,Chair_2 (9),4.20,-0.98,-2.19
+12.870,2,Auto Hand Player,6.58,-0.69,-1.76
+12.870,2,Auto Hand Player,6.58,-0.69,-1.76
+12.923,2,Auto Hand Player,6.58,-0.68,-1.76
+12.951,2,Auto Hand Player,6.58,-0.68,-1.76
+12.981,2,Auto Hand Player,6.58,-0.68,-1.76
+13.007,2,Auto Hand Player,6.58,-0.68,-1.76
+13.035,2,Auto Hand Player,6.58,-0.68,-1.76
+13.090,2,Auto Hand Player,6.58,-0.68,-1.76
+13.120,2,Auto Hand Player,6.58,-0.68,-1.76
+13.147,2,Auto Hand Player,6.58,-0.68,-1.76
+13.174,2,Auto Hand Player,6.58,-0.68,-1.76
+13.203,2,Auto Hand Player,6.58,-0.68,-1.76
+13.258,2,Auto Hand Player,6.58,-0.68,-1.76
+13.286,2,Auto Hand Player,6.58,-0.68,-1.76
+13.314,2,Auto Hand Player,6.58,-0.68,-1.76
+13.342,2,Auto Hand Player,6.58,-0.68,-1.76
+13.370,2,Auto Hand Player,6.58,-0.68,-1.76
+13.428,2,Auto Hand Player,6.58,-0.68,-1.76
+13.453,2,Auto Hand Player,6.58,-0.68,-1.76
+13.481,2,Auto Hand Player,6.58,-0.68,-1.76
+13.508,2,Auto Hand Player,6.58,-0.68,-1.76
+13.536,2,Auto Hand Player,6.58,-0.68,-1.76
+13.593,2,Auto Hand Player,6.58,-0.68,-1.76
+13.621,2,Auto Hand Player,6.58,-0.68,-1.76
+13.650,2,Auto Hand Player,6.58,-0.68,-1.76
+13.675,2,Auto Hand Player,6.58,-0.68,-1.76
+13.704,2,Auto Hand Player,6.58,-0.68,-1.76
+13.757,2,Auto Hand Player,6.58,-0.68,-1.76
+13.785,2,Auto Hand Player,6.58,-0.68,-1.77
+13.814,2,Auto Hand Player,6.58,-0.68,-1.77
+13.842,2,Conference_Room_Door_R,1.33,-1.08,-3.27
+13.872,2,Auto Hand Player,6.58,-0.68,-1.77
+13.927,2,Wall_3mx20cm_Conference_Door,1.41,-0.83,-4.09
+13.956,2,Auto Hand Player,6.58,-0.68,-1.78
+13.984,2,Auto Hand Player,6.59,-0.67,-1.78
+14.012,2,Wall_3mx40cm_Window,2.33,-0.67,-4.10
+14.039,2,Wall_3mx40cm_Window,2.30,-0.61,-4.10
+14.067,2,Wall_3mx40cm_Window,2.11,-0.56,-4.10
+14.123,2,Wall_3mx40cm_Window,1.49,-0.44,-4.10
+14.152,2,Wall_3mx20cm_Conference_Door,1.41,-0.39,-3.95
+14.178,2,Wall_3mx20cm_Conference_Door,1.41,-0.36,-3.78
+14.206,2,Wall_3mx20cm_Conference_Door,1.41,-0.35,-3.63
+14.234,2,Wall_3mx20cm_Conference_Door,1.35,-0.31,-3.53
+14.291,2,Conference_Room_Door_R,1.33,-0.26,-3.36
+14.320,2,Conference_Room_Door_R,1.33,-0.24,-3.30
+14.346,2,Conference_Room_Door_R,1.33,-0.21,-3.28
+14.374,2,Conference_Room_Door_R,1.33,-0.19,-3.28
+14.401,2,Conference_Room_Door_R,1.33,-0.17,-3.29
+14.457,2,Conference_Room_Door_R,1.33,-0.10,-3.36
+14.486,2,Conference_Room_Door_R,1.33,-0.07,-3.42
+14.513,2,Wall_3mx20cm_Conference_Door,1.23,-0.01,-3.53
+14.542,2,Wall_3mx20cm_Conference_Door,1.39,0.03,-3.53
+14.569,2,Wall_3mx20cm_Conference_Door,1.41,0.09,-3.57
+14.625,2,Wall_3mx20cm_Conference_Door,1.41,0.24,-3.62
+14.653,2,Wall_3mx20cm_Conference_Door,1.41,0.32,-3.65
+14.681,2,Wall_3mx20cm_Conference_Door,1.41,0.35,-3.64
+14.708,2,Wall_3mx20cm_Conference_Door,1.41,0.39,-3.63
+14.736,2,Wall_3mx20cm_Conference_Door,1.41,0.42,-3.59
+14.767,2,Wall_3mx20cm_Conference_Door,1.41,0.44,-3.53
+14.820,2,Timer,1.47,0.41,-3.42
+14.848,2,Timer,1.41,0.39,-3.38
+14.877,2,Wall_3mx20cm_Conference_Door,1.40,0.35,-3.35
+14.904,2,Wall_3mx40cm_Window,-0.79,0.73,-4.10
+14.959,2,Conference_Room_Door_R,1.33,0.24,-3.32
+14.989,2,Conference_Room_Door_R,1.33,0.21,-3.32
+15.015,2,Conference_Room_Door_R,1.33,0.19,-3.32
+15.043,2,Conference_Room_Door_R,1.33,0.16,-3.33
+15.072,2,Conference_Room_Door_R,1.33,0.14,-3.35
+15.100,2,Conference_Room_Door_R,1.33,0.13,-3.36
+15.156,2,Conference_Room_Door_R,1.33,0.11,-3.36
+15.182,2,Conference_Room_Door_R,1.33,0.08,-3.35
+15.212,2,Conference_Room_Door_R,1.33,0.05,-3.33
+15.238,2,Conference_Room_Door_R,1.33,0.02,-3.31
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.703,2,Conference_Room_Door_R,1.33,-0.28,-2.81
+15.769,2,Conference_Room_Door_R,1.33,-0.26,-2.81
+15.769,2,Conference_Room_Door_R,1.33,-0.26,-2.81
+15.822,2,Conference_Room_Door_R,1.33,-0.23,-2.78
+15.846,2,Conference_Room_Door_R,1.33,-0.20,-2.78
+15.875,2,Conference_Room_Door_R,1.33,-0.18,-2.78
+15.904,2,Conference_Room_Door_R,1.33,-0.18,-2.77
+15.960,2,Conference_Room_Door_R,1.33,-0.15,-2.75
+15.987,2,Conference_Room_Door_R,1.33,-0.14,-2.73
+16.016,2,Conference_Room_Door_R,1.33,-0.13,-2.70
+16.044,2,Conference_Room_Door_R,1.33,-0.12,-2.68
+16.072,2,Conference_Room_Door_R,1.33,-0.13,-2.67
+16.127,2,Conference_Room_Door_R,1.33,-0.17,-2.64
+16.156,2,Conference_Room_Door_R,1.33,-0.17,-2.63
+16.184,2,Conference_Room_Door_R,1.33,-0.19,-2.61
+16.210,2,Conference_Room_Door_L,1.33,-0.20,-2.59
+16.238,2,Conference_Room_Door_L,1.33,-0.20,-2.56
+16.294,2,Conference_Room_Door_L,1.33,-0.17,-2.50
+16.323,2,Conference_Room_Door_L,1.33,-0.14,-2.47
+16.351,2,Conference_Room_Door_L,1.33,-0.12,-2.42
+16.379,2,Conference_Room_Door_L,1.33,-0.10,-2.35
+16.406,2,Conference_Room_Door_L,1.33,-0.06,-2.26
+16.434,2,Conference_Room_Door_L,1.33,-0.03,-2.17
+16.489,2,Conference_Room_Door_L,1.33,0.03,-1.94
+16.516,2,Conference_Room_Door_L,1.33,0.04,-1.82
+16.544,2,None,0,0,0
+16.573,2,Wall_3mx20cm_Conference_Door,1.41,0.04,-1.60
+16.602,2,Wall_3mx20cm_Conference_Door,1.41,0.02,-1.50
+16.666,2,Wall_3mx20cm_Conference_Door,1.41,-0.02,-1.33
+16.685,2,Wall_3mx20cm_Conference_Door,1.41,-0.04,-1.26
+16.714,2,Wall_3mx20cm_Conference_Door,1.41,-0.04,-1.23
+16.742,2,Wall_3mx20cm_Conference_Door,1.41,-0.04,-1.21
+16.767,2,Wall_3mx20cm_Conference_Door,1.41,-0.03,-1.19
+16.825,2,Wall_3mx20cm_Conference_Door,1.41,-0.04,-1.17
+16.851,2,Wall_3mx20cm_Conference_Door,1.41,-0.05,-1.17
+16.879,2,Wall_3mx20cm_Conference_Door,1.41,-0.06,-1.17
+16.906,2,Wall_3mx20cm_Conference_Door,1.41,-0.08,-1.17
+16.934,2,Wall_3mx20cm_Conference_Door,1.41,-0.09,-1.20
+16.990,2,Wall_3mx20cm_Conference_Door,1.41,-0.16,-1.29
+17.018,2,Wall_3mx20cm_Conference_Door,1.41,-0.18,-1.34
+17.048,2,Wall_3mx20cm_Conference_Door,1.41,-0.21,-1.40
+17.075,2,Wall_3mx20cm_Conference_Door,1.41,-0.22,-1.44
+17.103,2,Wall_3mx20cm_Conference_Door,1.41,-0.21,-1.47
+17.158,2,Wall_3mx20cm_Conference_Door,1.41,-0.18,-1.54
+17.186,2,Wall_3mx20cm_Conference_Door,1.41,-0.18,-1.58
+17.214,2,Wall_3mx20cm_Conference_Door,1.41,-0.18,-1.62
+17.242,2,Wall_3mx20cm_Conference_Door,1.41,-0.20,-1.67
+17.271,2,None,0,0,0
+17.325,2,Conference_Room_Door_L,1.33,-0.28,-1.77
+17.354,2,Conference_Room_Door_L,1.33,-0.30,-1.80
+17.381,2,Conference_Room_Door_L,1.33,-0.32,-1.83
+17.409,2,Conference_Room_Door_L,1.33,-0.33,-1.85
+17.437,2,Conference_Room_Door_L,1.33,-0.32,-1.87
+17.495,2,Conference_Room_Door_L,1.33,-0.31,-1.88
+17.522,2,Conference_Room_Door_L,1.33,-0.33,-1.90
+17.550,2,Conference_Room_Door_L,1.33,-0.35,-1.92
+17.576,2,Conference_Room_Door_L,1.33,-0.34,-1.93
+17.604,2,Conference_Room_Door_L,1.33,-0.34,-1.94
+17.661,2,Conference_Room_Door_L,1.33,-0.33,-1.97
+17.688,2,Conference_Room_Door_L,1.33,-0.30,-1.97
+17.718,2,Conference_Room_Door_L,1.33,-0.30,-1.96
+17.744,2,Conference_Room_Door_L,1.33,-0.33,-1.96
+17.772,2,Conference_Room_Door_L,1.33,-0.34,-1.96
+17.801,2,Conference_Room_Door_L,1.33,-0.34,-1.95
+17.856,2,Conference_Room_Door_L,1.33,-0.43,-1.94
+17.884,2,Conference_Room_Door_L,1.33,-0.48,-1.94
+17.911,2,Conference_Room_Door_L,1.33,-0.54,-1.93
+17.942,2,Conference_Room_Door_L,1.33,-0.60,-1.93
+17.968,2,Conference_Room_Door_L,1.33,-0.65,-1.93
+18.024,2,Conference_Room_Door_L,1.33,-0.69,-1.92
+18.052,2,Conference_Room_Door_L,1.33,-0.70,-1.91
+18.080,2,Conference_Room_Door_L,1.33,-0.71,-1.91
+18.108,2,Conference_Room_Door_L,1.33,-0.71,-1.91
+18.135,2,Conference_Room_Door_L,1.33,-0.69,-1.90
+18.190,2,Conference_Room_Door_L,1.33,-0.64,-1.87
+18.219,2,Conference_Room_Door_L,1.33,-0.58,-1.82
+18.246,2,Conference_Room_Door_L,1.33,-0.52,-1.76
+18.275,2,None,0,0,0
+18.301,2,Wall_3mx20cm_Conference_Door,1.41,-0.39,-1.61
+18.355,2,Wall_3mx20cm_Conference_Door,1.41,-0.27,-1.51
+18.386,2,Wall_3mx20cm_Conference_Door,1.41,-0.22,-1.48
+18.413,2,Wall_3mx20cm_Conference_Door,1.41,-0.17,-1.45
+18.442,2,Wall_3mx20cm_Conference_Door,1.41,-0.11,-1.45
+18.468,2,Wall_3mx20cm_Conference_Door,1.41,-0.07,-1.46
+18.524,2,Wall_3mx20cm_Conference_Door,1.41,0.02,-1.49
+18.553,2,Wall_3mx20cm_Conference_Door,1.41,0.04,-1.52
+18.581,2,Wall_3mx20cm_Conference_Door,1.41,0.05,-1.54
+18.610,2,Wall_3mx20cm_Conference_Door,1.41,0.04,-1.54
+18.634,2,Wall_3mx20cm_Conference_Door,1.41,0.05,-1.56
+18.692,2,Wall_3mx20cm_Conference_Door,1.41,0.05,-1.59
+18.720,2,Wall_3mx20cm_Conference_Door,1.41,0.04,-1.60
+18.748,2,Wall_3mx20cm_Conference_Door,1.41,0.04,-1.61
+18.775,2,Wall_3mx20cm_Conference_Door,1.41,0.05,-1.63
+18.802,2,Wall_3mx20cm_Conference_Door,1.41,0.07,-1.64
+18.859,2,Wall_3mx20cm_Conference_Door,1.34,0.11,-1.67
+18.885,2,None,0,0,0
+18.913,2,Conference_Room_Door_L,1.33,0.14,-1.71
+18.942,2,Conference_Room_Door_L,1.33,0.16,-1.74
+18.971,2,Conference_Room_Door_L,1.33,0.18,-1.76
+19.025,2,Conference_Room_Door_L,1.33,0.24,-1.79
+19.055,2,Conference_Room_Door_L,1.33,0.27,-1.81
+19.081,2,Conference_Room_Door_L,1.33,0.29,-1.81
+19.110,2,Conference_Room_Door_L,1.33,0.29,-1.81
+19.137,2,Conference_Room_Door_L,1.33,0.29,-1.81
+19.191,2,Conference_Room_Door_L,1.33,0.28,-1.80
+19.222,2,Conference_Room_Door_L,1.33,0.27,-1.80
+19.250,2,Conference_Room_Door_L,1.33,0.28,-1.81
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.066,2,None,0,0,0
+20.168,2,Wall_3mx20cm_Conference_Door,1.30,0.35,-1.69
+20.168,2,Wall_3mx20cm_Conference_Door,1.30,0.35,-1.69
+20.168,2,Wall_3mx20cm_Conference_Door,1.30,0.35,-1.69
+20.168,2,Wall_3mx20cm_Conference_Door,1.30,0.35,-1.69
+20.225,2,Wall_3mx20cm_Conference_Door,1.41,0.33,-1.58
+20.254,2,Wall_3mx20cm_Conference_Door,1.41,0.33,-1.57
+20.279,2,Wall_3mx20cm_Conference_Door,1.41,0.33,-1.55
+20.308,2,Wall_3mx20cm_Conference_Door,1.41,0.32,-1.53
+20.334,2,Wall_3mx20cm_Conference_Door,1.41,0.32,-1.51
+20.390,2,Wall_3mx20cm_Conference_Door,1.41,0.34,-1.48
+20.420,2,Wall_3mx20cm_Conference_Door,1.41,0.35,-1.47
+20.446,2,Wall_3mx20cm_Conference_Door,1.41,0.36,-1.45
+20.492,2,Wall_3mx20cm_Conference_Door,1.41,0.40,-1.43
+20.518,2,Wall_3mx20cm_Conference_Door,1.41,0.44,-1.42
+20.546,2,Wall_3mx20cm_Conference_Door,1.41,0.48,-1.41
+20.573,2,Wall_3mx20cm_Conference_Door,1.41,0.50,-1.42
+20.603,2,Wall_3mx20cm_Conference_Door,1.41,0.52,-1.42
+20.654,2,Wall_3mx20cm_Conference_Door,1.41,0.58,-1.44
+20.681,2,Wall_3mx20cm_Conference_Door,1.41,0.59,-1.45
+20.710,2,Wall_3mx20cm_Conference_Door,1.41,0.60,-1.46
+20.741,2,Wall_3mx20cm_Conference_Door,1.41,0.60,-1.46
+20.793,2,Wall_3mx20cm_Conference_Door,1.41,0.60,-1.45
+20.822,2,Wall_3mx20cm_Conference_Door,1.41,0.61,-1.45
+20.849,2,Wall_3mx20cm_Conference_Door,1.41,0.62,-1.43
+20.877,2,Wall_3mx20cm_Conference_Door,1.41,0.62,-1.42
+20.906,2,Wall_3mx20cm_Conference_Door,1.41,0.63,-1.41
+20.961,2,Wall_3mx20cm_Conference_Door,1.41,0.68,-1.37
+20.987,2,Wall_3mx20cm_Conference_Door,1.41,0.71,-1.35
+21.016,2,Wall_3mx20cm_Conference_Door,1.41,0.76,-1.33
+21.044,2,Wall_3mx20cm_Conference_Door,1.41,0.79,-1.27
+21.073,2,Wall_3mx20cm_Conference_Door,1.41,0.81,-1.19
+21.128,2,Wall_3mx20cm_Door (1),1.41,0.79,-0.96
+21.156,2,Wall_3mx20cm_Door (1),1.41,0.77,-0.84
+21.186,2,Wall_3mx20cm_Door (1),1.41,0.73,-0.72
+21.212,2,Wall_3mx20cm_Door (1),1.41,0.71,-0.61
+21.240,2,Wall_3mx20cm_Door (1),1.41,0.68,-0.50
+21.267,2,Wall_3mx20cm_Door (1),1.41,0.65,-0.40
+21.609,2,Wall_3mx20cm_Wood_Panels (2),2.81,0.37,-0.31
+21.609,2,Wall_3mx20cm_Wood_Panels (2),2.81,0.37,-0.31
+21.609,2,Wall_3mx20cm_Wood_Panels (2),2.81,0.37,-0.31
+21.609,2,Wall_3mx20cm_Wood_Panels (2),2.81,0.37,-0.31
+21.609,2,Wall_3mx20cm_Wood_Panels (2),2.81,0.37,-0.31
+21.609,2,Wall_3mx20cm_Wood_Panels (2),2.81,0.37,-0.31
+21.609,2,Wall_3mx20cm_Wood_Panels (2),2.81,0.37,-0.31
+21.609,2,Wall_3mx20cm_Wood_Panels (2),2.81,0.37,-0.31
+21.609,2,Wall_3mx20cm_Wood_Panels (2),2.81,0.37,-0.31
+21.609,2,Wall_3mx20cm_Wood_Panels (2),2.81,0.37,-0.31
+21.768,2,Wall_3mx20cm_Wood_Panels (2),3.52,0.48,-0.31
+21.768,2,Wall_3mx20cm_Wood_Panels (2),3.52,0.48,-0.31
+21.768,2,Wall_3mx20cm_Wood_Panels (2),3.52,0.48,-0.31
+21.768,2,Wall_3mx20cm_Wood_Panels (2),3.52,0.48,-0.31
+21.768,2,Wall_3mx20cm_Wood_Panels (2),3.52,0.48,-0.31
+21.853,2,Wall_3mx20cm_Wood_Panels (2),4.12,0.65,-0.31
+21.853,2,Wall_3mx20cm_Wood_Panels (2),4.12,0.65,-0.31
+21.894,2,Wall_3mx20cm_Wood_Panels (2),4.16,0.72,-0.31
+21.920,2,Wall_3mx20cm_Wood_Panels (2),4.15,0.75,-0.31
+21.949,2,Wall_3mx20cm_Wood_Panels (2),4.19,0.79,-0.31
+21.976,2,Wall_3mx20cm_Wood_Panels (2),4.22,0.83,-0.31
+22.004,2,Wall_3mx20cm_Wood_Panels (2),4.24,0.83,-0.31
+22.058,2,Wall_3mx20cm_Wood_Panels (2),4.29,0.87,-0.31
+22.092,2,Wall_3mx20cm_Wood_Panels (2),4.31,0.91,-0.31
+22.114,2,Wall_3mx20cm_Wood_Panels (2),4.34,0.94,-0.31
+22.146,2,Wall_3mx20cm_Wood_Panels (2),4.38,0.97,-0.31
+22.170,2,Wall_3mx20cm_Wood_Panels (3),4.43,0.98,-0.31
+22.239,2,Wall_3mx20cm_Wood_Panels (3),4.53,0.96,-0.31
+22.239,2,Wall_3mx20cm_Wood_Panels (3),4.53,0.96,-0.31
+22.269,2,Wall_3mx20cm_Wood_Panels (3),4.56,0.93,-0.31
+22.325,2,Wall_3mx20cm_Wood_Panels (3),4.77,0.87,-0.31
+22.352,2,Wall_3mx20cm_Wood_Panels (3),4.88,0.83,-0.31
+22.378,2,Wall_3mx20cm_Wood_Panels (3),5.01,0.79,-0.31
+22.407,2,Wall_3mx20cm_Wood_Panels (3),5.12,0.76,-0.31
+22.435,2,Wall_3mx20cm_Wood_Panels (3),5.22,0.72,-0.31
+22.491,2,Wall_3mx20cm_Wood_Panels (3),5.39,0.63,-0.31
+22.520,2,Wall_3mx20cm_Wood_Panels (3),5.46,0.58,-0.31
+22.546,2,Wall_3mx20cm_Wood_Panels (3),5.52,0.53,-0.31
+22.576,2,Wall_3mx20cm_Wood_Panels (3),5.59,0.48,-0.31
+22.604,2,Wall_3mx20cm_Wood_Panels (3),5.65,0.43,-0.31
+22.657,2,Wall_3mx20cm_Wood_Panels (3),5.75,0.36,-0.31
+22.688,2,Wall_3mx20cm_Wood_Panels (3),5.77,0.34,-0.31
+22.712,2,Wall_3mx20cm_Wood_Panels (3),5.80,0.36,-0.31
+22.743,2,Wall_3mx20cm_Wood_Panels (3),5.81,0.34,-0.31
+22.771,2,Wall_3mx20cm_Wood_Panels (3),5.82,0.34,-0.31
+22.826,2,Wall_3mx20cm_Wood_Panels (3),5.82,0.35,-0.31
+22.855,2,Wall_3mx20cm_Wood_Panels (3),5.82,0.36,-0.31
+22.882,2,Wall_3mx20cm_Wood_Panels (3),5.82,0.37,-0.31
+22.909,2,Wall_3mx20cm_Wood_Panels (3),5.80,0.38,-0.31
+22.938,2,Wall_3mx20cm_Wood_Panels (3),5.79,0.40,-0.31
+22.981,2,Wall_3mx20cm_Wood_Panels (3),5.79,0.40,-0.31
+23.008,2,Wall_3mx20cm_Wood_Panels (3),5.78,0.42,-0.31
+23.035,2,Wall_3mx20cm_Wood_Panels (3),5.78,0.44,-0.31
+23.092,2,Wall_3mx20cm_Wood_Panels (3),5.78,0.46,-0.31
+23.120,2,Wall_3mx20cm_Wood_Panels (3),5.78,0.47,-0.31
+23.147,2,Wall_3mx20cm_Wood_Panels (3),5.78,0.48,-0.31
+23.176,2,Wall_3mx20cm_Wood_Panels (3),5.79,0.48,-0.31
+23.203,2,Wall_3mx20cm_Wood_Panels (3),5.80,0.48,-0.31
+23.247,2,Wall_3mx20cm_Wood_Panels (3),5.81,0.48,-0.31
+23.272,2,Wall_3mx20cm_Wood_Panels (3),5.81,0.48,-0.31
+23.316,2,Wall_3mx20cm_Wood_Panels (3),5.82,0.49,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.749,2,Wall_3mx20cm_Wood_Panels (3),5.84,0.52,-0.31
+23.856,2,Wall_3mx20cm_Wood_Panels (3),5.85,0.51,-0.31
+23.856,2,Wall_3mx20cm_Wood_Panels (3),5.85,0.51,-0.31
+23.856,2,Wall_3mx20cm_Wood_Panels (3),5.85,0.51,-0.31

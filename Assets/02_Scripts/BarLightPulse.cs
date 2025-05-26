@@ -10,7 +10,12 @@ public class BarLightPulse : MonoBehaviour
     [SerializeField] Color  baseColor    = new (0.23f, 0.42f, 1f); // #3A6CFF
     [SerializeField] float  maxIntensity = 5f;   // 머티리얼 HDR 값과 맞춤
     [SerializeField] float  pulseSpeed   = 2f;   // Hz ( 2 = 1 초 주기 )
-    [SerializeField] float  fadeSpeed    = 4f;   // Begin/End 페이드 속도
+    [SerializeField] float  fadeSpeed    = 8.0f;   // Begin/End 페이드 속도
+
+    [Header("음성 입력(선택)")]
+    [SerializeField] AudioSource voiceSrc = null;   // 아바타 음성 오디오
+    [SerializeField] float  silenceThresh = 0.02f;  // RMS 이하면 ‘무음’
+    [SerializeField] float  gain          = 30f;    // RMS→[0,1] 스케일링
 
     Renderer              rend;
     MaterialPropertyBlock mpb;
@@ -20,7 +25,9 @@ public class BarLightPulse : MonoBehaviour
 
     bool looping = false; 
     public bool IsLooping => looping;
-    /* ───────── Unity ───────── */
+    
+    static readonly float[] buf = new float[256];
+
     void Awake()
     {
         rend = GetComponent<Renderer>();
@@ -33,22 +40,33 @@ public class BarLightPulse : MonoBehaviour
 
     void Update()
     {
-        /* ① current → target 으로 천천히 이동 */
+        /* 1. 오디오 RMS → target 밝기 계산 */
+        float rms = (voiceSrc && voiceSrc.isPlaying)
+            ? GetRMS(voiceSrc)
+            : 0f;
+
+        //  (RMS - 임계) × gain → 0~1 로 클램프
+        float target = Mathf.Clamp01((rms - silenceThresh) * gain);   // ★
+
+        /* 2. 부드럽게 따라가도록 스무딩 */
         current = Mathf.MoveTowards(current, target,
-                                    Time.deltaTime * fadeSpeed);
+            Time.deltaTime * fadeSpeed);      // ★
 
-        /* ② 숨쉬기 펄스: 0.5~1.0 범위 */
-        float pulse     = 0.5f + 0.5f *
-                          Mathf.Sin(Time.time * pulseSpeed * Mathf.PI * 2);
-        float intensity = current * pulse * maxIntensity;
-
-        /* ③ 머티리얼에 emission 적용 (PropertyBlock) */
+        /* 3. 머티리얼에 적용 */
+        float intensity = current * maxIntensity;                      // ★
         rend.GetPropertyBlock(mpb);
         mpb.SetColor("_EmissionColor", baseColor * intensity);
         rend.SetPropertyBlock(mpb);
     }
-
-    /* ───────── Public API ───────── */
+    
+    float GetRMS(AudioSource src)
+    {
+        src.GetOutputData(buf, 0);
+        float sum = 0f;
+        for (int i = 0; i < buf.Length; ++i) sum += buf[i] * buf[i];
+        return Mathf.Sqrt(sum / buf.Length);
+    }
+    
     /** 발표 ‘지연’ 시작 – 지속 펄스 ON */
     public void PulseLoop()
     {
@@ -66,11 +84,16 @@ public class BarLightPulse : MonoBehaviour
     public void BlinkOnce(float seconds = 0.3f)
         => StartCoroutine(CoBlink(seconds));
 
-    /* ───────── 내부 코루틴 ───────── */
+    public void SetSpeaking(bool isSpeaking)
+    {
+        if (isSpeaking) target = 1f;
+        else if (!looping) target = 0f;
+    }
+    
     IEnumerator CoBlink(float sec)
     {
-        target = 1f;                 // 잠깐 켜고
+        target = 1f;
         yield return new WaitForSeconds(sec);
-        target = 0f;                 // 바로 끔
+        if (!looping) target = 0f;
     }
 }
