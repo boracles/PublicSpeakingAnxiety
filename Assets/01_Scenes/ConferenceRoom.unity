@@ -6747,7 +6747,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792033663}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0d83797e40c5804ca350668134a044b, type: 3}
   m_Name: 
@@ -6762,7 +6762,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792033663}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
   m_Name: 
@@ -27789,19 +27789,99 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[41]
+      propertyPath: m_BlendShapeWeights.Array.data[31]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[32]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[33]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[34]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[35]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[40]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[41]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[42]
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[43]
-      value: 0
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[46]
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[47]
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[48]
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[49]
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[50]
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[51]
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[52]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[53]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[54]
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[55]
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[56]
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[57]
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[58]
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[59]
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[68]
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3774885915943685086, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
@@ -27868,9 +27948,6 @@ PrefabInstance:
       addedObject: {fileID: 1494842616}
     - targetCorrespondingSourceObject: {fileID: -1355597695489818144, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1494842607}
-    - targetCorrespondingSourceObject: {fileID: -1355597695489818144, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1494842610}
     - targetCorrespondingSourceObject: {fileID: -1355597695489818144, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       insertIndex: -1
@@ -27881,27 +27958,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -1355597695489818144, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
   m_PrefabInstance: {fileID: 1494842605}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1494842607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494842606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b97b38f2f1fd24185315141a6c6a56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skinnedMeshRenderer: {fileID: 1494842608}
-  visemeToBlendTargets: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-  enableVisemeTestKeys: 0
-  visemeTestKeys: 600000000900000071000000770000006500000072000000740000007900000075000000690000006f000000700000005b0000005d0000005c000000
-  laughterKey: 301
-  laughterBlendTarget: 15
-  laughterThreshold: 0.5
-  laughterMultiplier: 1.5
-  smoothAmount: 95
 --- !u!137 &1494842608 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
@@ -28069,71 +28125,47 @@ MonoBehaviour:
   faceMesh: {fileID: 1494842608}
   clearEachFrame: 1
   maps:
-  - visemeSlot: 0
-    blendShapeIndex: ffffffff
-    weightMultiplier: 1
   - visemeSlot: 1
-    blendShapeIndex: 34000000
-    weightMultiplier: 1
-  - visemeSlot: 1
-    blendShapeIndex: 35000000
+    blendShapeIndex: 3400000035000000
     weightMultiplier: 1
   - visemeSlot: 2
-    blendShapeIndex: 2e000000
-    weightMultiplier: 1
+    blendShapeIndex: 2e0000002f000000
+    weightMultiplier: 0.8
   - visemeSlot: 3
-    blendShapeIndex: 44000000
+    blendShapeIndex: 3800000039000000
     weightMultiplier: 1
   - visemeSlot: 4
-    blendShapeIndex: 24000000
-    weightMultiplier: 1
-  - visemeSlot: 4
-    blendShapeIndex: 31000000
+    blendShapeIndex: 23000000
     weightMultiplier: 1
   - visemeSlot: 5
-    blendShapeIndex: 22000000
+    blendShapeIndex: 0f000000
     weightMultiplier: 1
   - visemeSlot: 6
-    blendShapeIndex: 32000000
+    blendShapeIndex: 09000000
     weightMultiplier: 1
   - visemeSlot: 7
-    blendShapeIndex: 2e000000
-    weightMultiplier: 1
-  - visemeSlot: 7
-    blendShapeIndex: 2f000000
-    weightMultiplier: 1
+    blendShapeIndex: 25000000
+    weightMultiplier: 0.8
   - visemeSlot: 8
-    blendShapeIndex: 2c000000
+    blendShapeIndex: 2a0000002b000000
     weightMultiplier: 1
   - visemeSlot: 9
-    blendShapeIndex: 29000000
+    blendShapeIndex: 33000000
     weightMultiplier: 1
   - visemeSlot: 10
-    blendShapeIndex: 22000000
-    weightMultiplier: 1
+    blendShapeIndex: 0f000000
+    weightMultiplier: 1.2
   - visemeSlot: 11
-    blendShapeIndex: 28000000
-    weightMultiplier: 1
-  - visemeSlot: 11
-    blendShapeIndex: 29000000
-    weightMultiplier: 1
+    blendShapeIndex: 2e0000002f000000
+    weightMultiplier: 0.8
   - visemeSlot: 12
+    blendShapeIndex: 3400000035000000
+    weightMultiplier: 0.8
+  - visemeSlot: 13
+    blendShapeIndex: 09000000
+    weightMultiplier: 1
+  - visemeSlot: 14
     blendShapeIndex: 25000000
-    weightMultiplier: 1
-  - visemeSlot: 12
-    blendShapeIndex: 2a000000
-    weightMultiplier: 1
-  - visemeSlot: 13
-    blendShapeIndex: 24000000
-    weightMultiplier: 1
-  - visemeSlot: 13
-    blendShapeIndex: 31000000
-    weightMultiplier: 1
-  - visemeSlot: 14
-    blendShapeIndex: 2e000000
-    weightMultiplier: 1
-  - visemeSlot: 14
-    blendShapeIndex: 2f000000
     weightMultiplier: 1
 --- !u!1001 &1495001031
 PrefabInstance:
