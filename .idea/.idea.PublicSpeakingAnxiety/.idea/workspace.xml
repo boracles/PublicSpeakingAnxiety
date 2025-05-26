@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4ecd6904-4017-441b-85ae-1659e9e1ef16" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PublicSpeakingAnxiety/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PublicSpeakingAnxiety/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PublicSpeakingAnxiety/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PublicSpeakingAnxiety/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Scenes/ConferenceRoom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scenes/ConferenceRoom.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/AvatarFSM.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/AvatarFSM.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/AvatarLookAt.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/AvatarLookAt.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/AzureStreamSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/AzureStreamSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/AzureStreamSender.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/AzureStreamSender.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/BarLightPulse.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/BarLightPulse.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/CaptionDisplay.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/CaptionDisplay.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/ChatManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/ChatManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/DelayManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/DelayManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/ExperimentManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/ExperimentManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/IncrementalSummarizer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/IncrementalSummarizer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/LLMClient.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/LLMClient.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/LLMTypes.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/LLMTypes.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/LipSyncBlendmap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/LipSyncBlendmap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/LipSyncBlendmap.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/LipSyncBlendmap.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/LipSyncDebug.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/LipSyncDebug.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/LogRecorder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/LogRecorder.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/MicCapturer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/MicCapturer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/PdfScreenController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/PdfScreenController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/PrintBlendShapes.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/PrintBlendShapes.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/QAController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/QAController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/SpeechConfigLoader.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/SpeechConfigLoader.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/SpeechRecognizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/SpeechRecognizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/TTSPlayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/TTSPlayer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/TranscriptBuffer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/TranscriptBuffer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02_Scripts/WavUtility.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02_Scripts/WavUtility.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Models/Materials/Monitor_display.001.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05_Models/Materials/Monitor_display.001.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Models/Materials/Monitor_display.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05_Models/Materials/Monitor_display.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Models/Materials/Monitor_plastik.001.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05_Models/Materials/Monitor_plastik.001.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Models/Materials/Monitor_plastik.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05_Models/Materials/Monitor_plastik.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05_Models/Materials/Table.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05_Models/Materials/Table.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Examples/Mesh/OculusHand_R.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Examples/Mesh/OculusHand_R.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Examples/Scenes/OpenXR/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Examples/Scenes/OpenXR/Demo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Examples/Scenes/OpenXR/Scripts/OpenXRGrabbableInput.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Examples/Scenes/OpenXR/Scripts/OpenXRGrabbableInput.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Examples/Scenes/OpenXR/Scripts/OpenXRHeldGrabbableInput.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Examples/Scenes/OpenXR/Scripts/OpenXRHeldGrabbableInput.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Examples/Scenes/OpenXR/XRHands.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Examples/Scenes/OpenXR/XRHands.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/AutoHandExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/AutoHandExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/BETA/AutoArrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/BETA/AutoArrow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/BETA/AutoBow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/BETA/AutoBow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/BETA/AutoGunEffects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/BETA/AutoGunEffects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/BETA/PlaceJoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/BETA/PlaceJoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Demo/Demo Scene/BoxingGlove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Demo/Demo Scene/BoxingGlove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Demo/Demo Scene/CubeBreak.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Demo/Demo Scene/CubeBreak.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Demo/Demo Scene/JointBreakStopForce1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Demo/Demo Scene/JointBreakStopForce1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Demo/Gadget Demo/ButtonDemoRespawn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Demo/Gadget Demo/ButtonDemoRespawn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Editor/HandColliderEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Editor/HandColliderEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/DispenserPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/DispenserPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/DistanceGrabbable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/DistanceGrabbable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/Grabbable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/Grabbable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/GrabbableExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/GrabbableExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/GrabbableThrowEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/GrabbableThrowEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/PlacePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/PlacePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/WeightlessFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Grabbable/WeightlessFollower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Hand/Hand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Hand/Hand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Hand/HandDistanceGrabber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Hand/HandDistanceGrabber.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Hand/HandFingerTouch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Hand/HandFingerTouch.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Internal/GrabbableBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Internal/GrabbableBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Internal/HandFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Internal/HandFollow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Internal/HandVelocityTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Internal/HandVelocityTracker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Movement/AutoHandPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Movement/AutoHandPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Movement/HeadPhysicsFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Movement/HeadPhysicsFollower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Tools/PhysicsFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Tools/PhysicsFollower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Tools/Smash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Tools/Smash.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Tools/Sticky.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AutoHand/Scripts/Tools/Sticky.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Advanced Grass Light.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Advanced Grass Light.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Advanced Grass Specular.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Advanced Grass Specular.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Advanced Grass Standard.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Advanced Grass Standard.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Cross_Model_Shader.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Cross_Model_Shader.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NMWind.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NMWind.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NMWindNoShiver.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NMWindNoShiver.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NMWindTouchRect.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NMWindTouchRect.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NM_Bark.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NM_Bark.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NM_Cross.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NM_Cross.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NM_Foliage.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NM_Foliage.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NM_indirect.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/NM_indirect.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Tree_Bark_Metalic.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Tree_Bark_Metalic.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Tree_Bark_Specular.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Tree_Bark_Specular.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Tree_Leaves_Metalic.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Tree_Leaves_Metalic.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Tree_Leaves_Specular.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Foliage Shaders/Tree_Leaves_Specular.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/NatureManufacture Wind.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/NatureManufacture Wind/3DNoise.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/NatureManufacture Wind/3DNoise.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/NatureManufacture Wind/GustNoise.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/NatureManufacture Wind/GustNoise.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/NatureManufacture Wind/NM_Wind.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/NatureManufacture Wind/NM_Wind.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/NatureManufacture Wind/Prefab_Wind.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/NatureManufacture Wind/Prefab_Wind.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/NatureManufacture Wind/Prefab_Wind_Spherical.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/NatureManufacture Wind/Prefab_Wind_Spherical.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Layered.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Layered.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Layered_Full_Triplanar.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Layered_Full_Triplanar.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Layered_Full_Triplanar_Cover.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Layered_Full_Triplanar_Cover.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Layered_Top_Cover.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Layered_Top_Cover.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Layered_Triplanar_Top_Cover.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Layered_Triplanar_Top_Cover.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Full_Triplanar_Cover.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Full_Triplanar_Cover.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Top_Cover.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Top_Cover.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Top_Cover_Specular.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Top_Cover_Specular.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Triplanar_Cover.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Triplanar_Cover.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Triplanar_Cover_Specular.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Lit_Triplanar_Cover_Specular.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Transp_Road.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Transp_Road.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Transp_Road_Advanced.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_Transp_Road_Advanced.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_indirect.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/NM_indirect.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/Standard_Metalic_Snow CutOut.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/Standard_Metalic_Snow CutOut.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/Standard_Metalic_Snow.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/Standard_Metalic_Snow.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/Standard_Metallic_Road_Transparent.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/Standard_Metallic_Road_Transparent.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/Standard_Specular_Snow CutOut.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/Standard_Specular_Snow CutOut.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/Standard_Specular_Snow.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Object Shaders/Standard_Specular_Snow.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_00_Poplar_plant_A.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_00_Poplar_plant_A.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_00_Poplar_plant_B.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_00_Poplar_plant_B.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_00_Poplar_plant_C.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_00_Poplar_plant_C.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_01_Poplar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_01_Poplar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_02_Poplar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_02_Poplar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_03_Poplar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_03_Poplar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_04_Poplar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_04_Poplar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_05_Poplar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_05_Poplar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_06_Poplar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_06_Poplar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_07_Poplar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_07_Poplar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_08_Poplar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Baked and Optimised Poplar Prefabs/prefab_Baked_08_Poplar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_A.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_A.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_A_LOD0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_A_LOD0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_A_LOD1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_A_LOD1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_A_cross_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_A_cross_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_A_cross_S_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_A_cross_S_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_B.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_B.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_B_LOD0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_B_LOD0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_B_LOD1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_B_LOD1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_B_cross_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_B_cross_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_B_cross_s_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_B_cross_s_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_C.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_C.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_C_LOD0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_C_LOD0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_C_LOD1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_C_LOD1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_C_LOD2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_C_LOD2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_C_cross_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_C_cross_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_C_cross_s_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/00_Poplar_plant_C_cross_s_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/01_Poplar.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/01_Poplar.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/01_Poplar_LOD0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/01_Poplar_LOD0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/01_Poplar_LOD1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/01_Poplar_LOD1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/01_Poplar_LOD2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/01_Poplar_LOD2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/01_Poplar_cross_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/01_Poplar_cross_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/01_Poplar_cross_s_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/01_Poplar_cross_s_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/02_Poplar.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/02_Poplar.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/02_Poplar_LOD0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/02_Poplar_LOD0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/02_Poplar_LOD1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/02_Poplar_LOD1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/02_Poplar_LOD2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/02_Poplar_LOD2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/02_Poplar_cross_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/02_Poplar_cross_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/02_Poplar_cross_s_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/02_Poplar_cross_s_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_LOD0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_LOD0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_LOD1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_LOD1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_LOD2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_LOD2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_LOD3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_LOD3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_cross_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_cross_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_cross_s_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_cross_s_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_skan.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/03_Poplar_skan.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_LOD0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_LOD0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_LOD1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_LOD1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_LOD2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_LOD2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_LOD3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_LOD3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_cross_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_cross_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_cross_s_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_cross_s_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_skan.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/04_Poplar_skan.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_LOD0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_LOD0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_LOD1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_LOD1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_LOD2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_LOD2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_LOD3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_LOD3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_cross_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_cross_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_cross_s_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_cross_s_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_skan.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/05_Poplar_skan.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_LOD0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_LOD0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_LOD1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_LOD1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_LOD2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_LOD2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_LOD3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_LOD3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_cross_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_cross_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_cross_s_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_cross_s_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_skan.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/06_Poplar_skan.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_LOD0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_LOD0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_LOD1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_LOD1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_LOD2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_LOD2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_LOD3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_LOD3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_cross_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_cross_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_cross_s_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_cross_s_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_skan.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/07_Poplar_skan.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_LOD0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_LOD0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_LOD1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_LOD1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_LOD2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_LOD2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_LOD3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_LOD3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_cross_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_cross_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_cross_s_Mesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_cross_s_Mesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_skan.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/08_Poplar_skan.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_00_Poplar_plant_A_Cross.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_00_Poplar_plant_A_Cross.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_00_Poplar_plant_B_Cross.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_00_Poplar_plant_B_Cross.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_00_Poplar_plant_C_Cross.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_00_Poplar_plant_C_Cross.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_01_Poplar_Cross.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_01_Poplar_Cross.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_02_Poplar_Cross.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_02_Poplar_Cross.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_03_Poplar_Cross.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_03_Poplar_Cross.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_04_Poplar_Cross.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_04_Poplar_Cross.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_05_Poplar_Cross.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_05_Poplar_Cross.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_06_Poplar_Cross.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_06_Poplar_Cross.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_07_Poplar_Cross.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_07_Poplar_Cross.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_08_Poplar_Cross.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_08_Poplar_Cross.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_Poplar_leaves.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_Poplar_leaves.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_branch_poplar_05.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_branch_poplar_05.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_branch_poplar_06.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_branch_poplar_06.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_trunk_poplar.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/M_trunk_poplar.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/Trunk_03.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/Trunk_03.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/Trunk_04.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/Trunk_04.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/Trunk_05.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/Trunk_05.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/Trunk_06.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/Trunk_06.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/Trunk_07.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/Trunk_07.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/Trunk_08.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Materials/Trunk_08.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_A_Cross_A_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_A_Cross_A_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_A_Cross_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_A_Cross_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_A_Cross_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_A_Cross_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_A_Cross_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_A_Cross_m.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_B_Cross_A_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_B_Cross_A_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_B_Cross_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_B_Cross_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_B_Cross_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_B_Cross_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_B_Cross_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_B_Cross_m.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_C_Cross_A_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_C_Cross_A_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_C_Cross_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_C_Cross_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_C_Cross_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_C_Cross_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_C_Cross_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_00_C_Cross_m.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_01_Cross_A_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_01_Cross_A_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_01_Cross_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_01_Cross_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_01_Cross_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_01_Cross_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_01_Cross_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_01_Cross_m.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_02_Cross_A_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_02_Cross_A_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_02_Cross_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_02_Cross_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_02_Cross_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_02_Cross_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_02_Cross_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_02_Cross_m.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_03_Cross_A_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_03_Cross_A_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_03_Cross_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_03_Cross_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_03_Cross_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_03_Cross_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_03_Cross_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_03_Cross_m.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_04_Cross_A_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_04_Cross_A_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_04_Cross_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_04_Cross_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_04_Cross_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_04_Cross_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_04_Cross_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_04_Cross_m.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_05_Cross_A_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_05_Cross_A_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_05_Cross_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_05_Cross_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_05_Cross_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_05_Cross_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_05_Cross_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_05_Cross_m.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_06_Cross_A_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_06_Cross_A_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_06_Cross_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_06_Cross_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_06_Cross_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_06_Cross_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_06_Cross_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_06_Cross_m.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_07_Cross_A_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_07_Cross_A_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_07_Cross_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_07_Cross_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_07_Cross_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_07_Cross_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_07_Cross_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_07_Cross_m.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_08_Cross_A_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_08_Cross_A_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_08_Cross_N.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_08_Cross_N.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_08_Cross_T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_08_Cross_T.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_08_Cross_m.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_08_Cross_m.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_01_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_01_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_01_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_01_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_01_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_01_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_02_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_02_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_02_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_02_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_02_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_02_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_03_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_03_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_03_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_03_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_03_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_03_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_04_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_04_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_04_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_04_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_04_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_04_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_05_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_05_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_05_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_05_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_05_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_05_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_06_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_06_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_06_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_06_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_06_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_bark_06_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_leaves_BC 1.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_leaves_BC 1.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_leaves_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_leaves_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_leaves_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_leaves_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_leaves_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_leaves_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_03_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_03_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_03_MASKA.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_03_MASKA.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_03_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_03_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_03_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_03_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_04_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_04_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_04_MASKA.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_04_MASKA.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_04_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_04_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_04_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_04_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_05_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_05_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_05_MASKA.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_05_MASKA.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_05_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_05_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_05_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_05_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_06_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_06_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_06_MASKA.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_06_MASKA.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_06_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_06_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_06_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_06_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_07_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_07_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_07_MASKA.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_07_MASKA.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_07_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_07_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_07_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_07_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_08_BC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_08_BC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_08_MASKA.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_08_MASKA.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_08_MT_AO_G.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_08_MT_AO_G.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_08_N.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_08_N.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_08_RGB_MASKA.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NatureManufacture Assets/Trees/Models/Textures/T_Poplar_trunk_08_RGB_MASKA.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NuGet.config.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NuGet.config.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NuGet/Editor/NuGetForUnity.PluginAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NuGet/Editor/NuGetForUnity.PluginAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NuGet/Editor/NugetForUnity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NuGet/Editor/NugetForUnity.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Azure.Core.1.44.1/azureicon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/Azure.Core.1.44.1/azureicon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Azure.Core.1.44.1/lib/netstandard2.0/Azure.Core.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/Azure.Core.1.44.1/lib/netstandard2.0/Azure.Core.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.6.0.0/Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.6.0.0/Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.6.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.6.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/.signature.p7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/LICENSE.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/Microsoft.CognitiveServices.Speech.nuspec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/Microsoft.CognitiveServices.Speech.nuspec.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/lib.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/lib/netstandard2.0.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/android-arm64.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/android-arm64/native.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.core.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.core.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.audio.sys.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.audio.sys.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.lu.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.lu.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/ios-arm64.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/ios-arm64/native.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/ios-arm64/native/libMicrosoft.CognitiveServices.Speech.core.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/ios-arm64/native/libMicrosoft.CognitiveServices.Speech.core.a.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.core.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.core.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.audio.sys.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.audio.sys.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.codec.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.codec.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.lu.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.lu.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libpal_azure_c_shared.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libpal_azure_c_shared.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libpal_azure_c_shared_openssl3.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/linux-x64/native/libpal_azure_c_shared_openssl3.so.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/osx-arm64.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/osx-arm64/native.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/osx-arm64/native/libMicrosoft.CognitiveServices.Speech.core.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/osx-arm64/native/libMicrosoft.CognitiveServices.Speech.core.dylib.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/osx-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/osx-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.dylib.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/osx-x64.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/osx-x64/native.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/osx-x64/native/libMicrosoft.CognitiveServices.Speech.core.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/osx-x64/native/libMicrosoft.CognitiveServices.Speech.core.dylib.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/osx-x64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.dylib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/osx-x64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.dylib.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.core.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.audio.sys.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.audio.sys.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.codec.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.codec.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.kws.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.kws.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.kws.ort.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.kws.ort.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.lu.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.lu.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.core.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.audio.sys.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.audio.sys.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.codec.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.codec.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.kws.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.kws.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.kws.ort.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.kws.ort.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.lu.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.CognitiveServices.Speech.1.43.0/runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.lu.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.ClientModel.1.1.0/DotNetPackageIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.ClientModel.1.1.0/DotNetPackageIcon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.ClientModel.1.1.0/lib/netstandard2.0/System.ClientModel.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.ClientModel.1.1.0/lib/netstandard2.0/System.ClientModel.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Diagnostics.DiagnosticSource.6.0.1/Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Diagnostics.DiagnosticSource.6.0.1/Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Diagnostics.DiagnosticSource.6.0.1/lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Diagnostics.DiagnosticSource.6.0.1/lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Memory.Data.6.0.0/Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Memory.Data.6.0.0/Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Memory.Data.6.0.0/lib/netstandard2.0/System.Memory.Data.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Memory.Data.6.0.0/lib/netstandard2.0/System.Memory.Data.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Encodings.Web.6.0.0/Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Encodings.Web.6.0.0/Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Encodings.Web.6.0.0/lib/netstandard2.0/System.Text.Encodings.Web.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Encodings.Web.6.0.0/lib/netstandard2.0/System.Text.Encodings.Web.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/System.Text.Json.SourceGeneration.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/System.Text.Json.SourceGeneration.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/cs/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/cs/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/de/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/de/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/es/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/es/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/fr/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/fr/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/it/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/it/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/ja/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/ja/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/ko/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/ko/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/pl/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/pl/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/ru/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/ru/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/tr/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/tr/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn3.11/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/cs/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/cs/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/de/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/de/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/es/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/es/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/fr/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/fr/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/it/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/it/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/ja/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/ja/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/ko/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/ko/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/pl/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/pl/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/pt-BR/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/ru/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/ru/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/tr/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/tr/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/zh-Hans/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/analyzers/dotnet/roslyn4.0/cs/zh-Hant/System.Text.Json.SourceGeneration.resources.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/lib/netstandard2.0/System.Text.Json.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Text.Json.6.0.10/lib/netstandard2.0/System.Text.Json.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SciFi_Conference Room/FBX/Materials/Screen.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SciFi_Conference Room/FBX/Materials/Screen.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_Renderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Anton OFL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Anton OFL.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Bangers - OFL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Bangers - OFL.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Oswald-Bold - OFL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Oswald-Bold - OFL.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scenes/12 - Link Example.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scenes/12 - Link Example.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scenes/12a - Text Interactions.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scenes/12a - Text Interactions.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark04.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark04.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_FrameRateCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_FrameRateCounter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_B.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_B.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_UiFrameRateCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_UiFrameRateCounter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TeleType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TeleType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshProFloatingText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshProFloatingText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexZoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexZoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/XRGeneralSettingsPerBuildTarget.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/XRGeneralSettingsPerBuildTarget.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/02_Scripts/LipSyncBlendmap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AutoHand/Scripts/Editor/HandColliderEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02_Scripts/AzureStreamSender.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02_Scripts/AvatarLookAt.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02_Scripts/IncrementalSummarizer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02_Scripts/LLMClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02_Scripts/MicCapturer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.9/Scripts/Editor/TMP_EditorUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02_Scripts/CaptionDisplay.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02_Scripts/SpeechRecognizer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/02_Scripts/ExperimentManager.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2wU7sYPBoA1SAykoKg59dAuAG3T" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ecd6904-4017-441b-85ae-1659e9e1ef16" name="Changes" comment="" />
+      <created>1746084508586</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746084508586</updated>
+      <workItem from="1746084547197" duration="9978000" />
+      <workItem from="1746340339336" duration="2000000" />
+      <workItem from="1746682284418" duration="13541000" />
+      <workItem from="1747355437899" duration="46686000" />
+      <workItem from="1747551367051" duration="3276000" />
+      <workItem from="1747716251656" duration="6381000" />
+      <workItem from="1747736791114" duration="5639000" />
+      <workItem from="1748169250360" duration="1235000" />
+      <workItem from="1748231002585" duration="794000" />
+      <workItem from="1748233592091" duration="2227000" />
+      <workItem from="1748236396129" duration="1510000" />
+      <workItem from="1748239295708" duration="256000" />
+      <workItem from="1748239865155" duration="1792000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

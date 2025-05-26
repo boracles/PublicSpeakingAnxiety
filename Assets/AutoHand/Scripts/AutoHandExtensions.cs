@@ -9,7 +9,11 @@ namespace Autohand
 {
     public static class AutoHandExtensions
     {
-        
+        public static float linearDamping(this Rigidbody rb) => rb.drag;
+        public static float angularDamping(this Rigidbody rb) => rb.angularDrag;
+        public static Vector3 linearVelocity(this Rigidbody rb) => rb.velocity;
+        public static Vector3 angularVelocity(this Rigidbody rb) => rb.angularVelocity;
+
         static Transform _transformRuler = null;
         //This is a "ruler" tool used to help calculate parent child calculations without doing parenting/childing
         public static Transform transformRuler

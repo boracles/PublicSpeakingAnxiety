@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class HandColliderEditor : EditorWindow {
     private GameObject selectedHand;
-    private PhysicsMaterial replacementMaterial;
+    private PhysicMaterial replacementMaterial;
 
     [MenuItem("/Window/Autohand/Hand Collider Editor")]
     public static void ShowWindow() => GetWindow<HandColliderEditor>("Hand Collider Editor");

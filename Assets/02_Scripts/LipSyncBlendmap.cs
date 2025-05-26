@@ -1,5 +1,4 @@
 using UnityEngine;
-using OVR;
 
 [RequireComponent(typeof(OVRLipSyncContext))]
 public class LipSyncBlendMap : MonoBehaviour
@@ -30,6 +29,9 @@ public class LipSyncBlendMap : MonoBehaviour
         var frame = ctx.GetCurrentPhonemeFrame();
         foreach (var m in maps)
         {
+            if (m.visemeSlot < 0 || m.visemeSlot >= frame.Visemes.Length)
+                continue; // 🔒 잘못된 슬롯은 무시
+
             float w = frame.Visemes[m.visemeSlot] * 100f * m.weightMultiplier;
             foreach (int idx in m.blendShapeIndex)
                 faceMesh.SetBlendShapeWeight(idx, w);

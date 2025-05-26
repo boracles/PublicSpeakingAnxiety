@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 public class SpeechRecognizer : MonoBehaviour
 {
     [Header("Azure Credentials")]
-    public string azureKey    = "2SBzXTEuTeWmlQIJWRw3YzCxY3uFJPpERzJPzaj4ZngPzFzeh7L5JQQJ99BEACNns7RXJ3w3AAAAACOGWzMb";
+    public string azureKey = "2SBzXTEuTeWmlQIJWRw3YzCxY3uFJPpERzJPzaj4ZngPzFzeh7L5JQQJ99BEACNns7RXJ3w3AAAAACOGWzMb";
     public string azureRegion = "koreacentral";
 
-    MicCapturer      mic;
+    MicCapturer mic;
     AzureStreamSender sender;
 
     public event Action<string, bool> OnText;   // (text, isFinal)
@@ -18,21 +18,35 @@ public class SpeechRecognizer : MonoBehaviour
 
     void Start()
     {
-        sender = new AzureStreamSender();
-        sender.Begin(azureKey, azureRegion);
-
-        sender.OnResult += (txt, t, fin) =>
-        {
-            if (fin) lastLatency = t;
-            OnText?.Invoke(txt, fin);
-        };
-        mic.OnSegment += sender.Send;
+        StartCoroutine(InitWhenMicReady());
     }
 
-    /* 안전하게 인식 종료 후 파괴 */
+    System.Collections.IEnumerator InitWhenMicReady()
+    {
+        yield return new WaitUntil(() => mic != null && mic.IsReady);
+        _ = Init();  // async Task fire-and-forget 호출
+    }
+
+    async Task Init()
+    {
+        try
+        {
+            sender = new AzureStreamSender();
+            sender.Begin(azureKey, azureRegion);  // 비동기 작업이면 await 필요
+            mic.OnSegment += sender.Send;
+        }
+        catch (Exception e)
+        {
+            UnityEngine.Debug.LogError($"SpeechRecognizer Init failed: {e.Message}");
+        }
+    }
+
     async void OnDestroy()
     {
-        mic.OnSegment -= sender.Send;
-        await sender.EndAsync();   // ⏹️ 완료 대기
+        if (sender != null)
+        {
+            mic.OnSegment -= sender.Send;
+            await sender.EndAsync();
+        }
     }
 }
