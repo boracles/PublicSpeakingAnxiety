@@ -167,18 +167,17 @@ public class QAController : MonoBehaviour {
          else if (currentMode == FeedbackMode.Spatial)
     	{
         	barLight.PulseLoop();          // 빛 루프 시작
-
         	fxSource.clip = spatialSfx;
         	fxSource.loop = false;         // ★ 루프 OFF – 한 번만 재생
         	fxSource.Play();
+
+ 			firstDelayDone = true; 
     	}
     }
 
     IEnumerator PlayDelay(bool  withFillerRequest)
     {
         bool useFiller = withFillerRequest || (!firstDelayDone && currentMode == FeedbackMode.Spatial); // Spatial 모드라면
-
-        firstDelayDone = true;    
         
         bool loopRunning = barLight.IsLooping;
 
@@ -215,8 +214,6 @@ public class QAController : MonoBehaviour {
     }
 
 
-
-    /* ───────── A 버튼이 눌릴 때까지 (타임아웃 없음) ───────── */
     IEnumerator WaitForAnswerButton()
     {
         answerDone     = false;      // 플래그 초기화
@@ -236,7 +233,7 @@ public class QAController : MonoBehaviour {
 	}
     
     public void ResetSummarizer()
-        { 
-            if (summarizer) summarizer.ResetContext();
-        }
+    { 
+		if (summarizer) summarizer.ResetContext();
+    }
 }

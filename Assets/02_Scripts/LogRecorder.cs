@@ -158,9 +158,23 @@ public class LogRecorder : MonoBehaviour
         audW.WriteLine($"{t:F3},{conditionId},{dB:F1},{wpm:F1},");
     }
 
-    /* =========================================================
-     *  메인 Update 루프
-     * =======================================================*/
+    // LogRecorder.cs
+// ─────────────────────────────────────────────────────────────
+    public void LogSurveyAnswer(int qIndex, string qText, string answer)
+    {
+        if (!writersReady) return;
+
+        // 문장 안에 쉼표가 있으면 세미콜론으로 치환
+        qText   = qText.Replace(',', ';');
+        answer  = answer.Replace(',', ';');
+
+        behW.WriteLine(
+            $"{Time.realtimeSinceStartup:F3}," +
+            $"{conditionId}," +
+            $"SURVEY_Q{qIndex}," +           // 태그
+            $"{qText}|{answer}");            // note 칸 : 질문|응답
+    }
+
     void Update()
     {
         if (!writersReady) return;

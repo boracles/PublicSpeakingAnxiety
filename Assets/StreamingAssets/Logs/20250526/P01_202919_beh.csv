@@ -1,0 +1,12 @@
+t,cond,tag,note
+7.698,10,SessionStart,
+7.698,1,COND_START,Spatial
+89.839,1,SURVEY_Q1,I felt that the avatar listened to me 
+like a real person 
+and asked appropriate questions.|3
+90.492,1,SURVEY_Q2,I felt that the system would generate appropriate questions 
+about my presentation without errors.|5
+91.550,1,SURVEY_Q3,Which cue did you notice during the pause?|Social Presence
+93.752,1,COND_END,Spatial
+93.752,0,COND_START,Gesture
+147.506,0,SessionEnd,
