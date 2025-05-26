@@ -202,14 +202,14 @@ public class QAController : MonoBehaviour {
         }
         else if (useFiller && currentMode == FeedbackMode.Gesture)
         {
-            tts.PlayCached("음…");
+            tts.PlayCached("아…");
             avatarGesture.SetTrigger(nextThinkingA ? "Listening1" : "Listening2");
         	nextThinkingA = !nextThinkingA;
             yield return new WaitForSeconds(0.12f);
         }
 
         /* ---------- 고정 지연 ---------- */
-        float sec = DelayManager.I ? DelayManager.I.CalcDelayFixed() : 1.5f;
+        float sec = DelayManager.I ? DelayManager.I.CalcDelayFixed() : 3.2f;
         yield return new WaitForSeconds(sec);
 
         /* ---------- 루프 정지 ---------- */
