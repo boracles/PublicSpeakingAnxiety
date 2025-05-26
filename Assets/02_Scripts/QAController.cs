@@ -27,7 +27,8 @@ public class QAController : MonoBehaviour {
 
     public System.Action OnIntroButton;
     bool firstDelayDone = false; 
-    
+    bool nextThinkingA = true;  
+
     const string QuestionSys =
         "You are a helpful assistant.\nReturn ONLY this schema: { \"questions\": [string, string] }";
 
@@ -159,7 +160,8 @@ public class QAController : MonoBehaviour {
         if (currentMode == FeedbackMode.Gesture)
         {
             tts.PlayCached("음…");
-            avatarGesture.SetTrigger("Listening");
+             avatarGesture.SetTrigger(nextThinkingA ? "Listening1" : "Listening2");
+        nextThinkingA = !nextThinkingA;
             yield return new WaitForSeconds(0.12f);
         }
         else if (currentMode == FeedbackMode.Spatial)
@@ -201,7 +203,8 @@ public class QAController : MonoBehaviour {
         else if (useFiller && currentMode == FeedbackMode.Gesture)
         {
             tts.PlayCached("음…");
-            avatarGesture.SetTrigger("Listening");
+            avatarGesture.SetTrigger(nextThinkingA ? "Listening1" : "Listening2");
+        	nextThinkingA = !nextThinkingA;
             yield return new WaitForSeconds(0.12f);
         }
 

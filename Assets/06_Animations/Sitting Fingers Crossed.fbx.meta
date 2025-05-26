@@ -22,9 +22,9 @@ ModelImporter:
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'MorroMan_Spine3' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n"
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'MorroMan_Spine3' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -890,10 +890,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 182581
-  packageName: Sitting MoCap 01
-  packageVersion: 1.03
-  assetPath: Assets/Sitting_MoCap_01/Animations/Sitting Fingers Crossed.fbx
-  uploadId: 433074

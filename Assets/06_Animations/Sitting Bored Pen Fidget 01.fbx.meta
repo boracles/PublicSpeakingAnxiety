@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: e5b5aa37387e2124d844155ee8de655a
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'MorroMan_Chest' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 1
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      internalID: 1827226128182048838
+      firstFrame: 0
+      lastFrame: 823
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 0
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: MorroMan_Root
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Femur
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Femur
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Knee
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Knee
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Ankle
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Ankle
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_Spine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_Spine2
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Clav
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Clav
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Shoulder
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Shoulder
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Elbow
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Elbow
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Wrist
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Wrist
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Toe
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Toe
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Thumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Thumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Thumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Index1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Index2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Index3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Middle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Middle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Middle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Ring1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Ring2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Ring3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Pinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Pinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_L_Pinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Thumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Thumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Thumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Index1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Index2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Index3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Middle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Middle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Middle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Ring1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Ring2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Ring3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Pinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Pinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_R_Pinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: MorroMan_Spine3
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Sitting Bored Pen Fidget 01(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_Root
+      parentName: Sitting Bored Pen Fidget 01(Clone)
+      position: {x: -0.000000095367426, y: 1.4484296, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Femur
+      parentName: MorroMan_Root
+      position: {x: -0.1438668, y: -0.0294132, z: 0.011550473}
+      rotation: {x: -0.006541877, y: 0.005400556, z: 0.7105812, w: 0.7035641}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Knee
+      parentName: MorroMan_L_Femur
+      position: {x: -0.660774, y: 3.5527136e-17, z: -4.440892e-18}
+      rotation: {x: -0.00080962665, y: -0.017479166, z: -0.01030544, w: 0.99979377}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Ankle
+      parentName: MorroMan_L_Knee
+      position: {x: -0.6167538, y: -3.1974422e-16, z: 4.352074e-16}
+      rotation: {x: -0.06700354, y: 0.44936305, z: -0.026427431, w: 0.8904409}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Toe
+      parentName: MorroMan_L_Ankle
+      position: {x: -0.21883483, y: 1.0658141e-16, z: -3.7303492e-16}
+      rotation: {x: 0.020514278, y: 0.2353205, z: 0.04649547, w: 0.9705883}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_ToeEnd
+      parentName: MorroMan_L_Toe
+      position: {x: -0.095108, y: -3.5527136e-17, z: -1.3322676e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_Spine1
+      parentName: MorroMan_Root
+      position: {x: -0, y: 0.15239464, z: -0.04372272}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_Spine2
+      parentName: MorroMan_Spine1
+      position: {x: -0, y: 0.16812763, z: 0.009676281}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_Spine3
+      parentName: MorroMan_Spine2
+      position: {x: -0, y: 0.16627137, z: -0.018589001}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_Chest
+      parentName: MorroMan_Spine3
+      position: {x: -0, y: 0.17134641, z: -0.014569791}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Clav
+      parentName: MorroMan_Chest
+      position: {x: -0.077930905, y: 0.058622632, z: 0.015197415}
+      rotation: {x: 0.006554745, y: -0.05139293, z: -0.12634699, w: 0.9906323}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Shoulder
+      parentName: MorroMan_L_Clav
+      position: {x: -0.22752054, y: 2.842171e-16, z: 0}
+      rotation: {x: -0.008367018, y: 0.0826445, z: 0.15258873, w: 0.98479265}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Elbow
+      parentName: MorroMan_L_Shoulder
+      position: {x: -0.35632044, y: 0, z: -5.3290704e-17}
+      rotation: {x: 0.000058870013, y: 0.0035105906, z: -0.0063588894, w: 0.99997365}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Wrist
+      parentName: MorroMan_L_Elbow
+      position: {x: -0.42576444, y: -1.4210854e-15, z: -7.105427e-16}
+      rotation: {x: -0.0028021007, y: -0.056345314, z: 0.009115027, w: 0.9983658}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Hand
+      parentName: MorroMan_L_Wrist
+      position: {x: -0.07778704, y: -2.842171e-16, z: 3.0531134e-17}
+      rotation: {x: -0.04018999, y: -0.34993285, z: 0.043894988, w: 0.93488234}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Pinky1
+      parentName: MorroMan_L_Hand
+      position: {x: -0.07234238, y: 1.1368684e-15, z: 4.2632563e-16}
+      rotation: {x: 0.022662831, y: 0.31620908, z: 0.0037754893, w: 0.9484113}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Pinky2
+      parentName: MorroMan_L_Pinky1
+      position: {x: -0.05090928, y: -5.684342e-16, z: -7.105427e-17}
+      rotation: {x: 0.013578444, y: 0.031111106, z: 0.029576033, w: 0.998986}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Pinky3
+      parentName: MorroMan_L_Pinky2
+      position: {x: -0.03095443, y: 0, z: 0}
+      rotation: {x: -0.003838472, y: -0.0029144057, z: 0.039098457, w: 0.99922377}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Pinky4
+      parentName: MorroMan_L_Pinky3
+      position: {x: -0.016831188, y: 5.684342e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Ring1
+      parentName: MorroMan_L_Hand
+      position: {x: -0.06815167, y: 0.006728192, z: 0.027543537}
+      rotation: {x: 0.04279497, y: 0.32369602, z: 0.008136691, w: 0.9451579}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Ring2
+      parentName: MorroMan_L_Ring1
+      position: {x: -0.0629188, y: 0, z: 2.1316282e-16}
+      rotation: {x: 0.012086386, y: 0.018974742, z: 0.03569406, w: 0.9991095}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Ring3
+      parentName: MorroMan_L_Ring2
+      position: {x: -0.047885012, y: -5.684342e-16, z: -2.6645352e-17}
+      rotation: {x: 0.004259271, y: 0.0016393004, z: 0.036391616, w: 0.9993272}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Ring4
+      parentName: MorroMan_L_Ring3
+      position: {x: -0.030313313, y: 5.684342e-16, z: -8.881784e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Index1
+      parentName: MorroMan_L_Hand
+      position: {x: -0.02421272, y: -0.0041965544, z: 0.06695042}
+      rotation: {x: 0.073800035, y: 0.3850942, z: 0.0075460486, w: 0.91989076}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Index2
+      parentName: MorroMan_L_Index1
+      position: {x: -0.06303123, y: -8.5265126e-16, z: -7.105427e-17}
+      rotation: {x: 0.0023287013, y: 0.0028260348, z: 0.039730653, w: 0.9992037}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Index3
+      parentName: MorroMan_L_Index2
+      position: {x: -0.048911445, y: 2.842171e-16, z: 1.7763568e-17}
+      rotation: {x: 0.0054821423, y: 0.00710111, z: 0.040345207, w: 0.99914557}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Index4
+      parentName: MorroMan_L_Index3
+      position: {x: -0.021772908, y: 0, z: -3.5527136e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Thumb1
+      parentName: MorroMan_L_Hand
+      position: {x: 0.03313103, y: -0.027113697, z: 0.015358082}
+      rotation: {x: 0.070256695, y: 0.6634788, z: 0.028647454, w: 0.7443381}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Thumb2
+      parentName: MorroMan_L_Thumb1
+      position: {x: -0.048951764, y: -5.684342e-16, z: -7.105427e-17}
+      rotation: {x: -0.0032779048, y: -0.005173003, z: -0.036692113, w: 0.9993079}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Thumb3
+      parentName: MorroMan_L_Thumb2
+      position: {x: -0.05268797, y: 2.842171e-16, z: -1.4210854e-16}
+      rotation: {x: -0.11386859, y: -0.034058735, z: 0.003512383, w: 0.9929057}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Thumb4
+      parentName: MorroMan_L_Thumb3
+      position: {x: -0.030905923, y: 5.684342e-16, z: 1.3877788e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Middle1
+      parentName: MorroMan_L_Hand
+      position: {x: -0.050279763, y: 0.008285484, z: 0.05049403}
+      rotation: {x: 0.0659197, y: 0.36339456, z: 0.013280845, w: 0.9292054}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Middle2
+      parentName: MorroMan_L_Middle1
+      position: {x: -0.06896247, y: 2.842171e-16, z: 1.5987211e-16}
+      rotation: {x: 0.0002087466, y: 0.00041922918, z: 0.041399438, w: 0.99914265}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Middle3
+      parentName: MorroMan_L_Middle2
+      position: {x: -0.051466033, y: -8.5265126e-16, z: -8.881784e-18}
+      rotation: {x: 0.018002305, y: 0.015176827, z: 0.036775704, w: 0.99904615}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_L_Middle4
+      parentName: MorroMan_L_Middle3
+      position: {x: -0.028179266, y: 5.684342e-16, z: 1.7763568e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_Neck
+      parentName: MorroMan_Chest
+      position: {x: -2.3564406e-20, y: 0.18934174, z: 0.003082217}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_Head
+      parentName: MorroMan_Neck
+      position: {x: 0.00006652006, y: 0.13617504, z: 0.051892955}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Clav
+      parentName: MorroMan_Chest
+      position: {x: 0.0779309, y: 0.058618188, z: 0.015197443}
+      rotation: {x: -0.1263514, y: 0.9906317, z: 0.006555002, w: -0.051392864}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Shoulder
+      parentName: MorroMan_R_Clav
+      position: {x: -0.22752158, y: 5.684342e-16, z: -8.881784e-18}
+      rotation: {x: 0.008742191, y: -0.081087, z: 0.14662641, w: 0.98582417}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Elbow
+      parentName: MorroMan_R_Shoulder
+      position: {x: -0.35632026, y: -5.684342e-16, z: 5.3290704e-17}
+      rotation: {x: -0.0000601225, y: -0.0035922183, z: -0.0063576996, w: 0.99997336}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Wrist
+      parentName: MorroMan_R_Elbow
+      position: {x: -0.42576167, y: 5.684342e-16, z: 3.5527136e-17}
+      rotation: {x: 0.001971286, y: 0.047182348, z: 0.02418179, w: 0.9985916}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Hand
+      parentName: MorroMan_R_Wrist
+      position: {x: -0.07779083, y: -5.684342e-16, z: 3.4972025e-17}
+      rotation: {x: 0.040170398, y: 0.34992534, z: 0.043864854, w: 0.9348874}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Pinky1
+      parentName: MorroMan_R_Hand
+      position: {x: -0.07234309, y: 5.684342e-16, z: 1.4210854e-16}
+      rotation: {x: -0.022628887, y: -0.31621605, z: 0.0038051389, w: 0.9484097}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Pinky2
+      parentName: MorroMan_R_Pinky1
+      position: {x: -0.050905287, y: 0, z: 7.105427e-17}
+      rotation: {x: -0.013581126, y: -0.031117862, z: 0.029422581, w: 0.9989903}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Pinky3
+      parentName: MorroMan_R_Pinky2
+      position: {x: -0.030950341, y: 0, z: -3.5527136e-17}
+      rotation: {x: 0.003798232, y: 0.0028839016, z: 0.03909383, w: 0.9992242}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Pinky4
+      parentName: MorroMan_R_Pinky3
+      position: {x: -0.016837165, y: 5.684342e-16, z: 1.0658141e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Ring1
+      parentName: MorroMan_R_Hand
+      position: {x: -0.06815446, y: 0.006724954, z: -0.02754389}
+      rotation: {x: -0.042772967, y: -0.3236898, z: 0.008154222, w: 0.94516075}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Ring2
+      parentName: MorroMan_R_Ring1
+      position: {x: -0.06291588, y: -2.842171e-16, z: -3.5527136e-17}
+      rotation: {x: -0.012088753, y: -0.01895681, z: 0.03569959, w: 0.9991096}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Ring3
+      parentName: MorroMan_R_Ring2
+      position: {x: -0.047888536, y: 0, z: -5.3290704e-17}
+      rotation: {x: -0.004260132, y: -0.0016416181, z: 0.03638951, w: 0.9993273}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Ring4
+      parentName: MorroMan_R_Ring3
+      position: {x: -0.030312303, y: -5.684342e-16, z: 2.6645352e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Index1
+      parentName: MorroMan_R_Hand
+      position: {x: -0.024214115, y: -0.00419841, z: -0.06695018}
+      rotation: {x: -0.073771685, y: -0.38508952, z: 0.0075629586, w: 0.9198948}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Index2
+      parentName: MorroMan_R_Index1
+      position: {x: -0.06302794, y: 0, z: 1.2434498e-16}
+      rotation: {x: -0.0023264214, y: -0.0028226078, z: 0.039730307, w: 0.9992038}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Index3
+      parentName: MorroMan_R_Index2
+      position: {x: -0.048914067, y: -2.842171e-16, z: 0}
+      rotation: {x: -0.0054904954, y: -0.007099434, z: 0.04034523, w: 0.99914557}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Index4
+      parentName: MorroMan_R_Index3
+      position: {x: -0.021771476, y: -5.684342e-16, z: -3.5527136e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Thumb1
+      parentName: MorroMan_R_Hand
+      position: {x: 0.03313273, y: -0.02710869, z: -0.015359517}
+      rotation: {x: -0.0700681, y: -0.66353136, z: 0.02846314, w: 0.74431616}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Thumb2
+      parentName: MorroMan_R_Thumb1
+      position: {x: -0.0489494, y: 0, z: 2.1316282e-16}
+      rotation: {x: 0.0032846413, y: 0.0051834546, z: -0.036688592, w: 0.99930793}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Thumb3
+      parentName: MorroMan_R_Thumb2
+      position: {x: -0.052688137, y: -2.842171e-16, z: 7.105427e-17}
+      rotation: {x: 0.11388374, y: 0.0340607, z: 0.0035230666, w: 0.99290377}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Thumb4
+      parentName: MorroMan_R_Thumb3
+      position: {x: -0.030905299, y: -2.842171e-16, z: -4.2188474e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Middle1
+      parentName: MorroMan_R_Hand
+      position: {x: -0.05027961, y: 0.008286544, z: -0.050491903}
+      rotation: {x: -0.06589359, y: -0.36338863, z: 0.013298045, w: 0.9292093}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Middle2
+      parentName: MorroMan_R_Middle1
+      position: {x: -0.06896173, y: -2.842171e-16, z: -1.7763568e-17}
+      rotation: {x: -0.00020845603, y: -0.00041854373, z: 0.041399416, w: 0.99914265}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Middle3
+      parentName: MorroMan_R_Middle2
+      position: {x: -0.051470432, y: 2.842171e-16, z: 1.7763568e-17}
+      rotation: {x: -0.018000126, y: -0.015189107, z: 0.03676554, w: 0.9990464}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Middle4
+      parentName: MorroMan_R_Middle3
+      position: {x: -0.028179973, y: -2.842171e-16, z: -1.7763568e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Femur
+      parentName: MorroMan_Root
+      position: {x: 0.143867, y: -0.02941173, z: 0.011550508}
+      rotation: {x: -0.005404565, y: 0.0065461607, z: 0.7035641, w: 0.7105811}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Knee
+      parentName: MorroMan_R_Femur
+      position: {x: -0.66077584, y: 1.4210854e-16, z: 0}
+      rotation: {x: 0.00080957805, y: -0.017489253, z: 0.0103055285, w: 0.9997936}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Ankle
+      parentName: MorroMan_R_Knee
+      position: {x: -0.6167537, y: -3.5527136e-17, z: -8.8817837e-17}
+      rotation: {x: 0.06700398, y: 0.44936684, z: 0.026427248, w: 0.8904389}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_Toe
+      parentName: MorroMan_R_Ankle
+      position: {x: -0.21883442, y: 1.0658141e-16, z: 1.7763567e-16}
+      rotation: {x: -0.02051333, y: 0.2353211, z: -0.046493437, w: 0.97058827}
+      scale: {x: 1, y: 1, z: 1}
+    - name: MorroMan_R_ToeEnd
+      parentName: MorroMan_R_Toe
+      position: {x: -0.09510878, y: -3.5527136e-17, z: -3.1086245e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
