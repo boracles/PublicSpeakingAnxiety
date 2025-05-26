@@ -9968,6 +9968,14 @@ PrefabInstance:
       propertyPath: useSmoothing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 978722647479649263, guid: f13bbbc9578242a44953eec81cfb27d4, type: 3}
+      propertyPath: useMovement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 978722647479649263, guid: f13bbbc9578242a44953eec81cfb27d4, type: 3}
+      propertyPath: allowClimbing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1575735658702523898, guid: f13bbbc9578242a44953eec81cfb27d4, type: 3}
       propertyPath: follow
       value: 
@@ -16035,6 +16043,14 @@ PrefabInstance:
     - target: {fileID: 3229984601889875230, guid: f13bbbc9578242a44953eec81cfb27d4, type: 3}
       propertyPath: aimerSmoothingSpeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395973213855612963, guid: f13bbbc9578242a44953eec81cfb27d4, type: 3}
+      propertyPath: moveAxis.m_Action.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395973213855612963, guid: f13bbbc9578242a44953eec81cfb27d4, type: 3}
+      propertyPath: turnAxis.m_Action.m_SingletonActionBindings.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3448467477898723317, guid: f13bbbc9578242a44953eec81cfb27d4, type: 3}
       propertyPath: poseData.Array.size
@@ -27948,9 +27964,6 @@ PrefabInstance:
       addedObject: {fileID: 1494842613}
     - targetCorrespondingSourceObject: {fileID: -1355597695489818144, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1494842614}
-    - targetCorrespondingSourceObject: {fileID: -1355597695489818144, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1494842616}
     - targetCorrespondingSourceObject: {fileID: -1355597695489818144, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       insertIndex: -1
@@ -28103,19 +28116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a9ab9bd307b52408482439332ccaa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1494842614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494842606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4300ee7de552cef4184c3ac764a7b824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ctx: {fileID: 1494842610}
 --- !u!114 &1494842616
 MonoBehaviour:
   m_ObjectHideFlags: 0

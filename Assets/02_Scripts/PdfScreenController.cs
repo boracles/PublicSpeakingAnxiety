@@ -4,26 +4,29 @@ using Paroxe.PdfRenderer;
 public class PdfScreenController : MonoBehaviour
 {
     [SerializeField] Renderer screenRenderer;
-    [SerializeField] int      pdfMatIndex = 1;          // 바꿀 머티리얼 슬롯
-    [SerializeField] int      texWidth    = 1024;
-    [SerializeField] int      texHeight   = 1024;
-    static readonly int BaseID = Shader.PropertyToID("_BaseMap");
-    static readonly int EmisID = Shader.PropertyToID("_EmissionMap"); // 발광
+    [SerializeField] int      pdfMatIndex = 1;
+    [SerializeField] int      texWidth = 1024;
+    [SerializeField] int      texHeight = 1024;
+    static readonly int BaseID    = Shader.PropertyToID("_BaseMap");
+    static readonly int EmisID    = Shader.PropertyToID("_EmissionMap");
     static readonly int EmisColID = Shader.PropertyToID("_EmissionColor");
-    Texture2D[] pageTex;         // [0]=p1 …
-    Material    targetMat;       // 머티리얼 자산 1개만 저장
+
+    Texture2D[] pageTex;
+    Material targetMat;
+    int currentPage = 0;
+    float inputCooldown = 0.5f;
+    float inputTimer = 0f;
 
     void Awake()
     {
-        /* ① PDF → Texture2D[3] 준비 (생략: 현재 쓰시는 코드와 동일) */
-        string pdfPath = System.IO.Path.Combine(
-            Application.streamingAssetsPath, "Presentation.pdf");
-
+        string pdfPath = System.IO.Path.Combine(Application.streamingAssetsPath, "Presentation.pdf");
         PDFDocument doc = new PDFDocument(pdfPath, null);
-        pageTex = new Texture2D[3];
+        int pageCount = Mathf.Min(doc.GetPageCount(), 10); // 최대 10페이지 제한 (필요시 조정)
+        pageTex = new Texture2D[pageCount];
+
         using (var renderer = new PDFRenderer())
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < pageCount; i++)
             {
                 var page = doc.GetPage(i);
                 pageTex[i] = renderer.RenderPageToTexture(page, texWidth, texHeight);
@@ -33,10 +36,50 @@ public class PdfScreenController : MonoBehaviour
         }
         doc.Dispose();
 
-        /* ② ‘공유’ 머티리얼 자산 레퍼런스를 보관 */
         targetMat = screenRenderer.sharedMaterials[pdfMatIndex];
+        ShowPage(currentPage);
+    }
 
-        ShowPage(0);             // 초기 텍스처
+    void Update()
+    {
+        float axis = Input.GetAxis("Oculus_CrossPlatform_SecondaryThumbstickHorizontal");
+        Debug.Log($"[PDF] Thumbstick axis value: {axis}");
+
+        inputTimer += Time.deltaTime;
+
+        if (inputTimer >= inputCooldown)
+        {
+            if (axis > 0.5f)
+            {
+                Debug.Log("[PDF] Next Page Triggered");
+                NextPage();
+                inputTimer = 0f;
+            }
+            else if (axis < -0.5f)
+            {
+                Debug.Log("[PDF] Previous Page Triggered");
+                PreviousPage();
+                inputTimer = 0f;
+            }
+        }
+    }
+
+    public void NextPage()
+    {
+        if (currentPage < pageTex.Length - 1)
+        {
+            currentPage++;
+            ShowPage(currentPage);
+        }
+    }
+
+    public void PreviousPage()
+    {
+        if (currentPage > 0)
+        {
+            currentPage--;
+            ShowPage(currentPage);
+        }
     }
 
     public void ShowPage(int idx)
@@ -44,13 +87,9 @@ public class PdfScreenController : MonoBehaviour
         if (pageTex == null || idx < 0 || idx >= pageTex.Length) return;
 
         Texture2D tex = pageTex[idx];
-
-        /* ① 알베도 교체 */
         targetMat.SetTexture(BaseID, tex);
-
-        /* ② Emission 교체 */
-        targetMat.EnableKeyword("_EMISSION");          // 발광 활성화
+        targetMat.EnableKeyword("_EMISSION");
         targetMat.SetTexture(EmisID, tex);
-        targetMat.SetColor  (EmisColID, Color.white);  // 밝기 1× (필요하면 조정)
+        targetMat.SetColor(EmisColID, Color.white);
     }
 }

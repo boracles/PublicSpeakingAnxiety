@@ -93,10 +93,6 @@ public class LipSyncBlendMap : MonoBehaviour
                 }
             }
         }
-
-#if UNITY_EDITOR
-    Debug.Log($"[Viseme 12] L={faceMesh.GetBlendShapeWeight(52):F2} / R={faceMesh.GetBlendShapeWeight(53):F2}");
-#endif
     }
 
 }
