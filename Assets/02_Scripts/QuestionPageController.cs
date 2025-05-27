@@ -13,11 +13,18 @@ public class QuestionPageController : MonoBehaviour
     [SerializeField] Color normalColor   = Color.gray;
     [SerializeField] Color selectedColor = Color.white;
 
-    int    currentIdx = -1;
-    string[] answers;          // 문자열로 저장
-    bool   finished;
+    [Header("조건별 3번 문항 텍스트")]
+    [TextArea] [SerializeField] string gestureQ3 =
+        "아바타의 고개 끄덕임과 ‘음…’이 내가 말한 내용을 신중히 고민 중이라는 느낌을 주었다.";
+    [TextArea] [SerializeField] string spatialQ3 =
+        "빛 패드의 점등과 ‘딩’ 소리는 시스템이 정보를 처리 중임을 명확히 알려주었다.";
 
-    /*──────────────── Survey 루틴 ─────────────────────────────*/
+    FeedbackMode mode;            // ⬅️ ExperimentManager 등에서 넘겨줌
+    int           currentIdx = -1;
+    string[]      answers;        // 문자열로 저장
+    bool          finished;
+
+    public void Init(FeedbackMode m) => mode = m;  
     public IEnumerator RunSurvey()
     {
         /* 1) 상태 리셋 */
@@ -27,14 +34,18 @@ public class QuestionPageController : MonoBehaviour
 
         foreach (var p in items) p.SetActive(false);
 
-        /* 2) 페이지 켜고 첫 문항 */
+        /* 2) 조건-맞춤 3번 문항 텍스트 세팅 */
+        TMP_Text q3 = items[2].transform.Find("Text").GetComponent<TMP_Text>();
+        q3.text = (mode == FeedbackMode.Gesture) ? gestureQ3 : spatialQ3;
+
+        /* 3) 페이지 켜고 첫 문항 */
         gameObject.SetActive(true);
         ShowItem(0);
 
-        /* 3) 완료될 때까지 기다림 */
+        /* 4) 완료될 때까지 대기 */
         yield return new WaitUntil(() => finished);
 
-        /* 4) 페이지 끄기 */
+        /* 5) 페이지 끄기 */
         gameObject.SetActive(false);
     }
 
@@ -79,7 +90,6 @@ public class QuestionPageController : MonoBehaviour
         if (next < items.Count) ShowItem(next);
         else                    FinishSurvey();
     }
-
 
     void SetColor(Button btn, Color c)
     {

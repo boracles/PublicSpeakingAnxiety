@@ -1,12 +1,4 @@
-/*
- * LogRecorder 3.0  (2025-05-21)
- * ------------------------------------------------------------
- * • BeginLogging(pid)   : 참가자 ID 지정 + 파일 열기
- * • conditionId         : 0=NF, 1=SR, 2=SC (조건 루프마다 갱신)
- * • Q_START / A_START   : QAController 호출 → Δt 계산용
- * • 모든 조건을 하나의 CSV 세트에 누적 기록
- */
-
+using System.Linq; 
 using UnityEngine;
 using System;
 using System.IO;
@@ -42,7 +34,20 @@ public class LogRecorder : MonoBehaviour
     bool writersReady;
     public string participant = "UNSET";
 
-    /* ---------- Awake ---------- */
+    class Stats {
+        public List<float> lag = new();
+        public int gazeHit, gazeTotal;
+        public float dbSum, wpmSum, headVelSum;
+        public int dbN,    wpmN,  headN;
+    }
+    readonly Dictionary<int, Stats> S = new();          // cond → Stats
+    Stats Cur => S.TryGetValue(conditionId, out var s) ? s : S[conditionId] = new Stats();
+
+// Q-START 시간 임시 저장
+    readonly Dictionary<string, float> qTime = new();
+
+    Quaternion prevRot;
+    float lastDb, lastWpm; 
     void Awake()
     {
         if (I) { Destroy(gameObject); return; }
@@ -51,17 +56,20 @@ public class LogRecorder : MonoBehaviour
         // 파일은 BeginLogging() 호출 때 열림
     }
 
-    /* =========================================================
-     *  외부 공개 API
-     * =======================================================*/
-
-    /// <summary>참가자 ID를 지정하고 최초로 파일을 연다 (한 세션당 1회 호출)</summary>
     public void BeginLogging(string participantId)
     {
-        if (writersReady) return;          // 이미 열렸으면 무시
+        if (writersReady) return;
+
         participant = participantId;
         OpenWriters();
         LogEvent("SessionStart");
+        
+        prevRot = Camera.main ?            // 헤드 각속도 첫 프레임용
+            Camera.main.transform.rotation :
+            Quaternion.identity;
+
+        gNext = pNext = aNext =            // 샘플 타이머 리셋
+            Time.realtimeSinceStartup;
     }
 
     public void LogQuestionStart(string qid)  => LogEvent("Q_START", qid);
@@ -71,22 +79,35 @@ public class LogRecorder : MonoBehaviour
     public void LogEvent(string tag, string note = "")
     {
         if (!writersReady) return;
-        behW.WriteLine($"{Time.realtimeSinceStartup:F3},{conditionId},{tag},{note}");
+
+        float t = Time.realtimeSinceStartup;
+        behW.WriteLine($"{t:F3},{conditionId},{tag},{note}");
+
+        // ───── Δt_resp 집계용 추가 로직 ─────
+        if (tag == "Q_START")
+        {
+            // 질문 시작 시각 저장 (key = qid)
+            qTime[note] = t;
+        }
+        else if (tag == "A_START" && qTime.Remove(note, out float qt))
+        {
+            // 대응하는 Q_START가 있으면 지연 계산 후 누적
+            Cur.lag.Add(t - qt);   // Cur = S[conditionId]  (Stats 구조체)
+        }
     }
 
     public void CloseAll()        // 세션 종료 시 호출
     {
-        if (!writersReady) return;
-        LogEvent("SessionEnd");
-        FlushAll();
+        if (!writersReady) return;      // 아직 안 열렸으면 아무 것도 안 함
+
+        WriteSummary();                 // ① 요약 CSV 먼저 저장
+        LogEvent("SessionEnd");         // ② 세션 종료 태그 기록
+        FlushAll();                     // ③ 버퍼 비우기
         behW?.Close(); audW?.Close(); gazeW?.Close(); poseW?.Close();
         writersReady = false;
         Debug.Log("[LogRecorder] files saved & closed.");
     }
 
-    /* =========================================================
-     *  파일 열기 / 플러시
-     * =======================================================*/
     void OpenWriters()
     {
 #if UNITY_EDITOR
@@ -156,10 +177,11 @@ public class LogRecorder : MonoBehaviour
 
         float wpm = lastTotalWords * 6f;
         audW.WriteLine($"{t:F3},{conditionId},{dB:F1},{wpm:F1},");
+        
+        lastDb  = dB;
+        lastWpm = wpm;
     }
 
-    // LogRecorder.cs
-// ─────────────────────────────────────────────────────────────
     public void LogSurveyAnswer(int qIndex, string qText, string answer)
     {
         if (!writersReady) return;
@@ -185,13 +207,22 @@ public class LogRecorder : MonoBehaviour
         {
             gNext += 1f / gazeHz;
             var cam = Camera.main; if (!cam) break;
+
             Ray ray = new Ray(cam.transform.position, cam.transform.forward);
             if (Physics.Raycast(ray, out RaycastHit hit, 10f))
             {
+                /* ★ ① 집계 추가 */
+                Cur.gazeTotal++;
+                if (hit.collider.name.Contains("Avatar")) Cur.gazeHit++;
+
                 Vector3 p = hit.point;
                 gazeW.WriteLine($"{t:F3},{conditionId},{hit.collider.name},{p.x:F2},{p.y:F2},{p.z:F2}");
             }
-            else gazeW.WriteLine($"{t:F3},{conditionId},None,0,0,0");
+            else
+            {
+                Cur.gazeTotal++;                    // ‘Avatar’ 아님
+                gazeW.WriteLine($"{t:F3},{conditionId},None,0,0,0");
+            }
         }
 
         /* pose */
@@ -199,8 +230,15 @@ public class LogRecorder : MonoBehaviour
         {
             pNext += 1f / poseHz;
             var cam = Camera.main; if (!cam) break;
+
             Vector3 pos = cam.transform.position;
             Quaternion rot = cam.transform.rotation;
+
+            /* ★ ② 집계 추가 */
+            float ang = Quaternion.Angle(prevRot, rot) / Time.deltaTime;
+            Cur.headVelSum += ang;  Cur.headN++;
+            prevRot = rot;
+
             poseW.WriteLine($"{t:F3},{conditionId},{pos.x:F3},{pos.y:F3},{pos.z:F3},{rot.x:F4},{rot.y:F4},{rot.z:F4},{rot.w:F4}");
         }
 
@@ -208,7 +246,11 @@ public class LogRecorder : MonoBehaviour
         while (t >= aNext)
         {
             aNext += 1f / audioHz;
-            SampleAudio(t);
+            SampleAudio(t);   // ← 내부에서 dB·wpm 계산 후 CSV 작성
+
+            /* ★ ③ 집계 추가 (SampleAudio 끝난 직후 바로) */
+            Cur.dbSum  += lastDb;   Cur.dbN++;     // lastDb: SampleAudio 내부에서 public 필드로 저장
+            Cur.wpmSum += lastWpm;  Cur.wpmN++;    // lastWpm: 마찬가지
         }
 
         /* flush */
@@ -219,7 +261,43 @@ public class LogRecorder : MonoBehaviour
         }
     }
 
-    /* =========================================================*/
+    void WriteSummary()
+    {
+        /* ① 파일 경로 구성 + 폴더 생성 */
+        string root = Path.Combine(Application.persistentDataPath, "Logs",
+            DateTime.UtcNow.ToString("yyyyMMdd"));
+        Directory.CreateDirectory(root);      // ← 폴더가 없으면 만들어 줌
+
+        string baseName = $"{participant}_{DateTime.UtcNow:HHmmss}";
+        string path     = Path.Combine(root, $"{baseName}_summary.csv");
+
+        /* ② 요약 CSV 작성 */
+        using var sw = File.CreateText(path);
+        sw.WriteLine("cond,lag_m,lag_sd,n_lag,fix_pct,db_m,wpm_m,head_vel_m");
+
+        foreach (var (cid, st) in S)
+        {
+            /* ── 기초 통계 ───────────────────────── */
+            float mLag = st.lag.Any() ? st.lag.Average() : 0f;
+            float sdLag = st.lag.Count > 1
+                ? Mathf.Sqrt(st.lag.Select(x => (x - mLag) * (x - mLag)).Average())
+                : 0f;
+            float pct = st.gazeTotal > 0
+                ? (float)st.gazeHit / st.gazeTotal * 100f
+                : 0f;
+
+            /* ── 0 분모 보호 ─────────────────────── */
+            float dbM   = st.dbN   > 0 ? st.dbSum      / st.dbN   : 0f;
+            float wpmM  = st.wpmN  > 0 ? st.wpmSum     / st.wpmN  : 0f;
+            float headM = st.headN > 0 ? st.headVelSum / st.headN : 0f;
+
+            /* ── 한 줄 출력 ─────────────────────── */
+            sw.WriteLine(
+                $"{cid},{mLag:F3},{sdLag:F3},{st.lag.Count}," +
+                $"{pct:F1},{dbM:F1},{wpmM:F1},{headM:F2}");
+        }
+    }
+
     void OnApplicationQuit() => CloseAll();
     void OnDestroy()         => CloseAll();
 }

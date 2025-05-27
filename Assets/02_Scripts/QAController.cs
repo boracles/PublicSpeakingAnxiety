@@ -36,7 +36,7 @@ public class QAController : MonoBehaviour {
     bool  busy, answerDone, waitForRelease;
     FeedbackMode currentMode;
     
-    readonly HashSet<string> askedGlobal = new();
+    static readonly HashSet<string> askedGlobal = new();
 
     /* ───────── 외부에서 세트마다 호출 ───────── */
     public IEnumerator RunTwoQuestions(FeedbackMode mode) {
