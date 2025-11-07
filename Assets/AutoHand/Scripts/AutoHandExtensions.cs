@@ -9,9 +9,9 @@ namespace Autohand
 {
     public static class AutoHandExtensions
     {
-        public static float linearDamping(this Rigidbody rb) => rb.drag;
-        public static float angularDamping(this Rigidbody rb) => rb.angularDrag;
-        public static Vector3 linearVelocity(this Rigidbody rb) => rb.velocity;
+        public static float linearDamping(this Rigidbody rb) => rb.linearDamping;
+        public static float angularDamping(this Rigidbody rb) => rb.angularDamping;
+        public static Vector3 linearVelocity(this Rigidbody rb) => rb.linearVelocity;
         public static Vector3 angularVelocity(this Rigidbody rb) => rb.angularVelocity;
 
         static Transform _transformRuler = null;
