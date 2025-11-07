@@ -84,7 +84,7 @@ public class ExperimentManager : MonoBehaviour
             yield return qa.RunTwoQuestions(mode);
 
 			yield return qa.tts.Speak("지금부터 간단한 설문에 응답해 주세요.");
-			yield return surveyPage.RunSurvey();          // 3문항 끝날 때까지 대기
+			yield return surveyPage.RunSurvey(mode);
 			yield return qa.tts.Speak("감사합니다.");
 
             LogRecorder.I.LogEvent("COND_END", mode.ToString());

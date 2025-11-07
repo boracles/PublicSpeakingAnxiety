@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using TMPro;
 
 public enum FeedbackMode { Gesture, Spatial }
 
@@ -24,6 +25,9 @@ public class QAController : MonoBehaviour {
     [TextArea] public string intro  = "발표 잘 들었습니다. 발표를 들으면서 궁금한 점이 있었는데요. ";
     [TextArea] public string intro2 = "답변 감사합니다. 추가 질문 하나 더 드리자면요. ";
     [TextArea] public string outro  = "답변 감사합니다. 발표는 여기서 마치겠습니다.";
+
+[Header("UI")]
+[SerializeField] TMP_Text statusText;  
 
     public System.Action OnIntroButton;
     bool firstDelayDone = false; 
@@ -104,7 +108,11 @@ public class QAController : MonoBehaviour {
             "발표 내용을 다시 정리해 주실 수 있나요?");
     }
     
-    /* -------------------- QAController.cs -------------------- */
+    void SetStatus(string msg)
+{
+    if (statusText) statusText.text = msg;
+}
+
     IEnumerator QAFlow()
     {
         busy = true;
@@ -112,7 +120,9 @@ public class QAController : MonoBehaviour {
         /* 0️⃣ 지연-피드백(“음…”, 라이트바 등) */
         yield return PlayImmediateFeedback();
 
-        /* 1️⃣ 발표 요약 획득 */
+        if (currentMode == FeedbackMode.Spatial)
+        SetStatus("질문 생성 중…");
+
         string summary = "";
         yield return summarizer.SummarizeNow((s, _) => summary = s);
         if (string.IsNullOrEmpty(summary))
@@ -133,22 +143,33 @@ public class QAController : MonoBehaviour {
         stage = Stage.Asking1;
         bool needLoop = currentMode == FeedbackMode.Spatial;  
         yield return PlayDelay(needLoop); 
-        yield return tts.Speak(intro + q1);
+if (currentMode == FeedbackMode.Spatial)
+    SetStatus("질문 생성 완료!");
+ yield return tts.Speak(intro + q1);
 
         stage = Stage.WaitAns1;
-        yield return WaitForAnswerButton();      // 참가자가 A버튼 누를 때까지
+        yield return WaitForAnswerButton();    
+if (currentMode == FeedbackMode.Spatial) 
+{
+	SetStatus("");
+}  // 참가자가 A버튼 누를 때까지
         yield return new WaitForSeconds(0.5f);   // STT 마지막 패킷 여유
 
         /* ───────── Q2 ───────────────────────── */
         stage = Stage.Asking2;
-        yield return PlayDelay(true);            // filler O, 고정지연 O
-        yield return tts.Speak(intro2 + q2);
+        yield return PlayDelay(true);            // filler O, 고정지연 
+if (currentMode == FeedbackMode.Spatial)
+    SetStatus("질문 생성 완료!");
+    yield return tts.Speak(intro2 + q2);
 
         stage = Stage.WaitAns2;
         yield return WaitForAnswerButton();
 
-        /* ───────── 클로징 ───────────────────── */
+if (currentMode == FeedbackMode.Spatial)
+    SetStatus(""); 
         stage = Stage.Closing;
+              if (currentMode == FeedbackMode.Spatial)
+    SetStatus(""); 
         yield return tts.Speak(outro);
 
         stage  = Stage.Done;
@@ -166,6 +187,8 @@ public class QAController : MonoBehaviour {
         }
          else if (currentMode == FeedbackMode.Spatial)
     	{
+        SetStatus("질문 생성 중…");
+
         	barLight.PulseLoop();          // 빛 루프 시작
         	fxSource.clip = spatialSfx;
         	fxSource.loop = false;         // ★ 루프 OFF – 한 번만 재생
@@ -230,6 +253,7 @@ public class QAController : MonoBehaviour {
 		busy = answerDone = waitForRelease = false; 
 		firstDelayDone = false;
 		nextThinkingA  = true;
+SetStatus(""); 
 	}
     
     public void ResetSummarizer()

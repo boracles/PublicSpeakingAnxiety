@@ -25,29 +25,29 @@ public class QuestionPageController : MonoBehaviour
     bool          finished;
 
     public void Init(FeedbackMode m) => mode = m;  
-    public IEnumerator RunSurvey()
+    public IEnumerator RunSurvey(FeedbackMode m)
+{
+    mode = m;                        // ← 이제 정상
+    finished   = false;
+    currentIdx = -1;
+    answers    = new string[items.Count];
+
+    foreach (var p in items) p.SetActive(false);
+
+    TMP_Text q3 = items[2].transform.Find("Text").GetComponent<TMP_Text>();
+    q3.text = mode switch
     {
-        /* 1) 상태 리셋 */
-        finished   = false;
-        currentIdx = -1;
-        answers    = new string[items.Count];
+        FeedbackMode.Gesture => gestureQ3,
+        FeedbackMode.Spatial => spatialQ3,
+        _                    => gestureQ3
+    };
 
-        foreach (var p in items) p.SetActive(false);
+    gameObject.SetActive(true);
+    ShowItem(0);
 
-        /* 2) 조건-맞춤 3번 문항 텍스트 세팅 */
-        TMP_Text q3 = items[2].transform.Find("Text").GetComponent<TMP_Text>();
-        q3.text = (mode == FeedbackMode.Gesture) ? gestureQ3 : spatialQ3;
-
-        /* 3) 페이지 켜고 첫 문항 */
-        gameObject.SetActive(true);
-        ShowItem(0);
-
-        /* 4) 완료될 때까지 대기 */
-        yield return new WaitUntil(() => finished);
-
-        /* 5) 페이지 끄기 */
-        gameObject.SetActive(false);
-    }
+    yield return new WaitUntil(() => finished);
+    gameObject.SetActive(false);
+}
 
     /*──────────────── 내부 메서드 ─────────────────────────────*/
     void ShowItem(int idx)
