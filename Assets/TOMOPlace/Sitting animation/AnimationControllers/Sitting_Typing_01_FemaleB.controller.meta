@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ba2614ffb70cfe04a9969bd45ae5315c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 219878
+  packageName: Basic Sitting animation package
+  packageVersion: 1.0
+  assetPath: Assets/TOMOPlace/Sitting animation/AnimationControllers/Sitting_Typing_01_FemaleB.controller
+  uploadId: 494046

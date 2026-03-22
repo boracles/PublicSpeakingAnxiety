@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8abc3d0036d697940adf962aaed2a0a4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 219878
+  packageName: Basic Sitting animation package
+  packageVersion: 1.0
+  assetPath: Assets/TOMOPlace/Sitting animation/AnimationControllers/Sitting_Chat_01_MaleG.controller
+  uploadId: 494046

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 75a2c89ac9c3a6d4a803e4f11e440dbd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 219878
+  packageName: Basic Sitting animation package
+  packageVersion: 1.0
+  assetPath: Assets/TOMOPlace/Sitting animation/AnimationControllers/Sitting_Mobile_01_MaleB.controller
+  uploadId: 494046

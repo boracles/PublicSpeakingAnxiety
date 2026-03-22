@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9628b913dda46c641bdbd233801421da
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 219878
+  packageName: Basic Sitting animation package
+  packageVersion: 1.0
+  assetPath: Assets/TOMOPlace/Sitting animation/AnimationControllers/Sitting_Idle_01_MaleB.controller
+  uploadId: 494046
