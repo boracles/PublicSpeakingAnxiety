@@ -80,10 +80,30 @@ public class AudienceBodyStateController : MonoBehaviour
 
     private void ApplyState(BodyState state)
     {
-        int animState = 0; // 0 = neutral, 1 = lowEnergy
+        int animState = 0;
 
-        if (state == BodyState.LowEnergySlumped)
-            animState = 1;
+        switch (state)
+        {
+            case BodyState.NeutralUpright:
+                animState = 0; // neutral
+                break;
+
+            case BodyState.AttentiveUpright:
+                animState = 1; // attentive_upright
+                break;
+
+            case BodyState.AttentiveForwardLean:
+                animState = 2; // attentive_forwardlean
+                break;
+
+            case BodyState.LowEnergySlumped:
+                animState = 3; // lowEnergy_slumped
+                break;
+
+            default:
+                animState = 0;
+                break;
+        }
 
         if (animator != null)
             animator.SetInteger(AnimStateParam, animState);
@@ -103,27 +123,27 @@ public class AudienceBodyStateController : MonoBehaviour
                 break;
 
             case BodyState.AttentiveUpright:
-                targetRigWeight = 1f;
+                targetRigWeight = 0.2f;
                 if (rig != null) rig.weight = targetRigWeight;
 
-                targetSpine01Weight = 0.5f;
-                targetSpine1Z = -66f;
-                targetNeckZ = -65f;
+                targetSpine01Weight = 0f;
+                targetSpine1Z = -60f;
+                targetNeckZ = -55f;
                 targetLowerarmLRot = baseLowerarmLRot;
                 targetLowerarmRRot = baseLowerarmRRot;
                 targetHandRRot = baseHandRRot;
                 break;
 
             case BodyState.AttentiveForwardLean:
-                targetRigWeight = 1f;
+                targetRigWeight = 0.2f;
                 if (rig != null) rig.weight = targetRigWeight;
 
-                targetSpine01Weight = 1f;
-                targetSpine1Z = -72f;
-                targetNeckZ = -70f;
-                targetLowerarmLRot = GetPoseRotation(lowerarmLForwardLeanPose, baseLowerarmLRot);
-                targetLowerarmRRot = GetPoseRotation(lowerarmRForwardLeanPose, baseLowerarmRRot);
-                targetHandRRot = GetPoseRotation(handRForwardLeanPose, baseHandRRot);
+                targetSpine01Weight = 0f;
+                targetSpine1Z = -60f;
+                targetNeckZ = -55f;
+                targetLowerarmLRot = baseLowerarmLRot;
+                targetLowerarmRRot = baseLowerarmRRot;
+                targetHandRRot = baseHandRRot;
                 break;
 
             case BodyState.LowEnergySlumped:
