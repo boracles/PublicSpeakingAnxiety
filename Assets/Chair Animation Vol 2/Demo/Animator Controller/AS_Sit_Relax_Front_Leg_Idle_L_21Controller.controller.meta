@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9b15636969d5acb4dbb50a0ad7dd6f08
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_Relax_Front_Leg_Idle_L_21Controller.controller
+  uploadId: 876156

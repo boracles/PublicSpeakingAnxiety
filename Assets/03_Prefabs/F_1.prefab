@@ -1430,6 +1430,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 976f362c20cb49540aab38501a830f16, type: 2}
+    - target: {fileID: -3742468882261758935, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ee8dd21a57c97d40aefd1a31aa462de, type: 2}
+    - target: {fileID: -3544029814905940565, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 87de1921e91c2457bba827b788976ce2, type: 2}
+    - target: {fileID: -3544029814905940565, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a5bd0cc7e4b54dbcbec5705e578946c, type: 2}
     - target: {fileID: -175052236744637197, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1438,14 +1450,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: F_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1918779918132383088, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 231b26a459d21944fa6e0647df2f11e6, type: 2}
+    - target: {fileID: 2750864797304851452, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 94a02a4c86b51466883496c111e05c0a, type: 2}
     - target: {fileID: 3637824688821448413, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 5662ce075424c424d9d6b656e287f0e1, type: 2}
+    - target: {fileID: 3774885915943685086, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7319b0189585a2a45aaf6890567648f1, type: 2}
+    - target: {fileID: 3774885915943685086, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3aa09cc6b51376b419d3a0ae3fcddef6, type: 2}
     - target: {fileID: 4372177706834584831, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ddab2b67e7a711e4dbe3bb9529a1d79b, type: 2}
+    - target: {fileID: 4372177706834584831, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5112172efb16eb74d81806c8e043f1d3, type: 2}
+    - target: {fileID: 5434889294173181328, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ee8dd21a57c97d40aefd1a31aa462de, type: 2}
     - target: {fileID: 5866666021909216657, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1454,6 +1490,14 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6061195342687859504, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7319b0189585a2a45aaf6890567648f1, type: 2}
+    - target: {fileID: 6061195342687859504, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3aa09cc6b51376b419d3a0ae3fcddef6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1545,6 +1589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudienceBodyStateController
   animator: {fileID: 7285153525019784665}
+  rig: {fileID: 130557243244703581}
   spine1Target: {fileID: 9001692589801605326}
   neck2Target: {fileID: 5306289594055569579}
   lowerarmLTarget: {fileID: 6056417444863115564}
@@ -1554,7 +1599,7 @@ MonoBehaviour:
   lowerarmRForwardLeanPose: {fileID: 7671306423922543352}
   handRForwardLeanPose: {fileID: 2238431542698789936}
   spine01RotFix: {fileID: 6464435395372693929}
-  postureBlendSpeed: 2
+  postureBlendSpeed: 1.2
   currentState: 0
 --- !u!114 &6110206150762629223
 MonoBehaviour:

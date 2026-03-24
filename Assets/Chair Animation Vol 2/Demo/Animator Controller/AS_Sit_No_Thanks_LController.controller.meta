@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5e6655f48641b7848adf47a28b5cd67a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_No_Thanks_LController.controller
+  uploadId: 876156

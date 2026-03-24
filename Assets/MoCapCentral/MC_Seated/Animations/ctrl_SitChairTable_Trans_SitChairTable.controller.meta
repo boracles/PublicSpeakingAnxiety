@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2936e69dcd14223488d30364917e335b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289895
+  packageName: MC Seated - Believable 3D Animations by MoCap Central
+  packageVersion: 1.1.0
+  assetPath: Assets/MoCapCentral/MC_Seated/Animations/ctrl_SitChairTable_Trans_SitChairTable.controller
+  uploadId: 843752

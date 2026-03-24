@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cf90066aa1f1e9d4ba45aeaa633cff80
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_Discuss_LController.controller
+  uploadId: 876156

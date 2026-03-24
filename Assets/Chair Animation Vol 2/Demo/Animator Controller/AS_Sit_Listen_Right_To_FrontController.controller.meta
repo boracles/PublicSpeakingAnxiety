@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 267d225699d81b343b6a059cdb9a395b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_Listen_Right_To_FrontController.controller
+  uploadId: 876156

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 359e16e487d09bc42963d446cc872963
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_Thinking_Loop_R_01Controller.controller
+  uploadId: 876156

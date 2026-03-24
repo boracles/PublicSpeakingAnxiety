@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 94775a4c29390d242bf3d180c8de2aad
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_Left_To_Right_LookController.controller
+  uploadId: 876156

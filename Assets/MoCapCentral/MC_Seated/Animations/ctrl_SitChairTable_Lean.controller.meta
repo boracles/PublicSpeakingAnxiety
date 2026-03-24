@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: acce857dd5c5e994db31e96bbb18e1c6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 289895
+  packageName: MC Seated - Believable 3D Animations by MoCap Central
+  packageVersion: 1.1.0
+  assetPath: Assets/MoCapCentral/MC_Seated/Animations/ctrl_SitChairTable_Lean.controller
+  uploadId: 843752

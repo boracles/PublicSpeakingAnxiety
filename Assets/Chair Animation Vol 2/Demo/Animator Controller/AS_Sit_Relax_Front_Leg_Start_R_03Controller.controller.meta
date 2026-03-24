@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: eb2e068237a4d4a418d1705c0891ef9c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_Relax_Front_Leg_Start_R_03Controller.controller
+  uploadId: 876156

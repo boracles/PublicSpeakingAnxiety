@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dc590a28bd94d6f4e9443c02f482832c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Standup_04Controller.controller
+  uploadId: 876156

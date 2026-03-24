@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5f2d121f2e7bc3744981771295f317fc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_Start_Hi_RController.controller
+  uploadId: 876156

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c5a82b2ad03d8e849b302f0833156c0e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_Clap_Start_R_01Controller.controller
+  uploadId: 876156

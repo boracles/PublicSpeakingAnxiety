@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c31d3c3a5bda6d14ea268ba5fee430e1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_Point_Left_Up_To_Sit_Idle_L_08Controller.controller
+  uploadId: 876156

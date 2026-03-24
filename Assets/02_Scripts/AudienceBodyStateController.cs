@@ -6,6 +6,10 @@ public class AudienceBodyStateController : MonoBehaviour
     [Header("References")]
     public Animator animator;
 
+    [Header("Rig Control")]
+    public Rig rig; // RigBuilder에 있는 Rig
+    private float targetRigWeight = 1f;
+
     [Header("Driven Targets")]
     public Transform spine1Target;
     public Transform neck2Target;
@@ -41,7 +45,7 @@ public class AudienceBodyStateController : MonoBehaviour
     private Quaternion targetLowerarmRRot;
     private Quaternion targetHandRRot;
 
-    private static readonly int BodyStateParam = Animator.StringToHash("BodyState");
+    private static readonly int AnimStateParam = Animator.StringToHash("AnimState");
 
     void Start()
     {
@@ -76,12 +80,20 @@ public class AudienceBodyStateController : MonoBehaviour
 
     private void ApplyState(BodyState state)
     {
+        int animState = 0; // 0 = neutral, 1 = lowEnergy
+
+        if (state == BodyState.LowEnergySlumped)
+            animState = 1;
+
         if (animator != null)
-            animator.SetInteger(BodyStateParam, (int)state);
+            animator.SetInteger(AnimStateParam, animState);
 
         switch (state)
         {
             case BodyState.NeutralUpright:
+                targetRigWeight = 1f;
+                if (rig != null) rig.weight = targetRigWeight;
+
                 targetSpine01Weight = 0f;
                 targetSpine1Z = -60f;
                 targetNeckZ = -55f;
@@ -91,6 +103,9 @@ public class AudienceBodyStateController : MonoBehaviour
                 break;
 
             case BodyState.AttentiveUpright:
+                targetRigWeight = 1f;
+                if (rig != null) rig.weight = targetRigWeight;
+
                 targetSpine01Weight = 0.5f;
                 targetSpine1Z = -66f;
                 targetNeckZ = -65f;
@@ -100,6 +115,9 @@ public class AudienceBodyStateController : MonoBehaviour
                 break;
 
             case BodyState.AttentiveForwardLean:
+                targetRigWeight = 1f;
+                if (rig != null) rig.weight = targetRigWeight;
+
                 targetSpine01Weight = 1f;
                 targetSpine1Z = -72f;
                 targetNeckZ = -70f;
@@ -109,10 +127,23 @@ public class AudienceBodyStateController : MonoBehaviour
                 break;
 
             case BodyState.LowEnergySlumped:
+                targetRigWeight = 0.2f;
+                if (rig != null) rig.weight = targetRigWeight;
+
+                targetSpine01Weight = 0f;
+                targetSpine1Z = -60f;
+                targetNeckZ = -55f;
+                targetLowerarmLRot = baseLowerarmLRot;
+                targetLowerarmRRot = baseLowerarmRRot;
+                targetHandRRot = baseHandRRot;
+                break;
+
             case BodyState.ReservedBackwardLean:
             case BodyState.SideOrientedNeutral:
             case BodyState.SelfRegulatingSelfContact:
             case BodyState.RestlessFidgetySeat:
+                targetRigWeight = 1f;
+
                 targetSpine01Weight = 0f;
                 targetSpine1Z = -60f;
                 targetNeckZ = -55f;
@@ -122,6 +153,8 @@ public class AudienceBodyStateController : MonoBehaviour
                 break;
 
             case BodyState.SelfMonitoringSlightClosed:
+                targetRigWeight = 1f;
+
                 targetSpine01Weight = 0.2f;
                 targetSpine1Z = -62f;
                 targetNeckZ = -58f;
@@ -143,6 +176,9 @@ public class AudienceBodyStateController : MonoBehaviour
     private void ApplyStateImmediate(BodyState state)
     {
         ApplyState(state);
+
+        if (rig != null)
+            rig.weight = targetRigWeight;
 
         if (spine01RotFix != null)
             spine01RotFix.weight = targetSpine01Weight;
@@ -169,7 +205,7 @@ public class AudienceBodyStateController : MonoBehaviour
             handRTarget.localRotation = targetHandRRot;
     }
 
-    private void UpdateWeights()
+   private void UpdateWeights()
     {
         if (spine01RotFix != null)
         {
@@ -183,14 +219,14 @@ public class AudienceBodyStateController : MonoBehaviour
         if (spine1Target != null)
         {
             Vector3 current = spine1Target.localEulerAngles;
-            float z = Mathf.LerpAngle(current.z, targetSpine1Z, Time.deltaTime * postureBlendSpeed);
+            float z = Mathf.MoveTowardsAngle(current.z, targetSpine1Z, postureBlendSpeed * 30f * Time.deltaTime);
             spine1Target.localEulerAngles = new Vector3(current.x, current.y, z);
         }
 
         if (neck2Target != null)
         {
             Vector3 current = neck2Target.localEulerAngles;
-            float z = Mathf.LerpAngle(current.z, targetNeckZ, Time.deltaTime * postureBlendSpeed);
+            float z = Mathf.MoveTowardsAngle(current.z, targetNeckZ, postureBlendSpeed * 30f * Time.deltaTime);
             neck2Target.localEulerAngles = new Vector3(current.x, current.y, z);
         }
 

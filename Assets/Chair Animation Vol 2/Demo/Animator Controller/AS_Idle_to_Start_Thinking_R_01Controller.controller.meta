@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 33c5d5eb488b8834cbd545737c355329
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Idle_to_Start_Thinking_R_01Controller.controller
+  uploadId: 876156

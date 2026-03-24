@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 29617f5536c0bc749b4446dac6e37d68
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_Idle_R_18Controller.controller
+  uploadId: 876156

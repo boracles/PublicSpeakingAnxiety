@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fb6d2a3a3aad83b4999b57711ba26a09
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_Point_Front_Mid_End_R_01Controller.controller
+  uploadId: 876156

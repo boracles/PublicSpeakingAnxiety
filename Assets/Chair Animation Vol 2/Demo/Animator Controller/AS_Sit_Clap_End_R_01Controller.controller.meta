@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 260f6788023280149a91e6f8067270af
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 366368
+  packageName: Chair Animation Vol 2
+  packageVersion: 1.0
+  assetPath: Assets/Chair Animation Vol 2/Demo/Animator Controller/AS_Sit_Clap_End_R_01Controller.controller
+  uploadId: 876156
