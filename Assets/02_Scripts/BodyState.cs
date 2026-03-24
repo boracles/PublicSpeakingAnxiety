@@ -3,10 +3,12 @@ public enum BodyState
     NeutralUpright,
     AttentiveUpright,
     AttentiveForwardLean,
-    LowEnergySlumped,
-    ReservedBackwardLean,
-    SelfMonitoringSlightClosed,
+    LowEnergySlumpedSubtle,
+    LowEnergySlumpedClear,
+    ReservedBackwardLeanSubtle,
+    ReservedBackwardLeanClear,
     SideOrientedNeutral,
     SelfRegulatingSelfContact,
-    RestlessFidgetySeat
+    RestlessFidgetySeat,
+    SelfMonitoringSlightClosed
 }

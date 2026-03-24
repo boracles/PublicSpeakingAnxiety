@@ -16,6 +16,15 @@ public class AudienceStateTestInput : MonoBehaviour
             controller.SetState(BodyState.AttentiveForwardLean);
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
-            controller.SetState(BodyState.LowEnergySlumped);
+            controller.SetState(BodyState.LowEnergySlumpedSubtle);
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+            controller.SetState(BodyState.LowEnergySlumpedClear);
+
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+            controller.SetState(BodyState.ReservedBackwardLeanSubtle);
+
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+            controller.SetState(BodyState.ReservedBackwardLeanClear);
     }
 }

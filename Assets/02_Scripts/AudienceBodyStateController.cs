@@ -31,8 +31,6 @@ public class AudienceBodyStateController : MonoBehaviour
     [Header("Current State")]
     public BodyState currentState = BodyState.NeutralUpright;
 
-    private BodyState previousState;
-
     private float targetSpine01Weight;
     private float targetSpine1Z;
     private float targetNeckZ;
@@ -46,6 +44,7 @@ public class AudienceBodyStateController : MonoBehaviour
     private Quaternion targetHandRRot;
 
     private static readonly int AnimStateParam = Animator.StringToHash("AnimState");
+    private static readonly int VariantIndexParam = Animator.StringToHash("VariantIndex");
 
     void Start()
     {
@@ -58,24 +57,18 @@ public class AudienceBodyStateController : MonoBehaviour
         if (handRTarget != null)
             baseHandRRot = handRTarget.localRotation;
 
-        previousState = currentState;
         ApplyStateImmediate(currentState);
     }
 
     void LateUpdate()
     {
-        if (currentState != previousState)
-        {
-            ApplyState(currentState);
-            previousState = currentState;
-        }
-
         UpdateWeights();
     }
 
     public void SetState(BodyState newState)
     {
         currentState = newState;
+        ApplyState(currentState);
     }
 
     private void ApplyState(BodyState state)
@@ -85,28 +78,47 @@ public class AudienceBodyStateController : MonoBehaviour
         switch (state)
         {
             case BodyState.NeutralUpright:
-                animState = 0; // neutral
+                animState = 0;
                 break;
-
             case BodyState.AttentiveUpright:
-                animState = 1; // attentive_upright
+                animState = 1;
                 break;
-
             case BodyState.AttentiveForwardLean:
-                animState = 2; // attentive_forwardlean
+                animState = 2;
                 break;
-
-            case BodyState.LowEnergySlumped:
-                animState = 3; // lowEnergy_slumped
+            case BodyState.LowEnergySlumpedSubtle:
+                animState = 3;
                 break;
-
+            case BodyState.LowEnergySlumpedClear:
+                animState = 4;
+                break;
+            case BodyState.ReservedBackwardLeanSubtle:
+                animState = 5;
+                break;
+            case BodyState.ReservedBackwardLeanClear:
+                animState = 6;
+                break;
             default:
                 animState = 0;
                 break;
         }
 
         if (animator != null)
+        {
+            if (state == BodyState.LowEnergySlumpedSubtle ||
+                state == BodyState.ReservedBackwardLeanSubtle ||
+                state == BodyState.ReservedBackwardLeanClear)
+            {
+                int VariantIndex = Random.Range(0, 2);
+                animator.SetInteger(VariantIndexParam, VariantIndex);
+            }
+            else
+            {
+                animator.SetInteger(VariantIndexParam, 0);
+            }
+
             animator.SetInteger(AnimStateParam, animState);
+        }
 
         switch (state)
         {
@@ -146,8 +158,20 @@ public class AudienceBodyStateController : MonoBehaviour
                 targetHandRRot = baseHandRRot;
                 break;
 
-            case BodyState.LowEnergySlumped:
-                targetRigWeight = 0.2f;
+            case BodyState.LowEnergySlumpedSubtle:
+            targetRigWeight = 0.12f;
+            if (rig != null) rig.weight = targetRigWeight;
+
+            targetSpine01Weight = 0f;
+            targetSpine1Z = -60f;
+            targetNeckZ = -55f;
+            targetLowerarmLRot = baseLowerarmLRot;
+            targetLowerarmRRot = baseLowerarmRRot;
+            targetHandRRot = baseHandRRot;
+            break;
+
+            case BodyState.LowEnergySlumpedClear:
+                targetRigWeight = 0.12f;
                 if (rig != null) rig.weight = targetRigWeight;
 
                 targetSpine01Weight = 0f;
@@ -158,7 +182,30 @@ public class AudienceBodyStateController : MonoBehaviour
                 targetHandRRot = baseHandRRot;
                 break;
 
-            case BodyState.ReservedBackwardLean:
+            case BodyState.ReservedBackwardLeanSubtle:
+                targetRigWeight = 0.12f;
+                if (rig != null) rig.weight = targetRigWeight;
+
+                targetSpine01Weight = 0f;
+                targetSpine1Z = -60f;
+                targetNeckZ = -55f;
+                targetLowerarmLRot = baseLowerarmLRot;
+                targetLowerarmRRot = baseLowerarmRRot;
+                targetHandRRot = baseHandRRot;
+                break;
+
+            case BodyState.ReservedBackwardLeanClear:
+                targetRigWeight = 0.12f;
+                if (rig != null) rig.weight = targetRigWeight;
+
+                targetSpine01Weight = 0f;
+                targetSpine1Z = -60f;
+                targetNeckZ = -55f;
+                targetLowerarmLRot = baseLowerarmLRot;
+                targetLowerarmRRot = baseLowerarmRRot;
+                targetHandRRot = baseHandRRot;
+                break;
+
             case BodyState.SideOrientedNeutral:
             case BodyState.SelfRegulatingSelfContact:
             case BodyState.RestlessFidgetySeat:

@@ -1599,7 +1599,7 @@ MonoBehaviour:
   lowerarmRForwardLeanPose: {fileID: 7671306423922543352}
   handRForwardLeanPose: {fileID: 2238431542698789936}
   spine01RotFix: {fileID: 6464435395372693929}
-  postureBlendSpeed: 1.2
+  postureBlendSpeed: 0.9
   currentState: 0
 --- !u!114 &6110206150762629223
 MonoBehaviour:
