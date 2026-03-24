@@ -1591,15 +1591,28 @@ MonoBehaviour:
   animator: {fileID: 7285153525019784665}
   rig: {fileID: 130557243244703581}
   spine1Target: {fileID: 9001692589801605326}
+  neck1Target: {fileID: 0}
   neck2Target: {fileID: 5306289594055569579}
   lowerarmLTarget: {fileID: 6056417444863115564}
   lowerarmRTarget: {fileID: 368021567144277949}
   handRTarget: {fileID: 790941879895584866}
+  upperarmLTarget: {fileID: 0}
+  upperarmRTarget: {fileID: 0}
   lowerarmLForwardLeanPose: {fileID: 4803525966728638403}
   lowerarmRForwardLeanPose: {fileID: 7671306423922543352}
   handRForwardLeanPose: {fileID: 2238431542698789936}
+  upperarmLBackwardLeanClearPose: {fileID: 0}
+  upperarmRBackwardLeanClearPose: {fileID: 0}
   spine01RotFix: {fileID: 6464435395372693929}
-  postureBlendSpeed: 0.9
+  neck1RotFix: {fileID: 0}
+  neck2RotFix: {fileID: 0}
+  upperarmLRotFix: {fileID: 0}
+  upperarmRRotFix: {fileID: 0}
+  lowerarmLRotFix: {fileID: 0}
+  lowerarmRRotFix: {fileID: 0}
+  handRRotFix: {fileID: 0}
+  handLRotFix: {fileID: 0}
+  postureBlendSpeed: 1.2
   currentState: 0
 --- !u!114 &6110206150762629223
 MonoBehaviour:
