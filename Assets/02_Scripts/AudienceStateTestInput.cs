@@ -6,6 +6,8 @@ public class AudienceStateTestInput : MonoBehaviour
 
     void Update()
     {
+        if (controller == null) return;
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
             controller.SetState(BodyState.NeutralUpright);
 
@@ -26,5 +28,17 @@ public class AudienceStateTestInput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha7))
             controller.SetState(BodyState.ReservedBackwardLeanClear);
+
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+            controller.SetState(BodyState.SelfMonitoringSlightClosedSubtle);
+
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+            controller.SetState(BodyState.SelfMonitoringSlightClosedClear);
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+            controller.SetState(BodyState.SideOrientedNeutral);
+
+        if (Input.GetKeyDown(KeyCode.Minus))
+            controller.SetState(BodyState.SelfRegulatingDiscomfort);
     }
 }

@@ -7,18 +7,29 @@ public class AudienceBodyStateController : MonoBehaviour
     public Animator animator;
 
     [Header("Rig Control")]
-    public Rig rig; // RigBuilder에 있는 Rig
+    public Rig rig;
     private float targetRigWeight = 1f;
+
+    [Header("Position Control")]
+    public Transform bodyRoot;
+    public float forwardLeanXOffset = -0.3f;
+
+    private Vector3 baseBodyRootLocalPos;
+    private Vector3 targetBodyRootLocalPos;
+
+    [Header("Position Blend")]
+    public float bodyRootPositionBlendSpeed = 8f;
 
     [Header("Driven Targets")]
     public Transform spine1Target;
     public Transform neck1Target;
     public Transform neck2Target;
+    public Transform upperarmLTarget;
+    public Transform upperarmRTarget;
     public Transform lowerarmLTarget;
     public Transform lowerarmRTarget;
     public Transform handRTarget;
-    public Transform upperarmLTarget;
-    public Transform upperarmRTarget;
+    public Transform handLTarget;
 
     [Header("Pose References")]
     public Transform lowerarmLForwardLeanPose;
@@ -26,6 +37,9 @@ public class AudienceBodyStateController : MonoBehaviour
     public Transform handRForwardLeanPose;
     public Transform upperarmLBackwardLeanClearPose;
     public Transform upperarmRBackwardLeanClearPose;
+    public Transform handLSelfMonitoringPose;
+    public Transform lowerarmLSelfMonitoringPose;
+    public Transform lowerarmLSelfMonitoringMarkedPose;
 
     [Header("Optional Constraint Weights")]
     public MultiRotationConstraint spine01RotFix;
@@ -35,22 +49,8 @@ public class AudienceBodyStateController : MonoBehaviour
     public MultiRotationConstraint upperarmRRotFix;
     public MultiRotationConstraint lowerarmLRotFix;
     public MultiRotationConstraint lowerarmRRotFix;
-    public MultiRotationConstraint handRRotFix;
     public MultiRotationConstraint handLRotFix;
-
-    private float targetUpperarmLWeight;
-    private float targetUpperarmRWeight;
-    private float targetLowerarmLWeight;
-    private float targetLowerarmRWeight;
-    private float targetHandRWeight;
-    private float targetHandLWeight;
-    private float targetNeck1Weight;
-    private float targetNeck2Weight;
-    private Quaternion baseUpperarmLRot;
-    private Quaternion baseUpperarmRRot;
-
-    private Quaternion targetUpperarmLRot;
-    private Quaternion targetUpperarmRRot;
+    public MultiRotationConstraint handRRotFix;
 
     [Header("Blend Speeds")]
     public float postureBlendSpeed = 2.0f;
@@ -60,15 +60,29 @@ public class AudienceBodyStateController : MonoBehaviour
     public BodyState currentState = BodyState.NeutralUpright;
 
     private float targetSpine01Weight;
-    private float targetSpine1Z;
+    private float targetNeck1Weight;
+    private float targetNeck2Weight;
+    private float targetUpperarmLWeight;
+    private float targetUpperarmRWeight;
+    private float targetLowerarmLWeight;
+    private float targetLowerarmRWeight;
+    private float targetHandLWeight;
+    private float targetHandRWeight;
 
+    private float targetSpine1Z;
     private float targetNeck1Z;
     private float targetNeck2Z;
 
+    private Quaternion baseUpperarmLRot;
+    private Quaternion baseUpperarmRRot;
     private Quaternion baseLowerarmLRot;
     private Quaternion baseLowerarmRRot;
     private Quaternion baseHandRRot;
+    private Quaternion baseHandLRot;
+    private Quaternion targetHandLRot;
 
+    private Quaternion targetUpperarmLRot;
+    private Quaternion targetUpperarmRRot;
     private Quaternion targetLowerarmLRot;
     private Quaternion targetLowerarmRRot;
     private Quaternion targetHandRRot;
@@ -78,20 +92,18 @@ public class AudienceBodyStateController : MonoBehaviour
 
     void Start()
     {
-        if (lowerarmLTarget != null)
-            baseLowerarmLRot = lowerarmLTarget.localRotation;
-
-        if (lowerarmRTarget != null)
-            baseLowerarmRRot = lowerarmRTarget.localRotation;
-
-        if (handRTarget != null)
-            baseHandRRot = handRTarget.localRotation;
-
-        if (upperarmLTarget != null)
-            baseUpperarmLRot = upperarmLTarget.localRotation;
-
-        if (upperarmRTarget != null)
-            baseUpperarmRRot = upperarmRTarget.localRotation;
+        if (bodyRoot != null)
+        {
+            baseBodyRootLocalPos = bodyRoot.localPosition;
+            targetBodyRootLocalPos = baseBodyRootLocalPos;
+        }
+        if (upperarmLTarget != null) baseUpperarmLRot = upperarmLTarget.localRotation;
+        if (upperarmRTarget != null) baseUpperarmRRot = upperarmRTarget.localRotation;
+        if (lowerarmLTarget != null) baseLowerarmLRot = lowerarmLTarget.localRotation;
+        if (lowerarmRTarget != null) baseLowerarmRRot = lowerarmRTarget.localRotation;
+        if (handRTarget != null) baseHandRRot = handRTarget.localRotation;
+        if (handLTarget != null)
+            baseHandLRot = handLTarget.localRotation;
 
         ApplyStateImmediate(currentState);
     }
@@ -109,62 +121,14 @@ public class AudienceBodyStateController : MonoBehaviour
 
     private void ApplyState(BodyState state)
     {
-        int animState = 0;
+        ResetTargetsToDefault();
 
-        targetNeck1Weight = 1f;
-        targetNeck2Weight = 1f;
-        targetUpperarmLWeight = 1f;
-        targetUpperarmRWeight = 1f;
-        targetLowerarmLWeight = 1f;
-        targetLowerarmRWeight = 1f;
-        targetHandLWeight = 1f;
-        targetHandRWeight = 1f;
-
-        targetUpperarmLRot = baseUpperarmLRot;
-        targetUpperarmRRot = baseUpperarmRRot;
-
-        switch (state)
-        {
-            case BodyState.NeutralUpright:
-                animState = 0;
-                break;
-            case BodyState.AttentiveUpright:
-                animState = 1;
-                break;
-            case BodyState.AttentiveForwardLean:
-                animState = 2;
-                break;
-            case BodyState.LowEnergySlumpedSubtle:
-                animState = 3;
-                break;
-            case BodyState.LowEnergySlumpedClear:
-                animState = 4;
-                break;
-            case BodyState.ReservedBackwardLeanSubtle:
-                animState = 5;
-                break;
-            case BodyState.ReservedBackwardLeanClear:
-                animState = 6;
-                break;
-            default:
-                animState = 0;
-                break;
-        }
+        int animState = GetAnimState(state);
+        int variantIndex = GetVariantIndex(state);
 
         if (animator != null)
         {
-            if (state == BodyState.LowEnergySlumpedSubtle ||
-                state == BodyState.ReservedBackwardLeanSubtle ||
-                state == BodyState.ReservedBackwardLeanClear)
-            {
-                int variantIndex = Random.Range(0, 2);
-                animator.SetInteger(VariantIndexParam, variantIndex);
-            }
-            else
-            {
-                animator.SetInteger(VariantIndexParam, 0);
-            }
-
+            animator.SetInteger(VariantIndexParam, variantIndex);
             animator.SetInteger(AnimStateParam, animState);
         }
 
@@ -172,91 +136,71 @@ public class AudienceBodyStateController : MonoBehaviour
         {
             case BodyState.NeutralUpright:
                 targetRigWeight = 1f;
-                if (rig != null) rig.weight = targetRigWeight;
-
                 targetSpine01Weight = 0f;
                 targetSpine1Z = -60f;
                 targetNeck1Z = -82.5f;
                 targetNeck2Z = -55f;
-                targetLowerarmLRot = baseLowerarmLRot;
-                targetLowerarmRRot = baseLowerarmRRot;
-                targetHandRRot = baseHandRRot;
                 break;
 
             case BodyState.AttentiveUpright:
                 targetRigWeight = 0.2f;
-                if (rig != null) rig.weight = targetRigWeight;
-
                 targetSpine01Weight = 0f;
                 targetSpine1Z = -60f;
                 targetNeck1Z = -82.5f;
                 targetNeck2Z = -55f;
-                targetLowerarmLRot = baseLowerarmLRot;
-                targetLowerarmRRot = baseLowerarmRRot;
-                targetHandRRot = baseHandRRot;
                 break;
 
             case BodyState.AttentiveForwardLean:
                 targetRigWeight = 0.2f;
-                if (rig != null) rig.weight = targetRigWeight;
-
                 targetSpine01Weight = 0f;
                 targetSpine1Z = -60f;
                 targetNeck1Z = -82.5f;
                 targetNeck2Z = -55f;
-                targetLowerarmLRot = baseLowerarmLRot;
-                targetLowerarmRRot = baseLowerarmRRot;
-                targetHandRRot = baseHandRRot;
+
+                targetLowerarmLRot = GetPoseRotation(lowerarmLForwardLeanPose, baseLowerarmLRot);
+                targetLowerarmRRot = GetPoseRotation(lowerarmRForwardLeanPose, baseLowerarmRRot);
+                targetHandRRot = GetPoseRotation(handRForwardLeanPose, baseHandRRot);
+
+                if (bodyRoot != null)
+                {
+                    targetBodyRootLocalPos = baseBodyRootLocalPos + new Vector3(forwardLeanXOffset, 0f, 0f);
+                }
                 break;
 
             case BodyState.LowEnergySlumpedSubtle:
-            targetRigWeight = 0.12f;
-            if (rig != null) rig.weight = targetRigWeight;
-
-            targetSpine01Weight = 0f;
-            targetSpine1Z = -60f;
-            targetNeck1Z = -82.5f;
-            targetNeck2Z = -55f;
-            targetLowerarmLRot = baseLowerarmLRot;
-            targetLowerarmRRot = baseLowerarmRRot;
-            targetHandRRot = baseHandRRot;
-            break;
-
-            case BodyState.LowEnergySlumpedClear:
-                targetRigWeight = 0.08f;
-                if (rig != null) rig.weight = targetRigWeight;
-
+                targetRigWeight = 0.12f;
                 targetSpine01Weight = 0f;
                 targetSpine1Z = -60f;
                 targetNeck1Z = -82.5f;
                 targetNeck2Z = -55f;
-                targetLowerarmLRot = baseLowerarmLRot;
-                targetLowerarmRRot = baseLowerarmRRot;
-                targetHandRRot = baseHandRRot;
+                break;
+
+            case BodyState.LowEnergySlumpedClear:
+                targetRigWeight = 0.08f;
+                targetSpine01Weight = 0f;
+                targetSpine1Z = -60f;
+                targetNeck1Z = -82.5f;
+                targetNeck2Z = -55f;
                 break;
 
             case BodyState.ReservedBackwardLeanSubtle:
                 targetRigWeight = 0.08f;
-                if (rig != null) rig.weight = targetRigWeight;
-
                 targetSpine01Weight = 0f;
                 targetSpine1Z = -60f;
                 targetNeck1Z = -82.5f;
                 targetNeck2Z = -55f;
-                targetLowerarmLRot = baseLowerarmLRot;
-                targetLowerarmRRot = baseLowerarmRRot;
-                targetHandRRot = baseHandRRot;
                 break;
 
             case BodyState.ReservedBackwardLeanClear:
                 targetRigWeight = 1f;
-                if (rig != null) rig.weight = targetRigWeight;
-
                 targetSpine01Weight = 0f;
+
                 targetNeck1Weight = 0f;
                 targetNeck2Weight = 0f;
+
                 targetUpperarmLWeight = 1f;
                 targetUpperarmRWeight = 1f;
+
                 targetLowerarmLWeight = 0f;
                 targetLowerarmRWeight = 0f;
                 targetHandLWeight = 0f;
@@ -268,59 +212,168 @@ public class AudienceBodyStateController : MonoBehaviour
 
                 targetUpperarmLRot = GetPoseRotation(upperarmLBackwardLeanClearPose, baseUpperarmLRot);
                 targetUpperarmRRot = GetPoseRotation(upperarmRBackwardLeanClearPose, baseUpperarmRRot);
+                break;
 
-                targetLowerarmLRot = baseLowerarmLRot;
+            case BodyState.SelfMonitoringSlightClosedSubtle:
+                targetRigWeight = 1.0f;
+
+                targetSpine01Weight = 0f;
+                targetNeck1Weight = 0f;
+                targetNeck2Weight = 0f;
+                targetUpperarmLWeight = 0f;
+                targetUpperarmRWeight = 0f;
+                targetLowerarmLWeight = 1f;
+                targetLowerarmRWeight = 0f;
+                targetHandLWeight = 1f;
+                targetHandRWeight = 0f;
+
+                targetSpine1Z = -62f;
+                targetNeck1Z = -82.5f;
+                targetNeck2Z = -55f;
+
+                targetLowerarmLRot = GetPoseRotation(lowerarmLSelfMonitoringPose, baseLowerarmLRot);
                 targetLowerarmRRot = baseLowerarmRRot;
+                targetHandLRot = GetPoseRotation(handLSelfMonitoringPose, baseHandLRot);
+                targetHandRRot = baseHandRRot;
+                break;
+
+            case BodyState.SelfMonitoringSlightClosedClear:
+                targetRigWeight = 1.0f;
+
+                targetSpine01Weight = 0f;
+                targetNeck1Weight = 0.5f;
+                targetNeck2Weight = 0f;
+                targetUpperarmLWeight = 0f;
+                targetUpperarmRWeight = 0f;
+                targetLowerarmLWeight = 0f;
+                targetLowerarmRWeight = 0f;
+                targetHandLWeight = 1.0f;
+                targetHandRWeight = 0f;
+
+                targetSpine1Z = -63f;
+                targetNeck1Z = -82.5f;
+                targetNeck2Z = -55f;
+
+                targetLowerarmLRot = GetPoseRotation(lowerarmLSelfMonitoringMarkedPose, baseLowerarmLRot);
+                targetLowerarmRRot = baseLowerarmRRot;
+                targetHandLRot = GetPoseRotation(handLSelfMonitoringPose, baseHandLRot);
                 targetHandRRot = baseHandRRot;
                 break;
 
             case BodyState.SideOrientedNeutral:
-            case BodyState.SelfRegulatingSelfContact:
-            case BodyState.RestlessFidgetySeat:
                 targetRigWeight = 1f;
-                if (rig != null) rig.weight = targetRigWeight;
-
                 targetSpine01Weight = 0f;
                 targetSpine1Z = -60f;
                 targetNeck1Z = -82.5f;
                 targetNeck2Z = -55f;
-                targetLowerarmLRot = baseLowerarmLRot;
-                targetLowerarmRRot = baseLowerarmRRot;
-                targetHandRRot = baseHandRRot;
                 break;
 
-            case BodyState.SelfMonitoringSlightClosed:
+            case BodyState.SelfRegulatingDiscomfort:
                 targetRigWeight = 1f;
-                if (rig != null) rig.weight = targetRigWeight;
-
-                targetSpine01Weight = 0.2f;
-                targetSpine1Z = -62f;
+                targetSpine01Weight = 0f;
+                targetSpine1Z = -60f;
                 targetNeck1Z = -82.5f;
                 targetNeck2Z = -55f;
-                targetLowerarmLRot = baseLowerarmLRot;
-                targetLowerarmRRot = baseLowerarmRRot;
-                targetHandRRot = baseHandRRot;
                 break;
+        }
+
+        if (rig != null)
+            rig.weight = targetRigWeight;
+    }
+
+    private int GetAnimState(BodyState state)
+    {
+        switch (state)
+        {
+            case BodyState.NeutralUpright: return 0;
+            case BodyState.AttentiveUpright: return 1;
+            case BodyState.AttentiveForwardLean: return 2;
+            case BodyState.LowEnergySlumpedSubtle: return 3;
+            case BodyState.LowEnergySlumpedClear: return 4;
+            case BodyState.ReservedBackwardLeanSubtle: return 5;
+            case BodyState.ReservedBackwardLeanClear: return 6;
+            case BodyState.SelfMonitoringSlightClosedSubtle: return 7;
+            case BodyState.SelfMonitoringSlightClosedClear: return 8;
+            case BodyState.SideOrientedNeutral: return 9;
+            case BodyState.SelfRegulatingDiscomfort: return 10;
+            default: return 0;
+        }
+    }
+
+    private int GetVariantIndex(BodyState state)
+    {
+        switch (state)
+        {
+            case BodyState.LowEnergySlumpedSubtle:
+            case BodyState.ReservedBackwardLeanSubtle:
+            case BodyState.ReservedBackwardLeanClear:
+            case BodyState.SelfMonitoringSlightClosedSubtle:
+            case BodyState.SideOrientedNeutral:
+                return Random.Range(0, 2);
+
+            default:
+                return 0;
         }
     }
 
     private Quaternion GetPoseRotation(Transform poseRef, Quaternion fallback)
     {
-        if (poseRef == null)
-            return fallback;
-
-        return poseRef.localRotation;
+        return poseRef == null ? fallback : poseRef.localRotation;
     }
 
     private void ApplyStateImmediate(BodyState state)
     {
         ApplyState(state);
 
+        if (rig != null) rig.weight = targetRigWeight;
+
+        if (spine01RotFix != null) spine01RotFix.weight = targetSpine01Weight;
+        if (neck1RotFix != null) neck1RotFix.weight = targetNeck1Weight;
+        if (neck2RotFix != null) neck2RotFix.weight = targetNeck2Weight;
+        if (upperarmLRotFix != null) upperarmLRotFix.weight = targetUpperarmLWeight;
+        if (upperarmRRotFix != null) upperarmRRotFix.weight = targetUpperarmRWeight;
+        if (lowerarmLRotFix != null) lowerarmLRotFix.weight = targetLowerarmLWeight;
+        if (lowerarmRRotFix != null) lowerarmRRotFix.weight = targetLowerarmRWeight;
+        if (handLRotFix != null) handLRotFix.weight = targetHandLWeight;
+        if (handRRotFix != null) handRRotFix.weight = targetHandRWeight;
+
+        if (spine1Target != null)
+        {
+            Vector3 euler = spine1Target.localEulerAngles;
+            spine1Target.localEulerAngles = new Vector3(euler.x, euler.y, targetSpine1Z);
+        }
+
+        if (neck1Target != null)
+        {
+            Vector3 euler = neck1Target.localEulerAngles;
+            neck1Target.localEulerAngles = new Vector3(euler.x, euler.y, targetNeck1Z);
+        }
+
+        if (neck2Target != null)
+        {
+            Vector3 euler = neck2Target.localEulerAngles;
+            neck2Target.localEulerAngles = new Vector3(euler.x, euler.y, targetNeck2Z);
+        }
+
+        if (upperarmLTarget != null) upperarmLTarget.localRotation = targetUpperarmLRot;
+        if (upperarmRTarget != null) upperarmRTarget.localRotation = targetUpperarmRRot;
+        if (lowerarmLTarget != null) lowerarmLTarget.localRotation = targetLowerarmLRot;
+        if (lowerarmRTarget != null) lowerarmRTarget.localRotation = targetLowerarmRRot;
+        if (handRTarget != null) handRTarget.localRotation = targetHandRRot;
+        if (handLTarget != null)
+            handLTarget.localRotation = targetHandLRot;
+        if (bodyRoot != null)
+            bodyRoot.localPosition = targetBodyRootLocalPos;
+    }
+
+    private void UpdateWeights()
+    {
         if (rig != null)
             rig.weight = targetRigWeight;
 
         if (spine01RotFix != null)
             spine01RotFix.weight = targetSpine01Weight;
+
         if (neck1RotFix != null)
             neck1RotFix.weight = targetNeck1Weight;
 
@@ -363,6 +416,12 @@ public class AudienceBodyStateController : MonoBehaviour
             neck2Target.localEulerAngles = new Vector3(euler.x, euler.y, targetNeck2Z);
         }
 
+        if (upperarmLTarget != null)
+            upperarmLTarget.localRotation = targetUpperarmLRot;
+
+        if (upperarmRTarget != null)
+            upperarmRTarget.localRotation = targetUpperarmRRot;
+
         if (lowerarmLTarget != null)
             lowerarmLTarget.localRotation = targetLowerarmLRot;
 
@@ -372,158 +431,36 @@ public class AudienceBodyStateController : MonoBehaviour
         if (handRTarget != null)
             handRTarget.localRotation = targetHandRRot;
 
-        if (upperarmLTarget != null)
-            upperarmLTarget.localRotation = targetUpperarmLRot;
-
-        if (upperarmRTarget != null)
-            upperarmRTarget.localRotation = targetUpperarmRRot;
+        if (handLTarget != null)
+            handLTarget.localRotation = targetHandLRot;
+        if (bodyRoot != null)
+        {
+            bodyRoot.localPosition = Vector3.Lerp(
+                bodyRoot.localPosition,
+                targetBodyRootLocalPos,
+                Time.deltaTime * bodyRootPositionBlendSpeed
+            );
+        }
     }
 
-   private void UpdateWeights()
+    private void ResetTargetsToDefault()
     {
-        if (spine01RotFix != null)
-        {
-            spine01RotFix.weight = Mathf.Lerp(
-                spine01RotFix.weight,
-                targetSpine01Weight,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
+        targetNeck1Weight = 1f;
+        targetNeck2Weight = 1f;
+        targetUpperarmLWeight = 1f;
+        targetUpperarmRWeight = 1f;
+        targetLowerarmLWeight = 1f;
+        targetLowerarmRWeight = 1f;
+        targetHandLWeight = 1f;
+        targetHandRWeight = 1f;
 
-        if (spine1Target != null)
-        {
-            Vector3 current = spine1Target.localEulerAngles;
-            float z = Mathf.MoveTowardsAngle(current.z, targetSpine1Z, postureBlendSpeed * 30f * Time.deltaTime);
-            spine1Target.localEulerAngles = new Vector3(current.x, current.y, z);
-        }
+        targetUpperarmLRot = baseUpperarmLRot;
+        targetUpperarmRRot = baseUpperarmRRot;
+        targetLowerarmLRot = baseLowerarmLRot;
+        targetLowerarmRRot = baseLowerarmRRot;
+        targetHandRRot = baseHandRRot;
+        targetHandLRot = baseHandLRot;
 
-        if (neck1Target != null)
-        {
-            Vector3 current = neck1Target.localEulerAngles;
-            float z = Mathf.MoveTowardsAngle(current.z, targetNeck1Z, postureBlendSpeed * 30f * Time.deltaTime);
-            neck1Target.localEulerAngles = new Vector3(current.x, current.y, z);
-        }
-        if (neck2Target != null)
-        {
-            Vector3 current = neck2Target.localEulerAngles;
-            float z = Mathf.MoveTowardsAngle(current.z, targetNeck2Z, postureBlendSpeed * 30f * Time.deltaTime);
-            neck2Target.localEulerAngles = new Vector3(current.x, current.y, z);
-        }
-
-        if (upperarmLTarget != null)
-        {
-            upperarmLTarget.localRotation = Quaternion.Slerp(
-                upperarmLTarget.localRotation,
-                targetUpperarmLRot,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
-
-        if (upperarmRTarget != null)
-        {
-            upperarmRTarget.localRotation = Quaternion.Slerp(
-                upperarmRTarget.localRotation,
-                targetUpperarmRRot,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
-        if (lowerarmLTarget != null)
-        {
-            lowerarmLTarget.localRotation = Quaternion.Slerp(
-                lowerarmLTarget.localRotation,
-                targetLowerarmLRot,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
-
-        if (lowerarmRTarget != null)
-        {
-            lowerarmRTarget.localRotation = Quaternion.Slerp(
-                lowerarmRTarget.localRotation,
-                targetLowerarmRRot,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
-
-        if (handRTarget != null)
-        {
-            handRTarget.localRotation = Quaternion.Slerp(
-                handRTarget.localRotation,
-                targetHandRRot,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
-
-        if (neck1RotFix != null)
-        {
-            neck1RotFix.weight = Mathf.Lerp(
-                neck1RotFix.weight,
-                targetNeck1Weight,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
-
-        if (neck2RotFix != null)
-        {
-            neck2RotFix.weight = Mathf.Lerp(
-                neck2RotFix.weight,
-                targetNeck2Weight,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
-
-        if (upperarmLRotFix != null)
-        {
-            upperarmLRotFix.weight = Mathf.Lerp(
-                upperarmLRotFix.weight,
-                targetUpperarmLWeight,
-                Time.deltaTime * rigWeightBlendSpeed
-            );
-        }
-
-        if (upperarmRRotFix != null)
-        {
-            upperarmRRotFix.weight = Mathf.Lerp(
-                upperarmRRotFix.weight,
-                targetUpperarmRWeight,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
-
-        if (lowerarmLRotFix != null)
-        {
-            lowerarmLRotFix.weight = Mathf.Lerp(
-                lowerarmLRotFix.weight,
-                targetLowerarmLWeight,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
-
-        if (lowerarmRRotFix != null)
-        {
-            lowerarmRRotFix.weight = Mathf.Lerp(
-                lowerarmRRotFix.weight,
-                targetLowerarmRWeight,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
-
-        if (handRRotFix != null)
-        {
-            handRRotFix.weight = Mathf.Lerp(
-                handRRotFix.weight,
-                targetHandRWeight,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
-
-        if (handLRotFix != null)
-        {
-            handLRotFix.weight = Mathf.Lerp(
-                handLRotFix.weight,
-                targetHandLWeight,
-                Time.deltaTime * postureBlendSpeed
-            );
-        }
+        targetBodyRootLocalPos = baseBodyRootLocalPos;
     }
 }
