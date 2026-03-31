@@ -25,6 +25,16 @@ public class AzureSpeechSTT : MonoBehaviour
     public string currentInferredStage = "Unknown";
     public float currentStageConfidence = 0f;
 
+    [Header("Stage Smoothing")]
+    public float minStageConfidence = 0.65f;
+    public int requiredRepeatCount = 2;
+
+    public string rawStage = "Unknown";
+    public string stableStage = "Unknown";
+
+    private string pendingStageCandidate = "Unknown";
+    private int pendingStageCount = 0;
+
     private bool pendingStageInference = false;
     private string pendingPayload = "";
 
@@ -240,11 +250,12 @@ public class AzureSpeechSTT : MonoBehaviour
                 {
                     currentInferredStage = result.stage;
                     currentStageConfidence = result.confidence;
-                    previousStage = result.stage;
 
-                    Debug.Log("[Stage] " + result.stage);
+                    Debug.Log("[Raw Stage] " + result.stage);
                     Debug.Log("[Confidence] " + result.confidence);
                     Debug.Log("[Reason] " + result.reason);
+
+                    ApplyStageSmoothing(result.stage, result.confidence);
                 }
             }
         }
@@ -263,6 +274,88 @@ public class AzureSpeechSTT : MonoBehaviour
             await recognizer.StopContinuousRecognitionAsync();
             recognizer.Dispose();
             recognizer = null;
+        }
+    }
+
+    private bool IsTransitionAllowed(string fromStage, string toStage)
+    {
+        if (fromStage == "Unknown") return true;
+        if (fromStage == toStage) return true;
+
+        switch (fromStage)
+        {
+            case "Orientation":
+                return toStage == "Rationale" || toStage == "Framework" || toStage == "Purpose";
+
+            case "Rationale":
+                return toStage == "Framework" || toStage == "Purpose" || toStage == "Methods";
+
+            case "Framework":
+                return toStage == "Purpose" || toStage == "Methods";
+
+            case "Purpose":
+                return toStage == "Methods" || toStage == "Results";
+
+            case "Methods":
+                return toStage == "Results" || toStage == "Implication";
+
+            case "Results":
+                return toStage == "Implication" || toStage == "Termination";
+
+            case "Implication":
+                return toStage == "Termination";
+
+            case "Termination":
+                return false;
+        }
+
+        return true;
+    }
+
+    private void ApplyStageSmoothing(string newStage, float confidence)
+    {
+        rawStage = newStage;
+
+        if (confidence < minStageConfidence)
+        {
+            Debug.Log($"[Stage Smoothing] ignored low confidence: {newStage} ({confidence})");
+            return;
+        }
+
+        if (!IsTransitionAllowed(stableStage, newStage))
+        {
+            Debug.Log($"[Stage Smoothing] blocked transition: {stableStage} -> {newStage}");
+            return;
+        }
+
+        if (newStage == stableStage)
+        {
+            pendingStageCandidate = newStage;
+            pendingStageCount = 0;
+            Debug.Log($"[Stage Smoothing] keep stable: {stableStage}");
+            return;
+        }
+
+        if (pendingStageCandidate == newStage)
+        {
+            pendingStageCount++;
+        }
+        else
+        {
+            pendingStageCandidate = newStage;
+            pendingStageCount = 1;
+        }
+
+        Debug.Log($"[Stage Smoothing] candidate={pendingStageCandidate}, count={pendingStageCount}/{requiredRepeatCount}");
+
+        if (pendingStageCount >= requiredRepeatCount)
+        {
+            stableStage = newStage;
+            previousStage = newStage;
+            pendingStageCandidate = newStage;
+            pendingStageCount = 0;
+
+            Debug.Log($"[Stable Stage Updated] {stableStage}");
         }
     }
 }

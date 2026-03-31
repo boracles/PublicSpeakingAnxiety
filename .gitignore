@@ -71,4 +71,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-/UserSettings/azure_speech.local.json
+/UserSettings/azure_speech.local.jsonstage-server/.env
+stage-server/.env
