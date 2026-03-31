@@ -59,6 +59,10 @@ public class AudienceBodyStateController : MonoBehaviour
     [Header("Current State")]
     public BodyState currentState = BodyState.NeutralUpright;
 
+    private BodyState baseState;
+    private Coroutine temporaryActionCoroutine;
+    private bool isTemporaryAction = false;
+
     private float targetSpine01Weight;
     private float targetNeck1Weight;
     private float targetNeck2Weight;
@@ -90,6 +94,9 @@ public class AudienceBodyStateController : MonoBehaviour
     private static readonly int AnimStateParam = Animator.StringToHash("AnimState");
     private static readonly int VariantIndexParam = Animator.StringToHash("VariantIndex");
 
+    private static readonly int SideOrientedTriggerParam = Animator.StringToHash("SideOrientedTrigger");
+    private bool suppressNeckForSideAction = false;
+
     void Start()
     {
         if (bodyRoot != null)
@@ -97,14 +104,15 @@ public class AudienceBodyStateController : MonoBehaviour
             baseBodyRootLocalPos = bodyRoot.localPosition;
             targetBodyRootLocalPos = baseBodyRootLocalPos;
         }
+
         if (upperarmLTarget != null) baseUpperarmLRot = upperarmLTarget.localRotation;
         if (upperarmRTarget != null) baseUpperarmRRot = upperarmRTarget.localRotation;
         if (lowerarmLTarget != null) baseLowerarmLRot = lowerarmLTarget.localRotation;
         if (lowerarmRTarget != null) baseLowerarmRRot = lowerarmRTarget.localRotation;
         if (handRTarget != null) baseHandRRot = handRTarget.localRotation;
-        if (handLTarget != null)
-            baseHandLRot = handLTarget.localRotation;
+        if (handLTarget != null) baseHandLRot = handLTarget.localRotation;
 
+        baseState = currentState;
         ApplyStateImmediate(currentState);
     }
 
@@ -115,7 +123,9 @@ public class AudienceBodyStateController : MonoBehaviour
 
     public void SetState(BodyState newState)
     {
+        baseState = newState;
         currentState = newState;
+        isTemporaryAction = false;
         ApplyState(currentState);
     }
 
@@ -462,5 +472,19 @@ public class AudienceBodyStateController : MonoBehaviour
         targetHandLRot = baseHandLRot;
 
         targetBodyRootLocalPos = baseBodyRootLocalPos;
+    }
+
+    public void PlaySideOrientedAction()
+    {
+        if (animator == null) return;
+
+        suppressNeckForSideAction = true;
+        animator.ResetTrigger(SideOrientedTriggerParam);
+        animator.SetTrigger(SideOrientedTriggerParam);
+    }
+
+    public void EndSideOrientedAction()
+    {
+        suppressNeckForSideAction = false;
     }
 }
