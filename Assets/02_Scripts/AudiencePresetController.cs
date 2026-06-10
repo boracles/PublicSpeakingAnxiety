@@ -13,7 +13,7 @@ public class AudiencePresetController : MonoBehaviour
 
     [Header("Audience Preset")]
     [SerializeField] private PresetLevel topicInterest = PresetLevel.High;
-    [SerializeField] private PresetLevel priorKnowledge = PresetLevel.Low;
+    [SerializeField] private PresetLevel priorKnowledge = PresetLevel.High;
 
     [Header("Runtime Audience State")]
     [SerializeField] private AudienceState audienceState = new AudienceState();
@@ -29,10 +29,18 @@ public class AudiencePresetController : MonoBehaviour
     [SerializeField] private TMP_Text currentStateValueText;
     [SerializeField] private TMP_Text sensitivityVectorValueText;
 
-    [Header("Test Delta Input")]
-    [SerializeField] private float testDeltaE = 0f;
-    [SerializeField] private float testDeltaV = 0f;
-    [SerializeField] private float testDeltaC = 0f;
+    [Header("Test Presentation Evaluation Result")]
+    [SerializeField] private PresentationEvaluationResult testEvaluationResult = new PresentationEvaluationResult();
+
+    [Header("Evaluation Weight")]
+    [Range(0f, 1f)]
+    [SerializeField] private float contentWeight = 0.5f;
+
+    [Range(0f, 1f)]
+    [SerializeField] private float deliveryWeight = 0.5f;
+
+    [Header("Debug Delta Result")]
+    [SerializeField] private Vector3 lastCalculatedDelta;
 
     private float initialEngagement;
     private float initialValence;
@@ -93,13 +101,24 @@ public class AudiencePresetController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ApplyTestDelta();
+            ApplyTestEvaluation();
         }
     }
 
-    private void ApplyTestDelta()
+    private void ApplyTestEvaluation()
     {
-        audienceState.ApplyDelta(testDeltaE, testDeltaV, testDeltaC);
+        lastCalculatedDelta = AudienceStateDeltaCalculator.CalculateTotalDelta(
+            testEvaluationResult,
+            contentWeight,
+            deliveryWeight
+        );
+
+        audienceState.ApplyDelta(
+            lastCalculatedDelta.x,
+            lastCalculatedDelta.y,
+            lastCalculatedDelta.z
+        );
+
         UpdateHUD();
     }
 
@@ -165,14 +184,12 @@ public class AudiencePresetController : MonoBehaviour
             audienceCountValueText.text = $"{audienceCount}명";
         }
 
-        // 초기 상태값: 사전 설정으로 계산된 고정값
         if (stateVectorValueText != null)
         {
             stateVectorValueText.text =
                 $"({FormatSigned(initialEngagement)}, {FormatSigned(initialValence)}, {FormatSigned(initialClarity)})";
         }
 
-        // 현재 상태값: Space 입력 등으로 갱신되는 런타임 값
         if (currentStateValueText != null)
         {
             currentStateValueText.text =
