@@ -176,17 +176,39 @@ public class PresentationTextEvaluationController : MonoBehaviour
     {
         PresentationEvaluationResult result = new PresentationEvaluationResult();
 
-        result.stage = ParseStage(response.stage);
+        PresentationStage parsedStage = ParseStage(response.stage);
+        result.stage = parsedStage;
 
-        result.organization = Mathf.Clamp(response.organization, -1f, 1f);
-        result.supportingMaterial = Mathf.Clamp(response.supportingMaterial, -1f, 1f);
-        result.centralMessage = Mathf.Clamp(response.centralMessage, -1f, 1f);
-        result.cerValidity = Mathf.Clamp(response.cerValidity, -1f, 1f);
+        // 1. LLM이 준 원점수
+        float rawOrg = Mathf.Clamp(response.organization, -1f, 1f);
+        float rawSup = Mathf.Clamp(response.supportingMaterial, -1f, 1f);
+        float rawMsg = Mathf.Clamp(response.centralMessage, -1f, 1f);
+        float rawCer = Mathf.Clamp(response.cerValidity, -1f, 1f);
 
+        // 2. 현재 stage에 해당하는 내용 평가 가중치
+        Vector4 weight = GetContentStageWeight(parsedStage);
+
+        // 3. stage-weighted content score
+        result.organization = rawOrg * weight.x;
+        result.supportingMaterial = rawSup * weight.y;
+        result.centralMessage = rawMsg * weight.z;
+        result.cerValidity = rawCer * weight.w;
+
+        // 지금은 내용 평가 중심.
+        // 전달 평가는 아직 별도 로직이므로 기존처럼 받되, 필요 없으면 0으로 둔다.
         result.languageClarity = Mathf.Clamp(response.languageClarity, -1f, 1f);
         result.vocalDelivery = Mathf.Clamp(response.vocalDelivery, -1f, 1f);
         result.gazeDelivery = Mathf.Clamp(response.gazeDelivery, -1f, 1f);
         result.slideSpeechAlignment = Mathf.Clamp(response.slideSpeechAlignment, -1f, 1f);
+
+        Debug.Log(
+            "[PresentationTextEvaluationController] Stage-weighted content scores: " +
+            $"stage={parsedStage}, " +
+            $"Org={result.organization}, " +
+            $"Sup={result.supportingMaterial}, " +
+            $"Msg={result.centralMessage}, " +
+            $"CER={result.cerValidity}"
+        );
 
         return result;
     }
@@ -206,6 +228,31 @@ public class PresentationTextEvaluationController : MonoBehaviour
 
         Debug.LogWarning("Unknown stage from server: " + stageText + ". Fallback to Orientation.");
         return PresentationStage.Orientation;
+    }
+
+    private Vector4 GetContentStageWeight(PresentationStage stage)
+    {
+        switch (stage)
+        {
+            case PresentationStage.Orientation:
+                return new Vector4(0.35f, 0.05f, 0.50f, 0.10f);
+            case PresentationStage.Rationale:
+                return new Vector4(0.15f, 0.20f, 0.25f, 0.40f);
+            case PresentationStage.Framework:
+                return new Vector4(0.20f, 0.15f, 0.20f, 0.45f);
+            case PresentationStage.Purpose:
+                return new Vector4(0.20f, 0.05f, 0.55f, 0.20f);
+            case PresentationStage.Methods:
+                return new Vector4(0.25f, 0.30f, 0.10f, 0.35f);
+            case PresentationStage.Results:
+                return new Vector4(0.15f, 0.35f, 0.25f, 0.25f);
+            case PresentationStage.Implication:
+                return new Vector4(0.15f, 0.20f, 0.35f, 0.30f);
+            case PresentationStage.Termination:
+                return new Vector4(0.30f, 0.05f, 0.55f, 0.10f);
+            default:
+                return new Vector4(0.25f, 0.25f, 0.25f, 0.25f);
+        }
     }
 
     [Serializable]
