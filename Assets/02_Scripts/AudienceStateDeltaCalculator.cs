@@ -4,19 +4,30 @@ public static class AudienceStateDeltaCalculator
 {
     public static Vector3 CalculateContentDelta(PresentationEvaluationResult result)
     {
+        Vector4 stageWeights = PresentationStageWeightProvider.GetContentWeights(result.stage);
+
+        float weightedOrg = result.organization * stageWeights.x;
+        float weightedSup = result.supportingMaterial * stageWeights.y;
+        float weightedMsg = result.centralMessage * stageWeights.z;
+        float weightedCER = result.cerValidity * stageWeights.w;
+
         float deltaE =
-            0.50f * result.organization +
-            0.50f * result.centralMessage;
+            0.35f * weightedOrg +
+            0.20f * weightedSup +
+            0.30f * weightedMsg +
+            0.15f * weightedCER;
 
         float deltaV =
-            1.00f * result.supportingMaterial +
-            1.00f * result.cerValidity;
+            0.10f * weightedOrg +
+            0.30f * weightedSup +
+            0.25f * weightedMsg +
+            0.35f * weightedCER;
 
         float deltaC =
-            1.00f * result.organization +
-            0.50f * result.supportingMaterial +
-            1.00f * result.centralMessage +
-            0.50f * result.cerValidity;
+            0.35f * weightedOrg +
+            0.15f * weightedSup +
+            0.25f * weightedMsg +
+            0.25f * weightedCER;
 
         return ClampDelta(deltaE, deltaV, deltaC);
     }
@@ -24,18 +35,22 @@ public static class AudienceStateDeltaCalculator
     public static Vector3 CalculateDeliveryDelta(PresentationEvaluationResult result)
     {
         float deltaE =
-            0.50f * result.languageClarity +
-            1.00f * result.vocalDelivery +
-            1.00f * result.gazeDelivery;
+            0.20f * result.languageClarity +
+            0.35f * result.vocalDelivery +
+            0.30f * result.gazeDelivery +
+            0.15f * result.slideSpeechAlignment;
 
         float deltaV =
-            0.50f * result.vocalDelivery +
-            0.50f * result.gazeDelivery +
-            0.50f * result.slideSpeechAlignment;
+            0.15f * result.languageClarity +
+            0.30f * result.vocalDelivery +
+            0.35f * result.gazeDelivery +
+            0.20f * result.slideSpeechAlignment;
 
         float deltaC =
-            1.00f * result.languageClarity +
-            1.00f * result.slideSpeechAlignment;
+            0.35f * result.languageClarity +
+            0.20f * result.vocalDelivery +
+            0.10f * result.gazeDelivery +
+            0.35f * result.slideSpeechAlignment;
 
         return ClampDelta(deltaE, deltaV, deltaC);
     }

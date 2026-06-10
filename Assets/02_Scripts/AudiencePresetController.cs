@@ -18,6 +18,9 @@ public class AudiencePresetController : MonoBehaviour
     [Header("Runtime Audience State")]
     [SerializeField] private AudienceState audienceState = new AudienceState();
 
+    [SerializeField] private TMP_Text currentStageValueText;
+    [SerializeField] private string currentPresentationStage = "None";
+
     [Header("Prototype Setting")]
     [SerializeField] private int audienceCount = 1;
 
@@ -92,21 +95,10 @@ public class AudiencePresetController : MonoBehaviour
         UpdateHUD();
     }
 
-    private void Update()
-    {
-        if (!Application.isPlaying)
-        {
-            return;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ApplyTestEvaluation();
-        }
-    }
-
     private void ApplyTestEvaluation()
     {
+        currentPresentationStage = testEvaluationResult.stage.ToString();
+
         lastCalculatedDelta = AudienceStateDeltaCalculator.CalculateTotalDelta(
             testEvaluationResult,
             contentWeight,
@@ -201,6 +193,30 @@ public class AudiencePresetController : MonoBehaviour
             sensitivityVectorValueText.text =
                 $"({audienceState.engagementSensitivity:0.00}, —, {audienceState.claritySensitivity:0.00})";
         }
+
+        if (currentStageValueText != null)
+        {
+            currentStageValueText.text = currentPresentationStage;
+        }
+    }
+
+    public void ApplyEvaluationResult(PresentationEvaluationResult result)
+    {
+        currentPresentationStage = result.stage.ToString();
+
+        lastCalculatedDelta = AudienceStateDeltaCalculator.CalculateTotalDelta(
+            result,
+            contentWeight,
+            deliveryWeight
+        );
+
+        audienceState.ApplyDelta(
+            lastCalculatedDelta.x,
+            lastCalculatedDelta.y,
+            lastCalculatedDelta.z
+        );
+
+        UpdateHUD();
     }
 
     private string FormatSigned(float value)

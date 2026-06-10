@@ -3,6 +3,9 @@ using UnityEngine;
 [System.Serializable]
 public class PresentationEvaluationResult
 {
+    [Header("Presentation Stage")]
+    public PresentationStage stage = PresentationStage.Orientation;
+
     [Header("Content Evaluation M_t")]
     [Range(-1f, 1f)] public float organization;
     [Range(-1f, 1f)] public float supportingMaterial;
