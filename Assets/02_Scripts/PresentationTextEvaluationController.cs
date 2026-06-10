@@ -12,13 +12,9 @@ public class PresentationTextEvaluationController : MonoBehaviour
     [Header("Server")]
     [SerializeField] private string serverUrl = "http://localhost:3000/evaluate-text";
 
-    [Header("Presentation Text Input")]
+    [Header("Inspector Test Text")]
     [TextArea(6, 15)]
     [SerializeField] private string presentationText;
-
-    [Header("Runtime Option")]
-    [SerializeField] private bool evaluateOnStart = true;
-    [SerializeField] private float evaluateDelayOnStart = 0.5f;
 
     [Header("Evaluation Result Preview")]
     [SerializeField] private PresentationEvaluationResult lastEvaluationResult = new PresentationEvaluationResult();
@@ -28,35 +24,20 @@ public class PresentationTextEvaluationController : MonoBehaviour
     [SerializeField] private string lastRawJson;
     [SerializeField] private string lastError;
 
-    private void Start()
-    {
-        if (evaluateOnStart)
-        {
-            StartCoroutine(EvaluateAfterDelay());
-        }
-    }
+    public bool IsEvaluating => isEvaluating;
 
-    private IEnumerator EvaluateAfterDelay()
-    {
-        yield return new WaitForSeconds(evaluateDelayOnStart);
-        EvaluatePresentationText();
-    }
-
-    private void Update()
-    {
-        if (!Application.isPlaying)
-        {
-            return;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            EvaluatePresentationText();
-        }
-    }
-
-    [ContextMenu("Evaluate Presentation Text")]
+    [ContextMenu("Evaluate Inspector Text")]
     public void EvaluatePresentationText()
+    {
+        EvaluateText(presentationText, "Inspector text");
+    }
+
+    public void EvaluateRuntimeText(string runtimeText)
+    {
+        EvaluateText(runtimeText, "Runtime STT text");
+    }
+
+    private void EvaluateText(string text, string sourceLabel)
     {
         if (!Application.isPlaying)
         {
@@ -64,25 +45,25 @@ public class PresentationTextEvaluationController : MonoBehaviour
             return;
         }
 
-        if (string.IsNullOrWhiteSpace(presentationText))
+        if (string.IsNullOrWhiteSpace(text))
         {
-            lastError = "Presentation text is empty.";
-            Debug.LogWarning(lastError);
+            lastError = $"{sourceLabel} is empty.";
+            Debug.LogWarning("[PresentationTextEvaluationController] " + lastError);
             return;
         }
 
         if (isEvaluating)
         {
             lastError = "Evaluation is already running.";
-            Debug.LogWarning(lastError);
+            Debug.LogWarning("[PresentationTextEvaluationController] " + lastError);
             return;
         }
 
-        Debug.Log("[PresentationTextEvaluationController] Start LLM evaluation.");
+        Debug.Log($"[PresentationTextEvaluationController] Start LLM evaluation from {sourceLabel}.");
         Debug.Log("[PresentationTextEvaluationController] Server URL: " + serverUrl);
-        Debug.Log("[PresentationTextEvaluationController] Text: " + presentationText);
+        Debug.Log("[PresentationTextEvaluationController] Text: " + text);
 
-        StartCoroutine(SendTextToServer(presentationText));
+        StartCoroutine(SendTextToServer(text));
     }
 
     private IEnumerator SendTextToServer(string text)
@@ -124,8 +105,7 @@ public class PresentationTextEvaluationController : MonoBehaviour
 
             lastRawJson = responseText;
 
-            Debug.Log("[PresentationTextEvaluationController] LLM raw response:");
-            Debug.Log(lastRawJson);
+            Debug.Log("[PresentationTextEvaluationController] LLM raw response: " + lastRawJson);
 
             EvaluationResponse response;
 
@@ -179,23 +159,31 @@ public class PresentationTextEvaluationController : MonoBehaviour
         PresentationStage parsedStage = ParseStage(response.stage);
         result.stage = parsedStage;
 
-        // 1. LLM이 준 원점수
+        Debug.Log(
+            "[PresentationTextEvaluationController] Raw LLM scores: " +
+            $"stage={response.stage}, " +
+            $"organization={response.organization}, " +
+            $"supportingMaterial={response.supportingMaterial}, " +
+            $"centralMessage={response.centralMessage}, " +
+            $"cerValidity={response.cerValidity}, " +
+            $"languageClarity={response.languageClarity}, " +
+            $"vocalDelivery={response.vocalDelivery}, " +
+            $"gazeDelivery={response.gazeDelivery}, " +
+            $"slideSpeechAlignment={response.slideSpeechAlignment}"
+        );
+
         float rawOrg = Mathf.Clamp(response.organization, -1f, 1f);
         float rawSup = Mathf.Clamp(response.supportingMaterial, -1f, 1f);
         float rawMsg = Mathf.Clamp(response.centralMessage, -1f, 1f);
         float rawCer = Mathf.Clamp(response.cerValidity, -1f, 1f);
 
-        // 2. 현재 stage에 해당하는 내용 평가 가중치
         Vector4 weight = GetContentStageWeight(parsedStage);
 
-        // 3. stage-weighted content score
         result.organization = rawOrg * weight.x;
         result.supportingMaterial = rawSup * weight.y;
         result.centralMessage = rawMsg * weight.z;
         result.cerValidity = rawCer * weight.w;
 
-        // 지금은 내용 평가 중심.
-        // 전달 평가는 아직 별도 로직이므로 기존처럼 받되, 필요 없으면 0으로 둔다.
         result.languageClarity = Mathf.Clamp(response.languageClarity, -1f, 1f);
         result.vocalDelivery = Mathf.Clamp(response.vocalDelivery, -1f, 1f);
         result.gazeDelivery = Mathf.Clamp(response.gazeDelivery, -1f, 1f);
