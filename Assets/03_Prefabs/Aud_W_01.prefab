@@ -1645,7 +1645,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: ca06e0f1ed0ed084cb3e8af04a81b5f7, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -1665,9 +1665,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4863834582767708964}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6685686302227511037}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3363572126982979298}
@@ -1708,22 +1705,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
   m_PrefabInstance: {fileID: 5027002838702111076}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6685686302227511037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5261024202918790197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.RigBuilder
-  m_RigLayers:
-  - m_Rig: {fileID: 804857566609742355}
-    m_Active: 1
-  m_Effectors: []
 --- !u!114 &3363572126982979298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1739,7 +1720,19 @@ MonoBehaviour:
   profile: {fileID: 0}
   topicInterest: 1
   priorKnowledge: 1
+  topicInterestValue: 0.5
+  priorKnowledgeValue: 0.5
+  currentSeat: {fileID: 0}
   hasLaptop: 0
+  speakerTarget: {fileID: 0}
+  slideTarget: {fileID: 0}
+  laptopTarget: {fileID: 0}
+  awayTarget: {fileID: 0}
+  laptopAnchor: {fileID: 0}
+  spawnedLaptop: {fileID: 0}
+  responsiveness: 0.5
+  expressivity: 0.5
+  criticalBias: 0.5
   state:
     engagement: 0
     evaluativeValence: 0
@@ -1762,7 +1755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8cc1ca278a6b04b8f1a6a5188a84ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudienceBackchannelPlanner
-  profile: {fileID: 0}
+  agent: {fileID: 0}
   state:
     engagement: 0
     evaluativeValence: 0

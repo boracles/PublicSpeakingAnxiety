@@ -9,6 +9,13 @@ public class AudienceAgent : MonoBehaviour
     public AudienceSettingLevel topicInterest = AudienceSettingLevel.Medium;
     public AudienceSettingLevel priorKnowledge = AudienceSettingLevel.Medium;
 
+    [Header("Runtime User Setting Values")]
+    [Range(0f, 1f)] public float topicInterestValue = 0.5f;
+    [Range(0f, 1f)] public float priorKnowledgeValue = 0.5f;
+
+    [Header("Seat Runtime")]
+    public AudienceSeatSlot currentSeat;
+
     [Header("Runtime Scene Condition")]
     public bool hasLaptop;
 
@@ -17,6 +24,10 @@ public class AudienceAgent : MonoBehaviour
     public Transform slideTarget;
     public Transform laptopTarget;
     public Transform awayTarget;
+
+    [Header("Laptop Runtime")]
+    public Transform laptopAnchor;
+    public GameObject spawnedLaptop;
 
     [Header("Runtime Behavior Traits")]
     [Range(0f, 1f)] public float responsiveness = 0.5f;
@@ -82,6 +93,21 @@ public class AudienceAgent : MonoBehaviour
         }
     }
 
+    public void AssignSeat(AudienceSeatSlot seat)
+    {
+        currentSeat = seat;
+
+        if (seat == null)
+            return;
+
+        transform.position = seat.seatPoint.position;
+        transform.rotation = seat.seatPoint.rotation;
+
+        laptopAnchor = seat.laptopAnchor;
+        laptopTarget = seat.laptopTarget;
+        awayTarget = seat.awayTarget;
+    }
+
     public void ApplySessionSettings(
         AudienceSettingLevel topic,
         AudienceSettingLevel knowledge,
@@ -103,6 +129,38 @@ public class AudienceAgent : MonoBehaviour
         claritySensitivity = LevelToDecreaseSensitivity(priorKnowledge);
 
         state.Clamp();
+    }
+
+    public void ApplySessionValues(
+    float topicValue,
+    float knowledgeValue,
+    float stateOffsetE,
+    float stateOffsetC
+    )
+    {
+        topicValue = Mathf.Clamp01(topicValue);
+        knowledgeValue = Mathf.Clamp01(knowledgeValue);
+
+        topicInterestValue = topicValue;
+        priorKnowledgeValue = knowledgeValue;
+
+        state.engagement = ToInitialStateValue(topicValue) + stateOffsetE;
+        state.evaluativeValence = 0f;
+        state.cognitiveClarity = ToInitialStateValue(knowledgeValue) + stateOffsetC;
+
+        engagementSensitivity = ValueToDecreaseSensitivity(topicValue);
+        claritySensitivity = ValueToDecreaseSensitivity(knowledgeValue);
+
+        state.Clamp();
+    }
+
+    private float ValueToDecreaseSensitivity(float value)
+    {
+        // 0.25 -> 1.20
+        // 0.50 -> 1.00
+        // 0.75 -> 0.80
+        float normalized = Mathf.InverseLerp(0.25f, 0.75f, value);
+        return Mathf.Lerp(1.20f, 0.80f, normalized);
     }
 
     public void ApplyBehaviorTraits(float newResponsiveness, float newExpressivity, float newCriticalBias)
