@@ -1,13 +1,9 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "AudienceProfile", menuName = "Audience/Audience Profile")]
 public class AudienceProfile : ScriptableObject
 {
-    public string agentId; // AUD_A, AUD_B...
+    [Header("Fixed Identity")]
+    public string agentId;
     public AudienceBodyType bodyType;
-    public bool hasLaptop;
-
-    public float topicInterest;
-    public float priorKnowledge;
-
-    public float responsiveness;
-    public float expressivity;
-    public float criticalBias;
 }
