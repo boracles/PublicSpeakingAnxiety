@@ -9,12 +9,21 @@ public class AudienceBackchannelOutput : MonoBehaviour
 
     [Header("References")]
     public AudienceBackchannelPlanner planner;
+    public AudienceGazePlanner gazePlanner;
 
     [Header("Timing")]
     public float interval = 5f;
-    public float displayDuration = 2f;
 
     private Coroutine displayCoroutine;
+
+    private void Awake()
+    {
+        if (planner == null)
+            planner = GetComponent<AudienceBackchannelPlanner>();
+
+        if (gazePlanner == null)
+            gazePlanner = GetComponent<AudienceGazePlanner>();
+    }
 
     private void Start()
     {
@@ -24,10 +33,10 @@ public class AudienceBackchannelOutput : MonoBehaviour
             backchannelText.gameObject.SetActive(false);
         }
 
-        StartCoroutine(BackchannelLoop());
+        StartCoroutine(OutputLoop());
     }
 
-    private IEnumerator BackchannelLoop()
+    private IEnumerator OutputLoop()
     {
         while (true)
         {
@@ -36,16 +45,43 @@ public class AudienceBackchannelOutput : MonoBehaviour
             if (planner == null)
                 continue;
 
-            string text = planner.PlanBackchannel();
+            AudienceBackchannelCommand command = planner.PlanBackchannel();
 
-            if (string.IsNullOrEmpty(text))
+            if (command == null)
                 continue;
 
-            ShowBackchannel(text);
+            ExecuteCommand(command);
         }
     }
 
-    private void ShowBackchannel(string text)
+    private void ExecuteCommand(AudienceBackchannelCommand command)
+    {
+        Transform gazeTarget = null;
+
+        if (gazePlanner != null)
+        {
+            gazeTarget = gazePlanner.GetTargetTransform(command.gazeTarget);
+        }
+
+        string gazeName = gazeTarget != null ? gazeTarget.name : "NULL";
+
+        Debug.Log(
+            $"{gameObject.name} backchannel: {command.behaviorId} / " +
+            $"utterance: {command.utterance} / gaze: {command.gazeTarget} -> {gazeName}"
+        );
+
+        if (!string.IsNullOrEmpty(command.utterance))
+        {
+            ShowText(command.utterance, command.duration);
+        }
+
+        // 여기서 나중에 Animator / IK 연결
+        // PlayBodyAnimation(command.behaviorId);
+        // PlayFaceAnimation(command.behaviorId);
+        // SetGazeTarget(gazeTarget);
+    }
+
+    private void ShowText(string text, float duration)
     {
         if (backchannelText == null)
             return;
@@ -53,15 +89,15 @@ public class AudienceBackchannelOutput : MonoBehaviour
         if (displayCoroutine != null)
             StopCoroutine(displayCoroutine);
 
-        displayCoroutine = StartCoroutine(ShowTextRoutine(text));
+        displayCoroutine = StartCoroutine(ShowTextRoutine(text, duration));
     }
 
-    private IEnumerator ShowTextRoutine(string text)
+    private IEnumerator ShowTextRoutine(string text, float duration)
     {
         backchannelText.gameObject.SetActive(true);
         backchannelText.text = text;
 
-        yield return new WaitForSeconds(displayDuration);
+        yield return new WaitForSeconds(duration);
 
         backchannelText.text = "";
         backchannelText.gameObject.SetActive(false);
