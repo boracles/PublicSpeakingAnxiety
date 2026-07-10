@@ -1,63 +1,62 @@
 fileFormatVersion: 2
-guid: e6d19c6adc5a9934caa1441cf6866b03
+guid: 382ed18f926592c40b30b689b06abe91
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: SciFi_Conf_Room_TV
-    100004: SciFi_Conf_Room_TV_Screen01
-    100006: SciFi_Conf_Room_TV_Screen02
-    100008: SciFi_Conf_Room_TV_Screen03
+    100002: SciFi_TouchScreen_01
+    100004: SciFi_TouchScreen_02
+    100006: SciFi_TouchScreen_03
+    100008: SciFi_TouchScreen_04
+    100010: SciFi_TouchScreen_05
+    100012: SciFi_TouchScreen_06
+    100014: SciFi_TouchScreen_07
+    100016: SciFi_TouchScreen_08
+    100018: SciFi_TouchScreen_09
+    100020: SciFi_TouchScreen_10
     400000: //RootNode
-    400002: SciFi_Conf_Room_TV
-    400004: SciFi_Conf_Room_TV_Screen01
-    400006: SciFi_Conf_Room_TV_Screen02
-    400008: SciFi_Conf_Room_TV_Screen03
-    2100000: SciFi_Conf_Room_TV
-    2100002: SciFi_Conf_Room_TV_Screen03
-    2100004: SciFi_Conf_Room_TV_Screen01
-    2100006: SciFi_Conf_Room_TV_Screen02
-    2100008: SciFi_Conf_Room_Glass
-    2300000: //RootNode
-    2300002: SciFi_Conf_Room_TV
-    2300004: SciFi_Conf_Room_TV_Screen01
-    2300006: SciFi_Conf_Room_TV_Screen02
-    2300008: SciFi_Conf_Room_TV_Screen03
-    3300000: //RootNode
-    3300002: SciFi_Conf_Room_TV
-    3300004: SciFi_Conf_Room_TV_Screen01
-    3300006: SciFi_Conf_Room_TV_Screen02
-    3300008: SciFi_Conf_Room_TV_Screen03
-    4300000: SciFi_Conf_Room_TV
-    4300002: SciFi_Conf_Room_TV_Screen01
-    4300004: SciFi_Conf_Room_TV_Screen02
-    4300006: SciFi_Conf_Room_TV_Screen03
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SciFi_Conf_Room_Glass
-    second: {fileID: 2100000, guid: 1b1b12fbc34f7c64d81fd20c2afa86c4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SciFi_Conf_Room_TV
-    second: {fileID: 2100000, guid: 555d33234fb8d524f944cdcd20d8ddac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SciFi_Conf_Room_TV_Screen01
-    second: {fileID: 2100000, guid: f1f44c845620c854f9860598d980b948, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SciFi_Conf_Room_TV_Screen02
-    second: {fileID: 2100000, guid: c24d9e0c681e13f4ca4eb10e8ca2be89, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SciFi_Conf_Room_TV_Screen03
-    second: {fileID: 2100000, guid: 4efbb83d7578ff14285c4733e8ed2852, type: 2}
+    400002: SciFi_TouchScreen_01
+    400004: SciFi_TouchScreen_02
+    400006: SciFi_TouchScreen_03
+    400008: SciFi_TouchScreen_04
+    400010: SciFi_TouchScreen_05
+    400012: SciFi_TouchScreen_06
+    400014: SciFi_TouchScreen_07
+    400016: SciFi_TouchScreen_08
+    400018: SciFi_TouchScreen_09
+    400020: SciFi_TouchScreen_10
+    2100000: SciFi_TouchScreen
+    2300000: SciFi_TouchScreen_01
+    2300002: SciFi_TouchScreen_02
+    2300004: SciFi_TouchScreen_03
+    2300006: SciFi_TouchScreen_04
+    2300008: SciFi_TouchScreen_05
+    2300010: SciFi_TouchScreen_06
+    2300012: SciFi_TouchScreen_07
+    2300014: SciFi_TouchScreen_08
+    2300016: SciFi_TouchScreen_09
+    2300018: SciFi_TouchScreen_10
+    3300000: SciFi_TouchScreen_01
+    3300002: SciFi_TouchScreen_02
+    3300004: SciFi_TouchScreen_03
+    3300006: SciFi_TouchScreen_04
+    3300008: SciFi_TouchScreen_05
+    3300010: SciFi_TouchScreen_06
+    3300012: SciFi_TouchScreen_07
+    3300014: SciFi_TouchScreen_08
+    3300016: SciFi_TouchScreen_09
+    3300018: SciFi_TouchScreen_10
+    4300000: SciFi_TouchScreen_02
+    4300002: SciFi_TouchScreen_10
+    4300004: SciFi_TouchScreen_09
+    4300006: SciFi_TouchScreen_08
+    4300008: SciFi_TouchScreen_07
+    4300010: SciFi_TouchScreen_03
+    4300012: SciFi_TouchScreen_04
+    4300014: SciFi_TouchScreen_05
+    4300016: SciFi_TouchScreen_06
+    4300018: SciFi_TouchScreen_01
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -142,5 +141,5 @@ AssetOrigin:
   productId: 167324
   packageName: Sci-Fi Conference Room
   packageVersion: 2017.4.37f1
-  assetPath: Assets/SciFi_Conference Room/FBX/SciFi_Conf_Room_TV.FBX
+  assetPath: Assets/SciFi_Conference Room/FBX/SciFi_TouchScreen.FBX
   uploadId: 364319
