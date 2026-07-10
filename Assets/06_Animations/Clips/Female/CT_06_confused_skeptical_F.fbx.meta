@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f14970f7f2f122748ad86744fc28146a
+guid: ff42b5106ec543d4d95b53a99b47d6fd
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -116,88 +116,88 @@ ModelImporter:
     serializedVersion: 3
     human: []
     skeleton:
-    - name: CT_05_trying_to_understand_F(Clone)
+    - name: CT_06_confused_skeptical_F(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: B_FK2_Clothing.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: B_FK2_Hair.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_EYE_L.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_EYE_R.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Eyelash.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Lower_Teeth.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Scalp.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Skin_Arm_S.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Skin_Head.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Skin_Leg_L.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Tongue.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Upper_Teeth.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Jacket_D1.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Shoes_Plain_Pumps_L.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Shoes_Plain_Pumps_R.002
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: disengaged_negative
-      parentName: CT_05_trying_to_understand_F(Clone)
+      parentName: CT_06_confused_skeptical_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071069, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
@@ -419,13 +419,13 @@ ModelImporter:
     - name: ring_02_r
       parentName: ring_01_r
       position: {x: 0.036898356, y: 0.00000013828277, z: -0.000013689994}
-      rotation: {x: 0.0083686635, y: -0.002041809, z: -0.040053535, w: 0.99916047}
-      scale: {x: 0.9999838, y: 1.0000242, z: 0.99999994}
+      rotation: {x: 0.008368726, y: -0.002042447, z: -0.04005211, w: 0.99916047}
+      scale: {x: 0.999983, y: 1.0000232, z: 0.99999946}
     - name: ring_03_r
       parentName: ring_02_r
-      position: {x: 0.023817519, y: 0.00000032424927, z: -0.0000125265115}
-      rotation: {x: -0.03147248, y: -0.00406513, z: -0.030912958, w: 0.9990182}
-      scale: {x: 0.9999872, y: 1.0000204, z: 1.0000018}
+      position: {x: 0.023817519, y: 0.00000022649765, z: -0.0000124883645}
+      rotation: {x: -0.03147234, y: -0.004065076, z: -0.030912945, w: 0.9990182}
+      scale: {x: 0.9999892, y: 1.0000187, z: 1.0000019}
     - name: pinky_metacarpal_r
       parentName: RightHand
       position: {x: 0.026676826, y: -0.0040806294, z: -0.021017976}
