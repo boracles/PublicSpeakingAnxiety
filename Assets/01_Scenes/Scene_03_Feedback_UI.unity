@@ -2449,7 +2449,7 @@ MonoBehaviour:
   savedPos: {x: -0.05000009, y: 0.752, z: -0.00000024211403}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 1.8000001, y: 0.7252}
-  savedColor: {r: 1, g: 1, b: 1, a: 0.039215688}
+  savedColor: {r: 1, g: 1, b: 1, a: 0.019607844}
   savedTextUV0: {x: 0, y: 0, z: 0, w: 0}
   savedFill: 1
 --- !u!114 &16728392
@@ -2465,7 +2465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 2100000, guid: fed34386461c64b388ccc434d4f042eb, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.039215688}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.019607844}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
