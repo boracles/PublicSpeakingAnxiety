@@ -14,5 +14,5 @@ public enum BodyState
     SelfMonitoringSlightClosedClear,
 
     SideOrientedNeutral,
-    SelfRegulatingDiscomfort
+    SelfRegulatingDiscomfort,
 }
