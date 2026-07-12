@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/01_Scenes/Scene_01_Intro.unity
+    path: Assets/01_Scenes/Scene_00.unity
+    guid: f849cdc76195fdf40beb2bdfeba1f907
+  - enabled: 1
+    path: Assets/01_Scenes/Scene_01_Intro_LhjBackup.unity
     guid: 6032b288d40a80b4bba9ca491cb18768
   - enabled: 1
-    path: Assets/01_Scenes/Scene_02_Presentation.unity
-    guid: 36c4e6ef02c74a441ad38b8b507aa262
+    path: Assets/01_Scenes/Scene_02_Presentation_LhjBackup.unity
+    guid: 310dfa884f4562e409fe4b3d04663ade
   - enabled: 1
     path: Assets/01_Scenes/Scene_03_Feedback.unity
-    guid: c994ce92b09688944852c612bf5158b8
+    guid: c7fa7c52402352441819c3830b527143
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0500ed5e4d1644ac7873b0c1c1107b6c, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 985a30650d3baaf4f9dee36db7aea5d5, type: 2}
