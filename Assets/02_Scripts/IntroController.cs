@@ -2,7 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-using System; 
+using System;
+using Firebase.Database; // Firebase 추가
 
 // ==========================================
 // 1. JSON 데이터 구조 정의
@@ -14,7 +15,6 @@ public class SessionData
     public string pin_code;
     public string created_at;
     public string session_status;
-    
     public Page1BasicInfo page_1_basic_info;
     public Page2FileInfo page_2_file_info;
     public Page3AudienceInfo page_3_audience_info;
@@ -42,7 +42,6 @@ public class Page2FileInfo
 [Serializable]
 public class Page3AudienceInfo
 {
-    public class SampleRate { } 
     public string audience_type;
     public int audience_scale_count;
     public string expertise_level;
@@ -57,73 +56,28 @@ public class IntroController : MonoBehaviour
     [Header("--- 1단계: PIN 입력 UI ---")]
     public TMP_InputField pinInputField;
     public Button pinSubmitButton;
-    public TMP_Text pinWarningText; 
+    public TMP_Text pinWarningText;
 
     [Header("--- 2단계: 세션 준비 완료 판넬 ---")]
-    public GameObject sessionInfoPanel;     
+    public GameObject sessionInfoPanel;
 
     [Header("--- 판넬 내부 텍스트 컴포넌트들 ---")]
-    public TMP_Text sessionTypeText;         
-    public TMP_Text durationText;            
-    public TMP_Text qaCountText;             
-    public TMP_Text audienceScaleText;       
-    public TMP_Text environmentText;         
-    public TMP_Text expertiseText;           
-    public TMP_Text interestText;            
+    public TMP_Text sessionTypeText;
+    public TMP_Text durationText;
+    public TMP_Text qaCountText;
+    public TMP_Text audienceScaleText;
+    public TMP_Text environmentText;
+    public TMP_Text expertiseText;
+    public TMP_Text interestText;
 
     [Header("--- 판넬 내부 하단 버튼 ---")]
-    public Button startPresentationButton;  
+    public Button startPresentationButton;
 
-    private SessionData currentSessionData; 
+    private SessionData currentSessionData;
 
-    // 가짜 서버 데이터
-    private string mockJsonFromServer = @"
-    {
-      ""user_id"": ""hazel_cybersec"",
-      ""pin_code"": ""1234"",
-      ""created_at"": ""2026-07-11T21:30:00Z"",
-      ""session_status"": ""READY"",
-      ""page_1_basic_info"": {
-        ""presentation_title"": ""VR발표환경에서의 반응적 중립성 기반 AI 청중 백채널 디자인"",
-        ""presentation_purpose"": ""연구결과공유"",
-        ""used_language"": ""한국어"",
-        ""duration_minutes"": 10,
-        ""environment_type"": ""세미나실"",
-        ""qa_count"": 3
-      },
-      ""page_2_file_info"": {
-        ""slide_pdf_name"": ""VR발표환경_발표자료.pdf"",
-        ""paper_pdf_name"": ""AI_Research_Paper.pdf"",
-        ""presentation_script_content"": ""스크립트 내용...""
-      },
-      ""page_3_audience_info"": {
-        ""audience_type"": ""심사위원 중심"",
-        ""audience_scale_count"": 6,
-        ""expertise_level"": ""보통"",
-        ""interest_level"": ""보통""
-      }
-    }";
-
-   void Start()
+    void Start()
     {
         if (sessionInfoPanel != null) sessionInfoPanel.SetActive(false);
-
-        // 💡 [수정 완성] 새 이름인 PresentationStageManager의 정적 플래그를 참조합니다!
-        if (PresentationStageManager.IsReturningFromPresentation)
-        {
-            // 1. 자동으로 JSON 데이터를 파싱해 UI를 채워줍니다.
-            currentSessionData = JsonUtility.FromJson<SessionData>(mockJsonFromServer);
-            FillUiWithSessionData();
-
-            // 2. 세션 판넬을 즉시 활성화(ON) 시켜줍니다!
-            if (sessionInfoPanel != null) sessionInfoPanel.SetActive(true);
-
-            // 3. 확인이 끝났으니 새 클래스의 플래그를 false로 원상복구합니다.
-            PresentationStageManager.IsReturningFromPresentation = false;
-            
-            Debug.Log("[복귀 인증] PIN 번호 입력 단계를 건너뛰고 세션 판넬을 즉시 오픈합니다.");
-        }
-
         if (pinSubmitButton != null) pinSubmitButton.onClick.AddListener(CheckPinCode);
         if (startPresentationButton != null) startPresentationButton.onClick.AddListener(LoadNextScene);
     }
@@ -131,24 +85,37 @@ public class IntroController : MonoBehaviour
     public void CheckPinCode()
     {
         if (pinInputField == null) return;
+        string pin = pinInputField.text;
+        string path = "sessions/" + pin;
 
-        currentSessionData = JsonUtility.FromJson<SessionData>(mockJsonFromServer);
+        Debug.Log("Firebase에서 데이터 검색 중: " + path);
 
-        if (pinInputField.text == currentSessionData.pin_code)
+        FirebaseDatabase.DefaultInstance.GetReference(path).GetValueAsync().ContinueWith(task =>
         {
-            FillUiWithSessionData();
-            if (sessionInfoPanel != null) sessionInfoPanel.SetActive(true);
-        }
-        else
-        {
-            pinInputField.text = "";
-        }
+            if (task.IsCompleted && task.Result.Exists)
+            {
+                string json = task.Result.GetRawJsonValue();
+                
+                // 데이터 가져오기 성공 시 UI 업데이트 (Main Thread 호출)
+                MainThreadDispatcher.Enqueue(() =>
+                {
+                    currentSessionData = JsonUtility.FromJson<SessionData>(json);
+                    FillUiWithSessionData();
+                    if (sessionInfoPanel != null) sessionInfoPanel.SetActive(true);
+                });
+            }
+            else
+            {
+                MainThreadDispatcher.Enqueue(() => {
+                    if (pinWarningText != null) pinWarningText.text = "잘못된 PIN 번호입니다.";
+                });
+            }
+        });
     }
 
     private void FillUiWithSessionData()
     {
         if (currentSessionData == null) return;
-
         var p1 = currentSessionData.page_1_basic_info;
         var p3 = currentSessionData.page_3_audience_info;
 
@@ -164,5 +131,26 @@ public class IntroController : MonoBehaviour
     public void LoadNextScene()
     {
         SceneManager.LoadScene("Scene_02_Presentation_LhjBackup");
+    }
+}
+
+// ==========================================
+// 3. 메인 스레드 호출 보조 클래스 (간단 버전)
+// ==========================================
+public static class MainThreadDispatcher
+{
+    private static readonly System.Collections.Concurrent.ConcurrentQueue<Action> _executionQueue = new System.Collections.Concurrent.ConcurrentQueue<Action>();
+
+    public static void Enqueue(Action action) => _executionQueue.Enqueue(action);
+
+    [RuntimeInitializeOnLoadMethod]
+    private static void Initialize() => new GameObject("MainThreadDispatcher").AddComponent<DispatcherHelper>();
+
+    private class DispatcherHelper : MonoBehaviour
+    {
+        void Update()
+        {
+            while (_executionQueue.TryDequeue(out var action)) action.Invoke();
+        }
     }
 }

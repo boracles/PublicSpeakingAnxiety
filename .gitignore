@@ -73,3 +73,5 @@ crashlytics-build.properties
 
 /UserSettings/azure_speech.local.jsonstage-server/.env
 stage-server/.env
+# Firebase 폴더 제외
+Assets/Firebase/Plugins/x86_64/

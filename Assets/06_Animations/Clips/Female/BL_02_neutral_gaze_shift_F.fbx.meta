@@ -47,10 +47,10 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -556,88 +556,88 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: BL_02_neutral_gaze_shift(Clone)
+    - name: BL_02_neutral_gaze_shift_F(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: B_FK2_Clothing.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: B_FK2_Hair.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_EYE_L.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_EYE_R.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Eyelash.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Lower_Teeth.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Scalp.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Skin_Arm_S.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Skin_Head.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Skin_Leg_L.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Tongue.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: FK2_Upper_Teeth.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Jacket_D1.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Shoes_Plain_Pumps_L.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Shoes_Plain_Pumps_R.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: root.001
-      parentName: BL_02_neutral_gaze_shift(Clone)
+      parentName: BL_02_neutral_gaze_shift_F(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
