@@ -122,7 +122,7 @@ Material:
     - _GlossyReflections: 0
     - _GlowIntensity: 2.5
     - _GlowWidth: 0.12
-    - _Horizon: -0.24
+    - _Horizon: -0.3
     - _HorizonHeight: -0.15
     - _Metallic: 0
     - _NoiseScale: 0.1
