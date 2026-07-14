@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 // 🌟 씬 2 안에서 가짜 서버 JSON을 파싱하기 위해 꼭 필요한 데이터 구조입니다!
 [Serializable]
@@ -9,6 +10,7 @@ public class PresentationSessionData
 {
     public Page1BasicInfo page_1_basic_info;
 }
+
 
 public class PresentationStageManager : MonoBehaviour
 {
@@ -33,18 +35,23 @@ public class PresentationStageManager : MonoBehaviour
       }
     }";
 
-    void Start()
+   void Start()
     {
-        PresentationSessionData sessionData = JsonUtility.FromJson<PresentationSessionData>(mockJsonFromServer);
-        if (sessionData != null && sessionData.page_1_basic_info != null)
+        // 🌟 씬 1에서 전달받은 데이터 가방(SessionManager)에서 시간 가져오기
+        if (SessionManager.Instance != null && SessionManager.Instance.activeSession != null)
         {
-            timeRemaining = sessionData.page_1_basic_info.duration_minutes * 60f;
+            // SessionManager에 저장된 데이터를 사용
+            timeRemaining = SessionManager.Instance.activeSession.page_1.duration_minutes * 60f;
+            Debug.Log($"[데이터 수신] 발표 시간 설정됨: {timeRemaining}초");
         }
         else
         {
-            timeRemaining = 10 * 60f; 
+            // 만약 데이터가 없으면 기본값(5분) 설정
+            timeRemaining = 5 * 60f; 
+            Debug.LogError("SessionManager에서 데이터를 찾을 수 없습니다! 기본값 5분 적용.");
         }
-        timeRemaining = 5f;
+        
+        // 💡 주의: timeRemaining = 5f; 이 줄은 테스트용이었으니 실제 발표라면 삭제하세요!
         isTimerRunning = true;
 
         if (toggleTimerButton != null)
@@ -124,7 +131,18 @@ public class PresentationStageManager : MonoBehaviour
 
     void OnEndPresentation()
     {
-        OnStartQA();
+        // 타이머가 0 이상일 때 (질의응답 버튼이 아닐 때)
+        if (timeRemaining >= 0)
+        {
+            // 씬 1로 돌아간다는 신호를 켭니다.
+            IsReturningFromPresentation = true; 
+            SceneManager.LoadScene("Scene_01_Intro_LhjBackup"); // 씬 1의 실제 파일명으로 바꾸세요!
+        }
+        else
+        {
+            // 타이머가 0 미만이면(질의응답 중) 기존 질의응답 로직 실행
+            OnStartQA();
+        }
     }
 
     void OnStartQA()
