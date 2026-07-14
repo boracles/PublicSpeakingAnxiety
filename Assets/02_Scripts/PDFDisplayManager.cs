@@ -1,31 +1,31 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PDFDisplayManager : MonoBehaviour
 {
     [Header("UI Display 연동")]
-    public RawImage displayImage;       // 메인 대형 스크린 UI
-    public RawImage deskImage;          // 💻 새로 추가한 데스크 모니터 UI!
+    public RawImage displayImage;
+    public RawImage deskImage;
 
-    private int currentPageIndex = 0;   // 0부터 시작
-    private int maxPages = 5;           // 총 5페이지
+    private int currentPageIndex = 0;
+    private List<string> imageUrls;
 
     void Start()
     {
-        if (displayImage == null)
+        // SessionManager에서 URL 리스트 가져오기
+        if (SessionManager.Instance != null && SessionManager.Instance.activeSession != null)
         {
-            Debug.LogError("[PDF 매니저] 인스펙터에서 Display Image(메인 스크린)를 연결해주세요!");
-        }
-        else
-        {
-            Debug.Log($"[PDF 매니저] 로드 성공! 총 {maxPages}페이지 이미지 연동 시작.");
-            UpdateDisplay(); 
+            imageUrls = SessionManager.Instance.activeSession.page_2.slide_image.image_urls;
+            UpdateDisplay();
         }
     }
 
     void Update()
     {
-        // 키보드 제어 테스트
+        // 💡 키보드 조작 로직 추가
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             NextPage();
@@ -38,52 +38,46 @@ public class PDFDisplayManager : MonoBehaviour
 
     public void NextPage()
     {
-        if (currentPageIndex < maxPages - 1)
+        if (imageUrls != null && currentPageIndex < imageUrls.Count - 1)
         {
             currentPageIndex++;
             UpdateDisplay();
-            Debug.Log($"[PDF] 다음 페이지 이동: {currentPageIndex + 1} / {maxPages}");
+            Debug.Log($"[PDF] 다음 페이지: {currentPageIndex + 1}");
         }
     }
 
     public void PrevPage()
     {
-        if (currentPageIndex > 0)
+        if (imageUrls != null && currentPageIndex > 0)
         {
             currentPageIndex--;
             UpdateDisplay();
-            Debug.Log($"[PDF] 이전 페이지 이동: {currentPageIndex + 1} / {maxPages}");
+            Debug.Log($"[PDF] 이전 페이지: {currentPageIndex + 1}");
         }
     }
 
     void UpdateDisplay()
     {
-        string fileName = $"PresentationPDF_{currentPageIndex}.jpg";
-        string imagePath = System.IO.Path.Combine(Application.dataPath, "01_Scenes", "PDF_Sample", fileName);
+        if (imageUrls == null || imageUrls.Count == 0) return;
+        StartCoroutine(LoadImageFromUrl(imageUrls[currentPageIndex]));
+    }
 
-        if (System.IO.File.Exists(imagePath))
+    IEnumerator LoadImageFromUrl(string url)
+    {
+        using (UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(url))
         {
-            byte[] fileData = System.IO.File.ReadAllBytes(imagePath);
-            Texture2D texture = new Texture2D(2, 2);
-            
-            if (texture.LoadImage(fileData))
+            yield return uwr.SendWebRequest();
+
+            if (uwr.result == UnityWebRequest.Result.Success)
             {
-                // 1. 메인 대형 스크린에 이미지 꽂기
-                if (displayImage != null)
-                {
-                    displayImage.texture = texture;
-                }
-
-                // 2. ✨[추가] 연사 데스크 모니터에도 똑같은 이미지 동시에 꽂기!
-                if (deskImage != null)
-                {
-                    deskImage.texture = texture;
-                }
+                Texture2D texture = DownloadHandlerTexture.GetContent(uwr);
+                if (displayImage != null) displayImage.texture = texture;
+                if (deskImage != null) deskImage.texture = texture;
             }
-        }
-        else
-        {
-            Debug.LogError($"[PDF 매니저] 이미지를 찾을 수 없습니다: {imagePath}");
+            else
+            {
+                Debug.LogError($"[PDF] 이미지 로드 실패: {uwr.error}");
+            }
         }
     }
 }

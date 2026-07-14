@@ -2,67 +2,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-using System;
-using Firebase.Database; // Firebase 추가
+using Firebase.Database;
 
-// ==========================================
-// 1. JSON 데이터 구조 정의
-// ==========================================
-[Serializable]
-public class SessionData
-{
-    public string user_id;
-    public string pin_code;
-    public string created_at;
-    public string session_status;
-    public Page1BasicInfo page_1_basic_info;
-    public Page2FileInfo page_2_file_info;
-    public Page3AudienceInfo page_3_audience_info;
-}
-
-[Serializable]
-public class Page1BasicInfo
-{
-    public string presentation_title;
-    public string presentation_purpose;
-    public string used_language;
-    public int duration_minutes;
-    public string environment_type;
-    public int qa_count;
-}
-
-[Serializable]
-public class Page2FileInfo
-{
-    public string slide_pdf_name;
-    public string paper_pdf_name;
-    public string presentation_script_content;
-}
-
-[Serializable]
-public class Page3AudienceInfo
-{
-    public string audience_type;
-    public int audience_scale_count;
-    public string expertise_level;
-    public string interest_level;
-}
-
-// ==========================================
-// 2. 메인 컨트롤러 클래스
-// ==========================================
 public class IntroController : MonoBehaviour
 {
-    [Header("--- 1단계: PIN 입력 UI ---")]
+    [Header("입력 UI")]
     public TMP_InputField pinInputField;
     public Button pinSubmitButton;
     public TMP_Text pinWarningText;
 
-    [Header("--- 2단계: 세션 준비 완료 판넬 ---")]
+    [Header("결과 표시 UI")]
     public GameObject sessionInfoPanel;
-
-    [Header("--- 판넬 내부 텍스트 컴포넌트들 ---")]
-    public TMP_Text sessionTypeText;
     public TMP_Text durationText;
     public TMP_Text qaCountText;
     public TMP_Text audienceScaleText;
@@ -70,25 +20,36 @@ public class IntroController : MonoBehaviour
     public TMP_Text expertiseText;
     public TMP_Text interestText;
 
-    [Header("--- 판넬 내부 하단 버튼 ---")]
-    public Button startPresentationButton;
-
-    private SessionData currentSessionData;
+    [Header("안내 문구")]
+    public GameObject instructionText;
 
     void Start()
     {
+        // 초기 설정: 결과 패널은 숨기고 입력 버튼에 기능 연결
         if (sessionInfoPanel != null) sessionInfoPanel.SetActive(false);
         if (pinSubmitButton != null) pinSubmitButton.onClick.AddListener(CheckPinCode);
-        if (startPresentationButton != null) startPresentationButton.onClick.AddListener(LoadNextScene);
+
+        if (PresentationStageManager.IsReturningFromPresentation)
+        {
+            // 플래그 초기화
+            PresentationStageManager.IsReturningFromPresentation = false;
+            
+            // 데이터가 있다면 바로 결과창 표시
+            if (SessionManager.Instance != null && SessionManager.Instance.activeSession != null)
+            {
+                FillUiWithSessionData(SessionManager.Instance.activeSession);
+                sessionInfoPanel.SetActive(true);
+                pinInputField.gameObject.SetActive(false);
+                pinSubmitButton.gameObject.SetActive(false);
+                if (pinWarningText != null) pinWarningText.gameObject.SetActive(false);
+            }
+        }
     }
 
     public void CheckPinCode()
     {
-        if (pinInputField == null) return;
         string pin = pinInputField.text;
-        string path = "sessions/" + pin;
-
-        Debug.Log("Firebase에서 데이터 검색 중: " + path);
+        string path = "presentation_data/" + pin;
 
         FirebaseDatabase.DefaultInstance.GetReference(path).GetValueAsync().ContinueWith(task =>
         {
@@ -96,61 +57,89 @@ public class IntroController : MonoBehaviour
             {
                 string json = task.Result.GetRawJsonValue();
                 
-                // 데이터 가져오기 성공 시 UI 업데이트 (Main Thread 호출)
                 MainThreadDispatcher.Enqueue(() =>
                 {
-                    currentSessionData = JsonUtility.FromJson<SessionData>(json);
-                    FillUiWithSessionData();
-                    if (sessionInfoPanel != null) sessionInfoPanel.SetActive(true);
+                    // 1. 세션 데이터 파싱
+                    SessionData data = JsonUtility.FromJson<SessionData>(json);
+
+                    // 2. SessionManager 생성 및 데이터 주입
+                    if (SessionManager.Instance == null)
+                    {
+                        GameObject go = new GameObject("SessionManager");
+                        go.AddComponent<SessionManager>();
+                    }
+                    SessionManager.Instance.activeSession = data;
+
+                    // 3. UI 업데이트
+                    FillUiWithSessionData(data);
+                    
+                    // 4. 화면 전환 (입력창 숨기고 결과창 표시)
+                    sessionInfoPanel.SetActive(true);
+                    pinInputField.gameObject.SetActive(false);
+                    pinSubmitButton.gameObject.SetActive(false);
+                    pinWarningText.gameObject.SetActive(false);
+
+                    if (instructionText != null) instructionText.SetActive(false); // 텍스트도 끄기
+    
+                    sessionInfoPanel.SetActive(true);
+                    
                 });
             }
             else
             {
                 MainThreadDispatcher.Enqueue(() => {
-                    if (pinWarningText != null) pinWarningText.text = "잘못된 PIN 번호입니다.";
+                    pinWarningText.text = "잘못된 PIN 번호입니다.";
                 });
             }
         });
     }
 
-    private void FillUiWithSessionData()
+    private void FillUiWithSessionData(SessionData data)
     {
-        if (currentSessionData == null) return;
-        var p1 = currentSessionData.page_1_basic_info;
-        var p3 = currentSessionData.page_3_audience_info;
+        if (data == null) return;
 
-        if (sessionTypeText != null) sessionTypeText.text = "발표 모드";
-        if (durationText != null) durationText.text = $"{p1.duration_minutes}분";
-        if (qaCountText != null) qaCountText.text = $"{p1.qa_count}개";
-        if (audienceScaleText != null) audienceScaleText.text = $"{p3.audience_scale_count}명";
-        if (environmentText != null) environmentText.text = p1.environment_type;
-        if (expertiseText != null) expertiseText.text = p3.expertise_level;
-        if (interestText != null) interestText.text = p3.interest_level;
+        // 위쪽 데이터
+        if (durationText != null) durationText.text = $"{data.page_1.duration_minutes}분";
+        if (qaCountText != null) qaCountText.text = $"{data.page_1.qa_count}개";
+        if (audienceScaleText != null) audienceScaleText.text = $"{data.page_3.audience_scale}명";
+        if (environmentText != null) environmentText.text = data.page_1.environment_type;
+
+        // 💡 누락된 아래쪽 데이터 채우기
+       if (expertiseText != null) expertiseText.text = data.page_3.audience_expertise;
+    if (interestText != null) interestText.text = data.page_3.audience_interest;
+    
+    Debug.Log($"[디버그] 전문성: {data.page_3.audience_expertise}, 관심도: {data.page_3.audience_interest}");
     }
-
-    public void LoadNextScene()
+    public void StartSession()
+{
+    // 씬 1에서 받아둔 데이터가 가방(SessionManager)에 잘 있는지 확인
+    if (SessionManager.Instance.activeSession != null)
     {
         SceneManager.LoadScene("Scene_02_Presentation_LhjBackup");
     }
+    else
+    {
+        Debug.LogError("세션 데이터가 없습니다. PIN을 먼저 확인하세요!");
+    }
 }
 
-// ==========================================
-// 3. 메인 스레드 호출 보조 클래스 (간단 버전)
-// ==========================================
-public static class MainThreadDispatcher
-{
-    private static readonly System.Collections.Concurrent.ConcurrentQueue<Action> _executionQueue = new System.Collections.Concurrent.ConcurrentQueue<Action>();
-
-    public static void Enqueue(Action action) => _executionQueue.Enqueue(action);
-
-    [RuntimeInitializeOnLoadMethod]
-    private static void Initialize() => new GameObject("MainThreadDispatcher").AddComponent<DispatcherHelper>();
-
-    private class DispatcherHelper : MonoBehaviour
+    public void ResetPinInput()
     {
-        void Update()
+        // 결과 패널 끄기
+        sessionInfoPanel.SetActive(false);
+        
+        // 입력창 및 안내 문구 켜기
+        pinInputField.gameObject.SetActive(true);
+        pinSubmitButton.gameObject.SetActive(true);
+        pinWarningText.gameObject.SetActive(true);
+        
+        // 안내 문구 복구
+        if (pinWarningText != null) 
         {
-            while (_executionQueue.TryDequeue(out var action)) action.Invoke();
+            pinWarningText.gameObject.SetActive(true);
+            pinWarningText.text = "웹에서 발급받은 PIN 번호 4자리를 입력해주세요.";
         }
+        
+        pinInputField.text = "";
     }
 }
