@@ -38,13 +38,13 @@
   <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
   <Project Path="Unity.XR.Hands.csproj" />
   <Project Path="Unity.2D.SpriteShape.Runtime.csproj" />
-  <Project Path="Firebase.App.Internal.csproj" />
   <Project Path="UnityEditor.TestRunner.csproj" />
+  <Project Path="Firebase.App.Internal.csproj" />
   <Project Path="Unity.XR.MetaOpenXR.csproj" />
   <Project Path="Unity.RenderPipelines.Universal.Runtime.csproj" />
   <Project Path="Oculus.LipSync.csproj" />
-  <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj" />
   <Project Path="Unity.Burst.CodeGen.csproj" />
   <Project Path="Autohand.OpenXR.csproj" />
   <Project Path="Unity.XR.ARFoundation.csproj" />
