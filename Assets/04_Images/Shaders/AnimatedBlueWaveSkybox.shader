@@ -41,6 +41,8 @@ Shader "Custom/Animated Blue Wave Skybox"
         Cull Off
         ZWrite Off
         ZTest LEqual
+        Blend Off
+        ColorMask RGB
 
         Pass
         {
@@ -95,7 +97,13 @@ Shader "Custom/Animated Blue Wave Skybox"
 
                 float3 positionWS = TransformObjectToWorld(input.positionOS.xyz);
                 output.positionCS = TransformWorldToHClip(positionWS);
-                output.positionCS.z = output.positionCS.w;
+
+                // Always place the sky at the platform-specific far plane.
+                // Using z = w directly can produce an incorrect depth on
+                // reversed-Z platforms and allow the sky pass to cover 3D geometry.
+                output.positionCS.z =
+                    UNITY_RAW_FAR_CLIP_VALUE * output.positionCS.w;
+
                 output.directionOS = input.positionOS.xyz;
 
                 return output;
