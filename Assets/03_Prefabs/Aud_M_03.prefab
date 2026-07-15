@@ -1322,6 +1322,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 995fc30f277634e6191fbd0d76f0ed7b, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 3672239286911045096}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 995fc30f277634e6191fbd0d76f0ed7b, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 2894139399319392750}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 995fc30f277634e6191fbd0d76f0ed7b, type: 3}
       insertIndex: -1
@@ -1330,11 +1333,35 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3047549664287273949}
   m_SourcePrefab: {fileID: 100100000, guid: 995fc30f277634e6191fbd0d76f0ed7b, type: 3}
+--- !u!95 &4204009348699408152 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 995fc30f277634e6191fbd0d76f0ed7b, type: 3}
+  m_PrefabInstance: {fileID: 7727387044919835273}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7492960922851067864 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 995fc30f277634e6191fbd0d76f0ed7b, type: 3}
   m_PrefabInstance: {fileID: 7727387044919835273}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3672239286911045096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492960922851067864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16390f1144043495e9b874e8533555bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudienceAnimationActor
+  animator: {fileID: 4204009348699408152}
+  seatRole: 0
+  groupParameter: GroupID
+  motionParameter: MotionID
+  variantParameter: VariantID
+  seatRoleParameter: SeatRole
+  playTrigger: ChangeGroup
 --- !u!114 &2894139399319392750
 MonoBehaviour:
   m_ObjectHideFlags: 0

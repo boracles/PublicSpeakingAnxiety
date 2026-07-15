@@ -1314,6 +1314,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f464b376804613479032d850b816d2f, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 7595043587497253930}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f464b376804613479032d850b816d2f, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 438499787455889622}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f464b376804613479032d850b816d2f, type: 3}
       insertIndex: -1
@@ -1327,6 +1330,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f464b376804613479032d850b816d2f, type: 3}
   m_PrefabInstance: {fileID: 91598516750235006}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7595043587497253930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973909520299624495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16390f1144043495e9b874e8533555bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudienceAnimationActor
+  animator: {fileID: 5778111675036666095}
+  seatRole: 0
+  groupParameter: GroupID
+  motionParameter: MotionID
+  variantParameter: VariantID
+  seatRoleParameter: SeatRole
+  playTrigger: ChangeGroup
 --- !u!114 &438499787455889622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1399,3 +1421,8 @@ MonoBehaviour:
   planner: {fileID: 0}
   gazePlanner: {fileID: 0}
   interval: 5
+--- !u!95 &5778111675036666095 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 2f464b376804613479032d850b816d2f, type: 3}
+  m_PrefabInstance: {fileID: 91598516750235006}
+  m_PrefabAsset: {fileID: 0}

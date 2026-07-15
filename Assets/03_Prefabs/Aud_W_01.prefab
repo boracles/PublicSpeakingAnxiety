@@ -1667,6 +1667,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       insertIndex: -1
+      addedObject: {fileID: -3797643856359719378}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 3363572126982979298}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       insertIndex: -1
@@ -1675,6 +1678,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3729306637862722467}
   m_SourcePrefab: {fileID: 100100000, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+--- !u!95 &1488745184018072821 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
+  m_PrefabInstance: {fileID: 5027002838702111076}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2341896289724773146 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7296840980284672638, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
@@ -1705,6 +1713,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
   m_PrefabInstance: {fileID: 5027002838702111076}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-3797643856359719378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5261024202918790197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16390f1144043495e9b874e8533555bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudienceAnimationActor
+  animator: {fileID: 1488745184018072821}
+  seatRole: 0
+  groupParameter: GroupID
+  motionParameter: MotionID
+  variantParameter: VariantID
+  seatRoleParameter: SeatRole
+  playTrigger: ChangeGroup
 --- !u!114 &3363572126982979298
 MonoBehaviour:
   m_ObjectHideFlags: 0
