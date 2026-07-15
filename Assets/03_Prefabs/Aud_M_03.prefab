@@ -1092,6 +1092,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 995fc30f277634e6191fbd0d76f0ed7b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1394f9795f9b4fd4aaae746d02b44406, type: 2}
     - target: {fileID: 5871944895168458575, guid: 995fc30f277634e6191fbd0d76f0ed7b, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -1386,6 +1390,7 @@ MonoBehaviour:
     engagement: 0
     evaluativeValence: 0
     cognitiveClarity: 0
+  utterancePosition: 0
 --- !u!114 &3047549664287273949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,5 +1405,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudienceBackchannelOutput
   backchannelText: {fileID: 0}
   planner: {fileID: 0}
+  gazePlanner: {fileID: 0}
   interval: 5
-  displayDuration: 2

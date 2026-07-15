@@ -1645,7 +1645,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: cb5f6f00490af43eaad071512b36752a, type: 2}
     - target: {fileID: 5866666021909216657, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -1760,6 +1760,7 @@ MonoBehaviour:
     engagement: 0
     evaluativeValence: 0
     cognitiveClarity: 0
+  utterancePosition: 0
 --- !u!114 &3729306637862722467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1774,8 +1775,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudienceBackchannelOutput
   backchannelText: {fileID: 0}
   planner: {fileID: 0}
+  gazePlanner: {fileID: 0}
   interval: 5
-  displayDuration: 2
 --- !u!4 &5686818728981592265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 803932062607491501, guid: 21d9a0b5cbed046f4976d2843ba8da8b, type: 3}

@@ -1096,6 +1096,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 2f464b376804613479032d850b816d2f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1394f9795f9b4fd4aaae746d02b44406, type: 2}
     - target: {fileID: 5871944895168458575, guid: 2f464b376804613479032d850b816d2f, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -1338,7 +1342,19 @@ MonoBehaviour:
   profile: {fileID: 0}
   topicInterest: 1
   priorKnowledge: 1
+  topicInterestValue: 0.5
+  priorKnowledgeValue: 0.5
+  currentSeat: {fileID: 0}
   hasLaptop: 0
+  speakerTarget: {fileID: 0}
+  slideTarget: {fileID: 0}
+  laptopTarget: {fileID: 0}
+  awayTarget: {fileID: 0}
+  laptopAnchor: {fileID: 0}
+  spawnedLaptop: {fileID: 0}
+  responsiveness: 0.5
+  expressivity: 0.5
+  criticalBias: 0.5
   state:
     engagement: 0
     evaluativeValence: 0
@@ -1361,11 +1377,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8cc1ca278a6b04b8f1a6a5188a84ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudienceBackchannelPlanner
-  profile: {fileID: 0}
+  agent: {fileID: 0}
   state:
     engagement: 0
     evaluativeValence: 0
     cognitiveClarity: 0
+  utterancePosition: 0
 --- !u!114 &2207677894843745536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1380,5 +1397,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudienceBackchannelOutput
   backchannelText: {fileID: 0}
   planner: {fileID: 0}
+  gazePlanner: {fileID: 0}
   interval: 5
-  displayDuration: 2
